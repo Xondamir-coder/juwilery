@@ -1,0 +1,70 @@
+@use '../utils/breakpoints';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	@include breakpoints.ipad-pro {
+		background-color: blue;
+	}
+}
+body {
+}
+p {
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+ul {
+	list-style: none;
+}
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	color: inherit;
+	font: inherit;
+}
+textarea {
+	resize: none;
+}
+input,
+textarea {
+	font: inherit;
+	color: inherit;
+	border: none;
+	outline: none;
+	&::placeholder {
+		color: inherit;
+		opacity: 0.8;
+	}
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+	pointer-events: none;
+}

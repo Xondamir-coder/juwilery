@@ -1,0 +1,32 @@
+@mixin grid-center {
+	display: grid;
+	place-items: center;
+}
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin grid-scroll($grid-width, $snap-align: start) {
+	grid-template-columns: initial;
+	grid-auto-flow: column;
+	grid-auto-columns: $grid-width;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	& > * {
+		scroll-snap-align: $snap-align;
+	}
+}
+@mixin flex-scroll($snap-align: start) {
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	& > * {
+		scroll-snap-align: $snap-align;
+	}
+}
