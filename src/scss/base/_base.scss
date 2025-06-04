@@ -1,3 +1,4 @@
+@use '../utils/variables';
 @use '../utils/breakpoints';
 
 *,
@@ -8,13 +9,31 @@
 	padding: 0;
 }
 html {
+	font-size: calc(100vw / (1920 / 10));
+
+	// @include breakpoints.large-desktop {
+	// 	font-size: calc(100vw / (1920 / 11));
+	// }
+
+	@include breakpoints.small-desktop {
+		font-size: calc(100vw / (1920 / 12));
+	}
+
 	@include breakpoints.ipad-pro {
-		background-color: blue;
+		font-size: calc(100vw / (1920 / 11.5));
+	}
+
+	@include breakpoints.large-mobile {
+		font-size: 62.5%;
+	}
+
+	@include breakpoints.small-mobile {
+		font-size: calc(100vw / (375 / 10));
 	}
 }
 body {
-}
-p {
+	font-family: variables.$font-manrope;
+	color: variables.$black;
 }
 a {
 	text-decoration: none;

@@ -1,0 +1,13 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+
+.section-title {
+	font-size: 5.2rem;
+	font-family: variables.$font-cormorant;
+	font-weight: 500;
+	line-height: 80%;
+
+	@include breakpoints.large-mobile {
+		font-size: 3.2rem;
+	}
+}
