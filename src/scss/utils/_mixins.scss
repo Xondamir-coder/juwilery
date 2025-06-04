@@ -1,3 +1,21 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+
+@mixin spacing($isPadding: true) {
+	@if $isPadding {
+		padding-inline: variables.$spacing;
+		@include breakpoints.large-mobile {
+			padding-inline: 1.6rem;
+		}
+	} @else {
+		margin-inline: variables.$spacing;
+		@include breakpoints.large-mobile {
+			margin-inline: 1.6rem;
+		}
+	}
+}
+
+// Layout related
 @mixin grid-center {
 	display: grid;
 	place-items: center;

@@ -1,0 +1,129 @@
+@use '../utils/variables';
+
+.fill-black {
+	fill: variables.$black;
+}
+
+.fill-green {
+	fill: variables.$green;
+}
+
+.fill-gold {
+	fill: variables.$gold;
+}
+
+.fill-light-gold {
+	fill: variables.$light-gold;
+}
+
+.fill-white {
+	fill: variables.$white;
+}
+
+.fill-grey-1 {
+	fill: variables.$grey-1;
+}
+
+.fill-grey-2 {
+	fill: variables.$grey-2;
+}
+
+.fill-grey-3 {
+	fill: variables.$grey-3;
+}
+
+.stroke-black {
+	stroke: variables.$black;
+}
+
+.stroke-green {
+	stroke: variables.$green;
+}
+
+.stroke-gold {
+	stroke: variables.$gold;
+}
+
+.stroke-light-gold {
+	stroke: variables.$light-gold;
+}
+
+.stroke-white {
+	stroke: variables.$white;
+}
+
+.stroke-grey-1 {
+	stroke: variables.$grey-1;
+}
+
+.stroke-grey-2 {
+	stroke: variables.$grey-2;
+}
+
+.stroke-grey-3 {
+	stroke: variables.$grey-3;
+}
+
+.color-black {
+	color: variables.$black;
+}
+
+.color-green {
+	color: variables.$green;
+}
+
+.color-gold {
+	color: variables.$gold;
+}
+
+.color-light-gold {
+	color: variables.$light-gold;
+}
+
+.color-white {
+	color: variables.$white;
+}
+
+.color-grey-1 {
+	color: variables.$grey-1;
+}
+
+.color-grey-2 {
+	color: variables.$grey-2;
+}
+
+.color-grey-3 {
+	color: variables.$grey-3;
+}
+
+.bg-black {
+	background-color: variables.$black;
+}
+
+.bg-green {
+	background-color: variables.$green;
+}
+
+.bg-gold {
+	background-color: variables.$gold;
+}
+
+.bg-light-gold {
+	background-color: variables.$light-gold;
+}
+
+.bg-white {
+	background-color: variables.$white;
+}
+
+.bg-grey-1 {
+	background-color: variables.$grey-1;
+}
+
+.bg-grey-2 {
+	background-color: variables.$grey-2;
+}
+
+.bg-grey-3 {
+	background-color: variables.$grey-3;
+}

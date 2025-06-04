@@ -1,0 +1,228 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.header {
+	backdrop-filter: blur(24px);
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	padding-block: 12px;
+	@include mixins.spacing;
+
+	@include breakpoints.large-mobile {
+		grid-template-columns: 1fr 1fr;
+	}
+	&__tel {
+		display: grid;
+		grid-template-columns: 16px 1fr;
+		align-items: center;
+		gap: 4px;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 1;
+		letter-spacing: -0.02em;
+		.icon {
+			width: 100%;
+		}
+
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	&__left {
+		display: flex;
+		gap: 5rem;
+	}
+	&__right {
+		display: flex;
+		gap: 4.8rem;
+		justify-self: flex-end;
+	}
+	&__logo {
+		display: flex;
+		width: 15.1rem;
+		@include breakpoints.large-mobile {
+			width: 7.5rem;
+		}
+		img {
+			object-fit: contain;
+		}
+	}
+	&__action {
+		flex: 1;
+		background-color: variables.$grey-2;
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+		padding: 3px;
+		border-radius: 1.3rem;
+		@include breakpoints.large-mobile {
+			display: none;
+		}
+	}
+	&__button {
+		color: #fff;
+		background-color: variables.$gold;
+		padding-block: 0.9rem;
+		padding-inline: 1.55rem;
+		border-radius: 1.3rem;
+		display: flex;
+		align-items: center;
+		gap: 1.375rem;
+		line-height: 1;
+		letter-spacing: -0.02em;
+		&:hover {
+			background-color: variables.$black;
+		}
+		&-icon {
+			width: 15px;
+			fill: currentColor;
+		}
+	}
+
+	&__call {
+		@include mixins.flex-center;
+		width: 4.8rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background-color: variables.$green;
+		&:hover {
+			background-color: variables.$black;
+		}
+	}
+	&__accessibility {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		@include breakpoints.large-mobile {
+			display: none;
+		}
+	}
+	&__dropdown {
+		position: absolute;
+		z-index: 5;
+		top: calc(100% + 2rem);
+		box-shadow: 0px 4px 30px 0px #00000017;
+		background: variables.$white;
+		border-radius: 1.4rem;
+		transition-property: opacity, transform;
+		transition-duration: 0.3s;
+		opacity: 0;
+		pointer-events: none;
+		&.active {
+			opacity: 1;
+			pointer-events: all;
+			transform: translate(0, 0);
+		}
+	}
+	&__languages {
+		position: relative;
+		&-options {
+			padding: 2px;
+			transform: translateY(5px);
+		}
+		&-option {
+			letter-spacing: -0.02em;
+			font-weight: 500;
+			padding-block: 1.6rem;
+			padding-inline: 2.4rem;
+			border-radius: 1.2rem;
+			text-align: center;
+			&:hover {
+				background-color: rgba(variables.$gold, 0.5);
+				color: #fff;
+			}
+			&.active {
+				color: variables.$white;
+				background-color: variables.$gold;
+			}
+		}
+		&-selected {
+			border: 1px solid #e3e3e3;
+			padding-block: 1.2rem;
+			padding-left: 0.8rem;
+			padding-right: 1.6rem;
+			display: flex;
+			align-items: center;
+			border-radius: 6rem;
+			gap: 4px;
+			&:hover {
+				border-color: variables.$gold;
+				color: variables.$gold;
+				.icon {
+					stroke: variables.$gold;
+				}
+			}
+		}
+	}
+	&__cta {
+		position: relative;
+		&-tag {
+			display: grid;
+			grid-template-columns: max-content 1fr;
+			align-items: center;
+			gap: 1.2rem;
+			font-weight: 500;
+			letter-spacing: -0.02em;
+			transition: background-color 0.2s, color 0.2s, transform 0.2s;
+			&:hover {
+				transform: translateX(5px);
+				color: rgba(variables.$gold, 0.5);
+			}
+		}
+		&-options {
+			display: flex;
+			flex-direction: column;
+			gap: 2.4rem;
+			padding: 3.2rem;
+			min-width: 29rem;
+			right: 0;
+			transform: translateX(-20px);
+		}
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 4.8rem;
+
+		@include breakpoints.large-mobile {
+			display: none;
+		}
+	}
+	&__item {
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: 0;
+		&:hover {
+			color: variables.$gold;
+		}
+	}
+	&__search {
+		padding-right: 1.6rem;
+		flex: 1;
+		border-radius: 1.3rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		&-button {
+			display: flex;
+			&:hover > * {
+				fill: variables.$gold;
+			}
+		}
+		&-icon {
+			width: 16px;
+			fill: variables.$grey-3;
+		}
+		&-input {
+			flex: 1;
+			background-color: transparent;
+			color: #5a6062;
+			letter-spacing: -0.02em;
+		}
+		&-stars {
+			fill: variables.$black;
+			width: 15px;
+		}
+	}
+}
