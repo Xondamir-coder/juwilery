@@ -1,0 +1,104 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+
+// Hero
+.hero {
+	display: grid;
+	& > * {
+		grid-area: 1/1/2/2;
+	}
+	&__content {
+		justify-self: center;
+		align-self: flex-start;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 20rem;
+		@include breakpoints.large-mobile {
+			margin-top: 6rem;
+			padding-inline: 2rem;
+		}
+	}
+	&__image {
+		z-index: -1;
+		transform: translateY(-50px);
+		@include breakpoints.large-mobile {
+			aspect-ratio: 375/792;
+		}
+	}
+	&__subtitle {
+		font-weight: 500;
+		font-size: 1.8rem;
+		line-height: 124%;
+		text-align: center;
+		opacity: 0.7;
+		max-width: 55ch;
+		@include breakpoints.large-mobile {
+			font-size: 1.4rem;
+		}
+	}
+	&__title {
+		max-width: 17ch;
+		font-family: variables.$font-ogg;
+		font-weight: 400;
+		font-size: 12.4rem;
+		line-height: 92%;
+		letter-spacing: -0.05em;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 4.8rem;
+		@include breakpoints.large-mobile {
+			margin-bottom: 2.4rem;
+			font-size: 4rem;
+		}
+	}
+	&__buttons {
+		display: flex;
+		gap: 1.2rem;
+		margin-top: 3.8rem;
+		@include breakpoints.large-mobile {
+			margin-top: 4.3rem;
+			flex-direction: column;
+			gap: 6px;
+		}
+	}
+	&__button {
+		padding-block: 2rem;
+		padding-inline: 3.05rem;
+		font-weight: 500;
+		line-height: 100%;
+		border-radius: 1.8rem;
+		@include breakpoints.large-mobile {
+			font-size: 1.4rem;
+			padding-block: 1.7rem;
+			padding-inline: 4.15rem;
+			border-radius: 1.4rem;
+			height: 4.8rem;
+		}
+		&:first-of-type {
+			background-color: variables.$black;
+			color: variables.$white;
+			&:hover {
+				background-color: variables.$white;
+				color: variables.$black;
+			}
+		}
+		&:last-of-type {
+			backdrop-filter: blur(24px);
+			background-color: variables.$white;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			.icon {
+				width: 24px;
+			}
+			&:hover {
+				background-color: variables.$black;
+				color: variables.$white;
+				.icon {
+					stroke: variables.$white;
+				}
+			}
+		}
+	}
+}

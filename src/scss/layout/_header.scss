@@ -7,6 +7,7 @@
 	display: grid;
 	grid-template-columns: 1.5fr 1fr;
 	padding-block: 12px;
+	background-color: variables.$white;
 	@include mixins.spacing;
 
 	@include breakpoints.large-mobile {
