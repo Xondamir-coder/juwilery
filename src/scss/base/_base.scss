@@ -39,7 +39,7 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
-	transition-property: color;
+	transition-property: color, background-color, border-color;
 	transition-duration: variables.$default-transition-duration;
 }
 img {

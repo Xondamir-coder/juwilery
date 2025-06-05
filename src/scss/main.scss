@@ -1,6 +1,7 @@
 // @use 'utils/variables';
 // @use 'utils/mixins';
 // @use 'utils/breakpoints';
+@use 'utils/utils';
 
 @use 'base/base';
 @use 'base/fonts';
@@ -8,5 +9,7 @@
 @use 'components/headings';
 @use 'components/icons';
 @use 'components/colors';
+@use 'components/texts';
+@use 'components/buttons';
 
 @use 'layout/header';

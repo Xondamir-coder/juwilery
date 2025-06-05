@@ -1,0 +1,30 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+
+.button {
+	padding-block: 1.6rem;
+	font-weight: 500;
+	line-height: 100%;
+	border-radius: 1.8rem;
+	@include breakpoints.large-mobile {
+		padding-block: 1.4rem;
+		border-radius: 1.4rem;
+		font-size: 1.4rem;
+	}
+	&--black {
+		background-color: variables.$black;
+		color: variables.$white;
+		&:hover {
+			background-color: variables.$white;
+			color: variables.$black;
+		}
+	}
+	&--white {
+		background-color: variables.$white;
+		color: variables.$black;
+		&:hover {
+			background-color: variables.$black;
+			color: variables.$white;
+		}
+	}
+}

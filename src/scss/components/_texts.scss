@@ -1,0 +1,12 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+
+.text-default {
+	font-size: 1.8rem;
+	line-height: 124%;
+	font-weight: 500;
+
+	@include breakpoints.large-mobile {
+		font-size: 1.4rem;
+	}
+}
