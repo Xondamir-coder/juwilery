@@ -56,7 +56,7 @@ button {
 	cursor: pointer;
 	color: inherit;
 	font: inherit;
-	transition-property: color, background-color, border-color;
+	transition-property: color, background-color, border-color, transform;
 	transition-duration: variables.$default-transition-duration;
 }
 textarea {

@@ -71,5 +71,19 @@
                 stroke="inherit" stroke-width="1.5" />
         </symbol>
 
+        <symbol id="left-curved-arrow" viewBox="0 0 24 24">
+            <g clip-path="url(#clip0_1_3956)">
+                <path
+                    d="M8 19C8 18.258 7.267 17.15 6.525 16.22C5.571 15.02 4.431 13.973 3.124 13.174C2.144 12.575 0.955998 12 -2.55504e-06 12M-2.55504e-06 12C0.955998 12 2.145 11.425 3.124 10.826C4.431 10.026 5.571 8.979 6.525 7.781C7.267 6.85 8 5.74 8 5M-2.55504e-06 12L24 12"
+                    stroke="inherit" stroke-width="1.6" />
+            </g>
+            <defs>
+                <clipPath id="clip0_1_3956">
+                    <rect width="24" height="24" fill="white"
+                        transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 24 24)" />
+                </clipPath>
+            </defs>
+        </symbol>
+
     </defs>
 </svg>

@@ -1,3 +1,6 @@
+import { register } from 'swiper/element/bundle';
+register();
+
 const handleToggleDropdowns = () => {
 	const togglers = document.querySelectorAll('[data-toggle]');
 	togglers.forEach(t => {

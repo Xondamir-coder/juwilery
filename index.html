@@ -10,7 +10,7 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
 			rel="stylesheet" />
-		<script type="module" src="src/js/main.js" defer></script>
+		<script type="module" src="src/js/pages/index.js" defer></script>
 		<title>Main Page</title>
 	</head>
 	<body>
@@ -221,7 +221,7 @@
 										fill="#E9E7E7" />
 								</svg>
 								<img
-									src="src/assets/images/rings.png"
+									src="src/assets/images/earrings.png"
 									alt="girl ring"
 									class="showcase__image" />
 								<span class="showcase__item-amount">19 товаров</span>
@@ -375,7 +375,146 @@
 					</section>
 				</div>
 				<!-- Popular -->
-				<section class="popular">Asd</section>
+				<section class="slider">
+					<div class="slider__header">
+						<h2 class="section-title">Популярное</h2>
+						<div class="slider__buttons">
+							<button class="slider__button">
+								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+							<button class="slider__button">
+								<svg
+									class="icon stroke-black rotate-180"
+									viewBox="0 0 24 24"
+									fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<swiper-container
+						class="slider__container"
+						slides-per-view="auto"
+						navigation="true"
+						navigation-prev-el=".slider__button:first-of-type"
+						navigation-next-el=".slider__button:last-of-type"
+						grab-cursor="true">
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/ring.png"
+								alt="ring"
+								class="slider__item-image h-auto" />
+							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/girl-showoff.jpg"
+								alt="girl showoff"
+								class="slider__item-image" />
+							<h3 class="slider__item-title color-white">
+								Кольцо из золота с фианитом
+							</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/ring.png"
+								alt="ring"
+								class="slider__item-image h-auto" />
+							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="ring"
+								class="slider__item-image tr-scale-1-3" />
+							<h3 class="slider__item-title color-white">
+								Кольцо из золота с фианитом
+							</h3>
+						</swiper-slide>
+					</swiper-container>
+				</section>
+				<!-- Others -->
+				<section class="slider">
+					<div class="slider__header">
+						<h2 class="section-title">Разное</h2>
+						<div class="slider__buttons">
+							<button class="slider__button">
+								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+							<button class="slider__button">
+								<svg
+									class="icon stroke-black rotate-180"
+									viewBox="0 0 24 24"
+									fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<swiper-container
+						class="slider__container"
+						slides-per-view="auto"
+						navigation="true"
+						navigation-prev-el=".slider__button:first-of-type"
+						navigation-next-el=".slider__button:last-of-type"
+						grab-cursor="true">
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="ring"
+								class="slider__item-image tr-scale-1-3" />
+							<h3 class="slider__item-title color-white">
+								Кольцо из золота с фианитом
+							</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/earrings.png"
+								alt="girl showoff"
+								class="slider__item-image h-auto w-70 x-y-centered" />
+							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/emerald.jpg"
+								alt="ring"
+								class="slider__item-image" />
+							<h3 class="slider__item-title color-white">
+								Кольцо из золота с фианитом
+							</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/ring.png"
+								alt="ring"
+								class="slider__item-image h-auto" />
+							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
+						</swiper-slide>
+					</swiper-container>
+				</section>
+				<!-- Info -->
+				<div class="slider__header">
+					<h2 class="section-title">Сияние Востока для избранных</h2>
+					<div class="slider__buttons">
+						<button class="slider__button">
+							<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
+								<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+							</svg>
+						</button>
+						<button class="slider__button">
+							<svg
+								class="icon stroke-black rotate-180"
+								viewBox="0 0 24 24"
+								fill="none">
+								<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
 			</main>
 		</div>
 	</body>

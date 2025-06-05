@@ -1,0 +1,98 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.slider {
+	display: flex;
+	flex-direction: column;
+	gap: 3.5rem;
+	@include breakpoints.large-mobile {
+		gap: 2.4rem;
+	}
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__button {
+		width: 4.8rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background-color: variables.$grey-1;
+		@include mixins.flex-center;
+
+		&:hover {
+			background-color: variables.$green;
+			.icon {
+				stroke: variables.$white;
+			}
+			&:first-of-type {
+				transform: translateX(-2px);
+			}
+			&:last-of-type {
+				transform: translateX(2px);
+			}
+		}
+	}
+	&__buttons {
+		display: flex;
+		gap: 4px;
+		@include breakpoints.large-mobile {
+			display: none;
+		}
+	}
+	// &__container {
+	// 	// display: flex;
+	// 	// gap: 2rem;
+	// 	// @include breakpoints.large-mobile {
+	// 	// 	gap: 0.8rem;
+	// 	// }
+	// }
+	&__item {
+		max-width: 36.7rem;
+		min-width: 22rem;
+		width: 25vw;
+		margin-right: 2rem;
+		border-radius: 2.4rem;
+		padding-block: 2.4rem;
+		padding-inline: 1.8rem;
+		border: 1.07px solid #e3e3e3;
+		overflow: hidden;
+		position: relative;
+		aspect-ratio: 367/476;
+		display: flex;
+		@include breakpoints.large-mobile {
+			padding-inline: 1.6rem;
+			border-radius: 1.6rem;
+			margin-right: 0.8rem;
+		}
+		&:has(.slider__item-title.color-white) {
+			&::after {
+				content: '';
+				position: absolute;
+				height: 48%;
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+			}
+		}
+		&-image {
+			position: absolute;
+			inset: 0;
+			object-position: bottom;
+		}
+		&-title {
+			font-family: variables.$font-cormorant;
+			font-weight: 600;
+			font-size: 2.4rem;
+			line-height: 96%;
+			letter-spacing: -0.05em;
+			align-self: flex-end;
+			z-index: 2;
+			@include breakpoints.large-mobile {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}

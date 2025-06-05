@@ -1,8 +1,10 @@
 @use '../utils/breakpoints';
+@use '../utils/variables';
 
 .icon {
 	width: 2.4rem;
-	transition: fill 0.2s, stroke 0.2s, transform 0.2s;
+	transition-property: fill, stroke, transform;
+	transition-duration: variables.$default-transition-duration;
 
 	@include breakpoints.large-mobile {
 		width: 1.6rem;
