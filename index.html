@@ -627,8 +627,107 @@
 			</main>
 			<!-- Footer -->
 			<footer class="footer">
-				<img src="src/assets/images/footer-bg.png" alt="footer bg" class="footer__image" />
-				<div class="footer__topleft">
+				<!-- Bg -->
+				<picture class="footer__image">
+					<source
+						srcset="src/assets/images/footer-bg-small.png"
+						media="(max-width: 768px)" />
+					<img src="src/assets/images/footer-bg.png" alt="footer bg" />
+				</picture>
+				<!-- Mobile -->
+				<a href="/" class="footer--mobile footer__logo">
+					<img src="src/assets/images/logo.png" alt="logo" />
+				</a>
+				<nav class="footer--mobile footer__nav">
+					<ul class="footer__nav-list">
+						<li>
+							<a href="/catalog" class="footer__nav-item"> Каталог </a>
+						</li>
+						<li>
+							<a href="/about" class="footer__nav-item"> О нас </a>
+						</li>
+						<li>
+							<a href="/faq" class="footer__nav-item"> FAQ </a>
+						</li>
+						<li>
+							<a href="/contacts" class="footer__nav-item"> Контакты </a>
+						</li>
+					</ul>
+				</nav>
+				<div class="footer--mobile footer__info">
+					<div class="footer__info-row">
+						<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+							<use href="src/assets/sprites.svg#pin"></use>
+						</svg>
+						<p class="footer__info-text">
+							Астана, ул Гейдара Алиева, 14 «Хилтон Астана»
+						</p>
+					</div>
+					<div class="footer__info-row">
+						<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+							<use href="src/assets/sprites.svg#little-star"></use>
+						</svg>
+						<p class="footer__info-text">Ежедневно: 11.00 - 19.00</p>
+					</div>
+				</div>
+				<div class="footer--mobile footer__cta">
+					<a href="tel:+7 (702) 263 00 75" class="footer__tel">+7 (702) 263 00 75</a>
+					<a href="mailto:saltanat.houseofdiamonds@gmail.ru" class="footer__email">
+						saltanat.houseofdiamonds@gmail.ru
+					</a>
+				</div>
+				<div class="footer--mobile footer__mobile-bottom">
+					<nav class="footer__socials">
+						<ul class="footer__socials-list">
+							<li>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://telegram.org"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#telegram-small"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://whatsapp.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#whatsapp-small"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="footer__bottomright-bottom footer--mobile">
+						<p class="footer__bottomright-bottom_text">
+							Made with
+							<svg viewBox="0 0 16 16" fill="#E28D4E" width="16" height="16">
+								<use href="src/assets/sprites.svg#heart"></use>
+							</svg>
+							by Bairamov Studio
+						</p>
+						<p class="footer__copyright">@ {year} Saltanat . Все права защищены</p>
+					</div>
+				</div>
+
+				<!-- Desktop -->
+				<div class="footer--desktop footer__topleft">
 					<a href="/" class="footer__logo">
 						<img src="src/assets/images/logo.png" alt="logo" />
 					</a>
@@ -649,7 +748,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="footer__topright">
+				<div class="footer--desktop footer__topright">
 					<nav class="footer__nav">
 						<ul class="footer__nav-list">
 							<li>
@@ -671,7 +770,7 @@
 						<a href="tel:+7 (702) 263 00 75" class="footer__tel">+7 (702) 263 00 75</a>
 					</div>
 				</div>
-				<div class="footer__bottomleft">
+				<div class="footer--desktop footer__bottomleft">
 					<nav class="footer__socials">
 						<ul class="footer__socials-list">
 							<li>
@@ -711,7 +810,7 @@
 					</nav>
 					<p class="footer__copyright">@ {year} Saltanat . Все права защищены</p>
 				</div>
-				<div class="footer__bottomright">
+				<div class="footer--desktop footer__bottomright">
 					<div class="footer__cta">
 						<span class="footer__cta-label"> Email </span>
 						<a href="mailto:saltanat.houseofdiamonds@gmail.ru" class="footer__email">

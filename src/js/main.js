@@ -18,8 +18,10 @@ const handleToggleDropdowns = () => {
 };
 const setCopyrightYear = () => {
 	const currentYear = new Date().getFullYear();
-	const el = document.querySelector('.footer__copyright');
-	el.textContent = el.textContent.replace('{year}', currentYear);
+	const el = document.querySelectorAll('.footer__copyright');
+	el.forEach(e => {
+		e.textContent = e.textContent.replace('{year}', currentYear);
+	});
 };
 
 setCopyrightYear();
