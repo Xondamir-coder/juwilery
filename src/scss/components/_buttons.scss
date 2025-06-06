@@ -2,7 +2,7 @@
 @use '../utils/breakpoints';
 
 .button {
-	padding-block: 1.6rem;
+	padding-block: 2rem;
 	font-weight: 500;
 	line-height: 100%;
 	border-radius: 1.8rem;
@@ -25,6 +25,14 @@
 		&:hover {
 			background-color: variables.$black;
 			color: variables.$white;
+		}
+	}
+	&--gold {
+		background-color: variables.$gold;
+		color: variables.$white;
+		&:hover {
+			background-color: variables.$black;
+			color: variables.$gold;
 		}
 	}
 }

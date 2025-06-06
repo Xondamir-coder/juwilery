@@ -379,12 +379,12 @@
 					<div class="slider__header">
 						<h2 class="section-title">Популярное</h2>
 						<div class="slider__buttons">
-							<button class="slider__button">
+							<button class="slider__button" id="popular-btn-prev">
 								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
 									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
 								</svg>
 							</button>
-							<button class="slider__button">
+							<button class="slider__button" id="popular-btn-next">
 								<svg
 									class="icon stroke-black rotate-180"
 									viewBox="0 0 24 24"
@@ -398,8 +398,8 @@
 						class="slider__container"
 						slides-per-view="auto"
 						navigation="true"
-						navigation-prev-el=".slider__button:first-of-type"
-						navigation-next-el=".slider__button:last-of-type"
+						navigation-prev-el="#popular-btn-prev"
+						navigation-next-el="#popular-btn-next"
 						grab-cursor="true">
 						<swiper-slide class="slider__item">
 							<img
@@ -440,12 +440,12 @@
 					<div class="slider__header">
 						<h2 class="section-title">Разное</h2>
 						<div class="slider__buttons">
-							<button class="slider__button">
+							<button class="slider__button" id="others-btn-prev">
 								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
 									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
 								</svg>
 							</button>
-							<button class="slider__button">
+							<button class="slider__button" id="others-btn-next">
 								<svg
 									class="icon stroke-black rotate-180"
 									viewBox="0 0 24 24"
@@ -459,8 +459,8 @@
 						class="slider__container"
 						slides-per-view="auto"
 						navigation="true"
-						navigation-prev-el=".slider__button:first-of-type"
-						navigation-next-el=".slider__button:last-of-type"
+						navigation-prev-el="#others-btn-prev"
+						navigation-next-el="#others-btn-next"
 						grab-cursor="true">
 						<swiper-slide class="slider__item">
 							<img
@@ -497,24 +497,135 @@
 					</swiper-container>
 				</section>
 				<!-- Info -->
-				<div class="slider__header">
-					<h2 class="section-title">Сияние Востока для избранных</h2>
-					<div class="slider__buttons">
-						<button class="slider__button">
-							<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
-								<use href="src/assets/sprites.svg#left-curved-arrow"></use>
-							</svg>
-						</button>
-						<button class="slider__button">
-							<svg
-								class="icon stroke-black rotate-180"
-								viewBox="0 0 24 24"
-								fill="none">
-								<use href="src/assets/sprites.svg#left-curved-arrow"></use>
-							</svg>
-						</button>
+				<section class="slider">
+					<div class="slider__header">
+						<h2 class="section-title">Сияние Востока для избранных</h2>
+						<div class="slider__buttons">
+							<button class="slider__button" id="info-btn-prev">
+								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+							<button class="slider__button" id="info-btn-next">
+								<svg
+									class="icon stroke-black rotate-180"
+									viewBox="0 0 24 24"
+									fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+						</div>
 					</div>
-				</div>
+					<swiper-container
+						class="slider__container"
+						slides-per-view="auto"
+						navigation="true"
+						navigation-prev-el="#info-btn-prev"
+						navigation-next-el="#info-btn-next"
+						grab-cursor="true">
+						<swiper-slide class="info__item">
+							<div class="info__item-box">
+								<svg viewBox="0 0 64 64" class="info__item-ornament">
+									<use href="src/assets/sprites.svg#ornament"></use>
+								</svg>
+							</div>
+							<svg viewBox="0 0 53 53" class="info__item-star">
+								<use href="src/assets/sprites.svg#curved-star"></use>
+							</svg>
+							<div class="info__item-content">
+								<h3 class="info__item-title">Качество материалов</h3>
+								<p class="info__item-text">
+									Только драгоценные металлы, натуральные бриллианты и камни для
+									долговечных и стильных украшений
+								</p>
+							</div>
+						</swiper-slide>
+						<swiper-slide class="info__item">
+							<div class="info__item-box">
+								<svg viewBox="0 0 64 64" class="info__item-ornament">
+									<use href="src/assets/sprites.svg#ornament-heart"></use>
+								</svg>
+							</div>
+							<svg viewBox="0 0 53 53" class="info__item-star">
+								<use href="src/assets/sprites.svg#curved-star"></use>
+							</svg>
+							<div class="info__item-content">
+								<h3 class="info__item-title">Качество материалов</h3>
+								<p class="info__item-text">
+									Только драгоценные металлы, натуральные бриллианты и камни для
+									долговечных и стильных украшений
+								</p>
+							</div>
+						</swiper-slide>
+						<swiper-slide class="info__item">
+							<div class="info__item-box">
+								<svg viewBox="0 0 64 64" class="info__item-ornament">
+									<use href="src/assets/sprites.svg#ornament"></use>
+								</svg>
+							</div>
+							<svg viewBox="0 0 53 53" class="info__item-star">
+								<use href="src/assets/sprites.svg#curved-star"></use>
+							</svg>
+							<div class="info__item-content">
+								<h3 class="info__item-title">Качество материалов</h3>
+								<p class="info__item-text">
+									Только драгоценные металлы, натуральные бриллианты и камни для
+									долговечных и стильных украшений
+								</p>
+							</div>
+						</swiper-slide>
+						<swiper-slide class="info__item">
+							<div class="info__item-box">
+								<svg viewBox="0 0 64 64" class="info__item-ornament">
+									<use href="src/assets/sprites.svg#ornament-heart"></use>
+								</svg>
+							</div>
+							<svg viewBox="0 0 53 53" class="info__item-star">
+								<use href="src/assets/sprites.svg#curved-star"></use>
+							</svg>
+							<div class="info__item-content">
+								<h3 class="info__item-title">Качество материалов</h3>
+								<p class="info__item-text">
+									Только драгоценные металлы, натуральные бриллианты и камни для
+									долговечных и стильных украшений
+								</p>
+							</div>
+						</swiper-slide>
+					</swiper-container>
+				</section>
+				<section class="cta">
+					<picture>
+						<source
+							srcset="src/assets/images/fading-girl-lookingup.png"
+							media="(max-width: 768px)" />
+						<img
+							src="src/assets/images/girl-lookingup.png"
+							alt="girl"
+							class="cta__image" />
+					</picture>
+					<div class="cta__bg">
+						<svg viewBox="0 0 64 64" class="cta__ornament">
+							<use href="src/assets/sprites.svg#ornament"></use>
+						</svg>
+						<svg viewBox="0 0 64 64" class="cta__ornament">
+							<use href="src/assets/sprites.svg#ornament"></use>
+						</svg>
+						<svg viewBox="0 0 64 64" class="cta__ornament">
+							<use href="src/assets/sprites.svg#ornament"></use>
+						</svg>
+					</div>
+					<div class="cta__content">
+						<h2 class="cta__title">
+							Украшение <br />
+							вашей мечты
+						</h2>
+						<p class="text-default o-6 color-white">
+							Расскажите нам о своем идеальном украшении, и мы воплотим его в жизнь –
+							от эскиза до готового шедевра
+						</p>
+					</div>
+					<button class="cta__button button button--gold">Подобрать украшение</button>
+				</section>
 			</main>
 		</div>
 	</body>
