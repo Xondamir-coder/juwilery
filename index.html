@@ -10,7 +10,7 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
 			rel="stylesheet" />
-		<script type="module" src="src/js/pages/index.js" defer></script>
+		<script type="module" src="src/js/main.js" defer></script>
 		<title>Main Page</title>
 	</head>
 	<body>
@@ -132,7 +132,6 @@
 					</a>
 				</div>
 			</header>
-
 			<!-- Hero -->
 			<section class="hero">
 				<img src="src/assets/images/main-hero.png" alt="main hero" class="hero__image" />
@@ -155,7 +154,6 @@
 					</div>
 				</div>
 			</section>
-
 			<!-- Main content -->
 			<main class="main">
 				<!-- Showcase  -->
@@ -627,6 +625,111 @@
 					<button class="cta__button button button--gold">Подобрать украшение</button>
 				</section>
 			</main>
+			<!-- Footer -->
+			<footer class="footer">
+				<img src="src/assets/images/footer-bg.png" alt="footer bg" class="footer__image" />
+				<div class="footer__topleft">
+					<a href="/" class="footer__logo">
+						<img src="src/assets/images/logo.png" alt="logo" />
+					</a>
+					<div class="footer__info">
+						<div class="footer__info-row">
+							<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+								<use href="src/assets/sprites.svg#pin"></use>
+							</svg>
+							<p class="footer__info-text">
+								Астана, ул Гейдара Алиева, 14 «Хилтон Астана»
+							</p>
+						</div>
+						<div class="footer__info-row">
+							<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+								<use href="src/assets/sprites.svg#little-star"></use>
+							</svg>
+							<p class="footer__info-text">Ежедневно: 11.00 - 19.00</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer__topright">
+					<nav class="footer__nav">
+						<ul class="footer__nav-list">
+							<li>
+								<a href="/catalog" class="footer__nav-item"> Каталог </a>
+							</li>
+							<li>
+								<a href="/about" class="footer__nav-item"> О нас </a>
+							</li>
+							<li>
+								<a href="/faq" class="footer__nav-item"> FAQ </a>
+							</li>
+							<li>
+								<a href="/contacts" class="footer__nav-item"> Контакты </a>
+							</li>
+						</ul>
+					</nav>
+					<div class="footer__cta">
+						<span class="footer__cta-label"> Phone </span>
+						<a href="tel:+7 (702) 263 00 75" class="footer__tel">+7 (702) 263 00 75</a>
+					</div>
+				</div>
+				<div class="footer__bottomleft">
+					<nav class="footer__socials">
+						<ul class="footer__socials-list">
+							<li>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://telegram.org"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#telegram-small"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://whatsapp.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#whatsapp-small"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<p class="footer__copyright">@ {year} Saltanat . Все права защищены</p>
+				</div>
+				<div class="footer__bottomright">
+					<div class="footer__cta">
+						<span class="footer__cta-label"> Email </span>
+						<a href="mailto:saltanat.houseofdiamonds@gmail.ru" class="footer__email">
+							saltanat.houseofdiamonds@gmail.ru
+						</a>
+					</div>
+					<div class="footer__bottomright-bottom">
+						<a href="/policy">Политика приватности</a>
+						<p class="footer__bottomright-bottom_text">
+							Made with
+							<svg viewBox="0 0 16 16" fill="#E28D4E" width="16" height="16">
+								<use href="src/assets/sprites.svg#heart"></use>
+							</svg>
+							by Bairamov Studio
+						</p>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>

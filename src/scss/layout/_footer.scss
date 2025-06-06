@@ -1,0 +1,162 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.footer {
+	align-content: center;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding-top: 25rem;
+	gap: 5vw;
+	aspect-ratio: 1920/800;
+	@include mixins.spacing;
+	&__image {
+		aspect-ratio: 1920/1080;
+		position: absolute;
+		inset: 0;
+		height: auto;
+		z-index: -1;
+		transform: translateY(-12%);
+	}
+	&__email {
+		font-family: variables.$font-cormorant;
+		font-weight: 500;
+		font-size: 3.8rem;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		@include breakpoints.large-mobile {
+			font-size: 1.8rem;
+		}
+	}
+	&__cta {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		&-label {
+			font-weight: 600;
+			font-size: 1.8rem;
+			line-height: 100%;
+			letter-spacing: -0.02em;
+			color: #e28d4e;
+		}
+	}
+	&__tel {
+		font-family: variables.$font-cormorant;
+		font-weight: 400;
+		font-size: 6rem;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		@include breakpoints.large-mobile {
+			font-size: 4rem;
+		}
+	}
+	&__nav {
+		&-list {
+			display: flex;
+			justify-content: space-between;
+		}
+		&-item {
+			font-weight: 700;
+			font-size: 1.6rem;
+			line-height: 100%;
+			letter-spacing: -0.02em;
+			@include breakpoints.large-mobile {
+				font-size: 1.4rem;
+			}
+		}
+	}
+	a:hover {
+		color: variables.$gold;
+	}
+	&__logo {
+		display: flex;
+		width: 20.2rem;
+		@include breakpoints.large-mobile {
+			width: 13.8rem;
+		}
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 2.8rem;
+		@include breakpoints.large-mobile {
+			gap: 1.6rem;
+		}
+		&-row {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		&-text {
+			max-width: 22ch;
+			font-weight: 500;
+			font-size: 1.8rem;
+			line-height: 100%;
+			@include breakpoints.large-mobile {
+				font-size: 1.6rem;
+			}
+		}
+	}
+	&__icon {
+		width: 16px;
+	}
+	&__topright {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: max-content;
+	}
+	&__topleft {
+		display: flex;
+		flex-direction: column;
+		gap: 4.5rem;
+	}
+	&__bottomright {
+		display: flex;
+		gap: 6rem;
+		flex-direction: column;
+		&-bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 14px;
+			line-height: 100%;
+			&_text {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+		}
+	}
+	&__bottomleft {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		gap: 3.2rem;
+	}
+	&__copyright {
+		font-size: 14px;
+		line-height: 100%;
+	}
+	&__socials {
+		&-list {
+			display: flex;
+			gap: 8px;
+		}
+		&-item {
+			width: 48px;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background-color: variables.$black;
+			@include mixins.flex-center;
+			&:hover {
+				background-color: variables.$gold;
+			}
+		}
+		&-icon {
+			width: 50%;
+			fill: variables.$white;
+		}
+	}
+}

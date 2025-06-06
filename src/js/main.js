@@ -16,5 +16,11 @@ const handleToggleDropdowns = () => {
 		}
 	});
 };
+const setCopyrightYear = () => {
+	const currentYear = new Date().getFullYear();
+	const el = document.querySelector('.footer__copyright');
+	el.textContent = el.textContent.replace('{year}', currentYear);
+};
 
+setCopyrightYear();
 handleToggleDropdowns();
