@@ -8,8 +8,23 @@
 	grid-template-columns: 1.5fr 1fr;
 	padding-block: 12px;
 	background-color: variables.$white;
+	z-index: 101;
+	position: relative;
+	transition: background-color 0.3s, padding-top 0.3s;
+	&.active {
+		background-color: transparent;
+		padding-top: 0;
+		.header__container {
+			padding-top: 1.2rem;
+		}
+		.header__logo {
+			opacity: 0;
+		}
+		.header__right {
+			opacity: 0;
+		}
+	}
 	@include mixins.spacing;
-
 	@include breakpoints.large-mobile {
 		grid-template-columns: 1fr 1fr;
 	}
@@ -35,11 +50,13 @@
 		gap: 5rem;
 	}
 	&__right {
+		transition: opacity 0.3s;
 		display: flex;
 		gap: 4.8rem;
 		justify-self: flex-end;
 	}
 	&__logo {
+		transition: opacity 0.3s;
 		display: flex;
 		width: 15.1rem;
 		@include breakpoints.large-mobile {
@@ -47,6 +64,22 @@
 		}
 		img {
 			object-fit: contain;
+		}
+	}
+	&__container {
+		position: relative;
+		flex: 1;
+		display: flex;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			width: calc(100% + 6.4rem);
+			transform: translateX(-3.2rem);
+			background-color: variables.$white;
+			border-top-left-radius: 2.4rem;
+			border-top-right-radius: 2.4rem;
 		}
 	}
 	&__action {
@@ -75,9 +108,22 @@
 		&:hover {
 			background-color: variables.$black;
 		}
+		&.active {
+			.header__button-icon .icon:first-of-type {
+				transform: scale(0);
+			}
+			.header__button-icon .icon:last-of-type {
+				transform: scale(1);
+			}
+		}
 		&-icon {
-			width: 15px;
-			fill: currentColor;
+			display: grid;
+			& > * {
+				grid-area: 1/1/2/2;
+				&:last-of-type {
+					transform: scale(0);
+				}
+			}
 		}
 	}
 
@@ -205,8 +251,25 @@
 		display: flex;
 		align-items: center;
 		gap: 1rem;
+		.icon.active {
+			fill: variables.$green;
+		}
+		&.active .header__search-button > * {
+			&:first-of-type {
+				transform: scale(0);
+			}
+			&:last-of-type {
+				transform: scale(1);
+			}
+		}
 		&-button {
-			display: flex;
+			display: grid;
+			& > * {
+				grid-area: 1/1/2/2;
+				&:last-of-type {
+					transform: scale(0);
+				}
+			}
 			&:hover > * {
 				fill: variables.$gold;
 			}
@@ -218,8 +281,10 @@
 		&-input {
 			flex: 1;
 			background-color: transparent;
-			color: #5a6062;
 			letter-spacing: -0.02em;
+			font-weight: 500;
+			font-size: 1.6rem;
+			line-height: 100%;
 		}
 		&-stars {
 			fill: variables.$black;

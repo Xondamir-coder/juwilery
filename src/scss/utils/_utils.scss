@@ -25,3 +25,15 @@
 .o-6 {
 	opacity: 0.6;
 }
+.ds-none {
+	display: none;
+}
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition-property: visibility, opacity;
+	transition-duration: 0.5s;
+}
+.no-scroll {
+	overflow: hidden;
+}

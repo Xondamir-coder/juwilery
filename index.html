@@ -15,34 +15,177 @@
 	</head>
 	<body>
 		<div class="container">
+			<!-- Overlay -->
+			<div class="overlay hidden"></div>
+
 			<!-- Header -->
 			<header class="header">
 				<div class="header__left">
 					<a href="/" class="header__logo">
 						<img src="src/assets/images/logo.png" alt="logo" />
 					</a>
-					<div class="header__action">
-						<button class="header__button">
-							<svg class="icon fill-white" viewBox="0 0 25 24">
-								<use href="src/assets/sprites.svg#menu"></use>
-							</svg>
-							<span>Каталог</span>
-						</button>
-						<div class="header__search">
-							<svg class="icon fill-black" viewBox="0 0 24 24">
-								<use href="src/assets/sprites.svg#stars"></use>
-							</svg>
-							<input
-								type="text"
-								name="search"
-								id="search"
-								placeholder="Введите название изделия"
-								class="header__search-input" />
-							<button class="header__search-button">
-								<svg class="icon fill-grey-3" viewBox="0 0 24 24">
-									<use href="src/assets/sprites.svg#search"></use>
-								</svg>
+					<div class="header__container">
+						<div class="menu">
+							<div class="menu__query">
+								<h3 class="menu__query-title">Кольца</h3>
+								<ul class="menu__list">
+									<li class="menu__item">
+										<img
+											src="src/assets/images/diamond-ring.jpg"
+											alt="diamondring"
+											class="menu__item-image" />
+										<div class="menu__item-content">
+											<h3 class="menu__item-name">
+												Кольцо с фианитом из белого
+											</h3>
+											<p class="menu__item-text">Кольца помолвочные</p>
+										</div>
+										<svg
+											viewBox="0 0 24 24"
+											fill="none"
+											class="stroke-grey-3"
+											width="24"
+											height="24">
+											<use
+												href="src/assets/sprites.svg#chevron-right-arrow"></use>
+										</svg>
+									</li>
+									<li class="menu__item">
+										<img
+											src="src/assets/images/diamond-ring.jpg"
+											alt="diamondring"
+											class="menu__item-image" />
+										<div class="menu__item-content">
+											<h3 class="menu__item-name">
+												Кольцо с фианитом из белого
+											</h3>
+											<p class="menu__item-text">Кольца помолвочные</p>
+										</div>
+										<svg
+											viewBox="0 0 24 24"
+											fill="none"
+											class="stroke-grey-3"
+											width="24"
+											height="24">
+											<use
+												href="src/assets/sprites.svg#chevron-right-arrow"></use>
+										</svg>
+									</li>
+								</ul>
+							</div>
+							<!-- <div class="menu__row">
+								<div class="menu__row-header">
+									<h3 class="menu__row-header_title">Серьги</h3>
+									<button class="menu__row-header_button">
+										<span>Все серьги</span>
+										<svg
+											viewBox="0 0 24 24"
+											fill="none"
+											class="stroke-gold"
+											width="24"
+											height="24">
+											<use
+												href="src/assets/sprites.svg#chevron-right-arrow"></use>
+										</svg>
+									</button>
+								</div>
+								<ul class="menu__row-list">
+									<li class="menu__row-item">
+										<img
+											src="src/assets/images/flexing-ring.jpg"
+											alt="flex"
+											class="menu__row-item_image" />
+										<h4 class="menu__row-item_title">пусеты</h4>
+									</li>
+									<li class="menu__row-item">
+										<img
+											src="src/assets/images/flexing-ring.jpg"
+											alt="flex"
+											class="menu__row-item_image" />
+										<h4 class="menu__row-item_title">Английская застежка</h4>
+									</li>
+									<li class="menu__row-item">
+										<img
+											src="src/assets/images/flexing-ring.jpg"
+											alt="flex"
+											class="menu__row-item_image" />
+										<h4 class="menu__row-item_title">Французская застежка</h4>
+									</li>
+								</ul>
+							</div>
+							<div class="menu__row">
+								<div class="menu__row-header">
+									<h3 class="menu__row-header_title">Серьги</h3>
+									<button class="menu__row-header_button">
+										<span>Все серьги</span>
+										<svg
+											viewBox="0 0 24 24"
+											fill="none"
+											class="stroke-gold"
+											width="24"
+											height="24">
+											<use
+												href="src/assets/sprites.svg#chevron-right-arrow"></use>
+										</svg>
+									</button>
+								</div>
+								<ul class="menu__row-list">
+									<li class="menu__row-item">
+										<img
+											src="src/assets/images/flexing-ring.jpg"
+											alt="flex"
+											class="menu__row-item_image" />
+										<h4 class="menu__row-item_title">пусеты</h4>
+									</li>
+									<li class="menu__row-item">
+										<img
+											src="src/assets/images/flexing-ring.jpg"
+											alt="flex"
+											class="menu__row-item_image" />
+										<h4 class="menu__row-item_title">Английская застежка</h4>
+									</li>
+									<li class="menu__row-item">
+										<img
+											src="src/assets/images/flexing-ring.jpg"
+											alt="flex"
+											class="menu__row-item_image" />
+										<h4 class="menu__row-item_title">Французская застежка</h4>
+									</li>
+								</ul>
+							</div> -->
+						</div>
+						<div class="header__action">
+							<button class="header__button">
+								<div class="header__button-icon">
+									<svg class="icon fill-white" viewBox="0 0 25 24">
+										<use href="src/assets/sprites.svg#menu"></use>
+									</svg>
+									<svg class="icon fill-white" viewBox="0 0 25 24">
+										<use href="src/assets/sprites.svg#x"></use>
+									</svg>
+								</div>
+								<span>Каталог</span>
 							</button>
+							<form class="header__search">
+								<svg class="icon fill-black" viewBox="0 0 24 24">
+									<use href="src/assets/sprites.svg#stars"></use>
+								</svg>
+								<input
+									required
+									type="text"
+									name="search"
+									id="search"
+									placeholder="Введите название изделия"
+									class="header__search-input" />
+								<button class="header__search-button" type="button">
+									<svg class="icon fill-grey-3" viewBox="0 0 24 24">
+										<use href="src/assets/sprites.svg#search"></use>
+									</svg>
+									<svg class="icon stroke-white fill-grey-4" viewBox="0 0 24 24">
+										<use href="src/assets/sprites.svg#outlined-x"></use>
+									</svg>
+								</button>
+							</form>
 						</div>
 					</div>
 				</div>

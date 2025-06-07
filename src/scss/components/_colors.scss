@@ -32,6 +32,10 @@
 	fill: variables.$grey-3;
 }
 
+.fill-grey-4 {
+	fill: variables.$grey-4;
+}
+
 .stroke-black {
 	stroke: variables.$black;
 }
@@ -64,7 +68,11 @@
 	stroke: variables.$grey-3;
 }
 
-.color-black {
+.stroke-grey-4 {
+	stroke: variables.$grey-4;
+}
+
+.colo4-black {
 	color: variables.$black;
 }
 
@@ -96,7 +104,11 @@
 	color: variables.$grey-3;
 }
 
-.bg-black {
+.color-grey-4 {
+	color: variables.$grey-4;
+}
+
+.b4-black {
 	background-color: variables.$black;
 }
 
@@ -126,4 +138,8 @@
 
 .bg-grey-3 {
 	background-color: variables.$grey-3;
+}
+
+.bg-grey-4 {
+	background-color: variables.$grey-4;
 }
