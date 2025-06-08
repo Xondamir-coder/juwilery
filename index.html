@@ -17,58 +17,165 @@
 		<div class="container">
 			<!-- Overlay -->
 			<div class="overlay hidden"></div>
-			<!-- Nav Bottombar -->
+			<!-- Nav Bottombar Mobile -->
 			<div class="bottombar">
-				<div class="bottombar__menu" data-item="menu">
+				<div class="bottombar__menu ds-none" data-item="menu">
 					<h3 class="bottombar__menu-title">Меню</h3>
-					<nav class="bottombar__nav">
-						<ul class="bottombar__nav-list">
-							<li class="bottombar__nav-item">
-								<div class="bottombar__nav-icon">
-									<svg viewBox="0 0 20 20" width="20" height="20">
-										<use href="src/assets/sprites.svg#home"></use>
+					<nav>
+						<ul class="bottombar__nav">
+							<li>
+								<a href="/" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#home"></use>
+										</svg>
+									</div>
+									<span>Главная</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
 									</svg>
-								</div>
-								<span>Главная</span>
-								<svg viewBox="0 0 24 24" width="16" height="16">
-									<use href="src/assets/sprites.svg#chevron-right-arrow"></use>
-								</svg>
+								</a>
 							</li>
-							<li class="bottombar__nav-item">
-								<div class="bottombar__nav-icon">
-									<svg viewBox="0 0 20 20" width="20" height="20">
-										<use href="src/assets/sprites.svg#octagon"></use>
+							<li>
+								<a href="/about" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#octagon"></use>
+										</svg>
+									</div>
+									<span>О нас</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
 									</svg>
-								</div>
-								<span>О нас</span>
-								<svg viewBox="0 0 24 24" width="16" height="16">
-									<use href="src/assets/sprites.svg#chevron-right-arrow"></use>
-								</svg>
+								</a>
 							</li>
-							<li class="bottombar__nav-item">
-								<div class="bottombar__nav-icon">
-									<svg viewBox="0 0 20 20" width="20" height="20">
-										<use href="src/assets/sprites.svg#faq"></use>
+							<li>
+								<a href="/faq" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#faq"></use>
+										</svg>
+									</div>
+									<span>FAQ</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
 									</svg>
-								</div>
-								<span>FAQ</span>
-								<svg viewBox="0 0 24 24" width="16" height="16">
-									<use href="src/assets/sprites.svg#chevron-right-arrow"></use>
-								</svg>
+								</a>
 							</li>
-							<li class="bottombar__nav-item">
-								<div class="bottombar__nav-icon">
-									<svg viewBox="0 0 20 20" width="20" height="20">
-										<use href="src/assets/sprites.svg#contacts"></use>
+							<li>
+								<a href="/contacts" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg viewBox="0 0 20 20" width="20" height="20">
+											<use href="src/assets/sprites.svg#contacts"></use>
+										</svg>
+									</div>
+									<span>Контакты</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
 									</svg>
-								</div>
-								<span>Контакты</span>
-								<svg viewBox="0 0 24 24" width="16" height="16">
-									<use href="src/assets/sprites.svg#chevron-right-arrow"></use>
-								</svg>
+								</a>
 							</li>
 						</ul>
 					</nav>
+					<ul class="bottombar__languages">
+						<li>
+							<button class="bottombar__language active">Rus</button>
+						</li>
+						<li>
+							<button class="bottombar__language">Eng</button>
+						</li>
+						<li>
+							<button class="bottombar__language">Kaz</button>
+						</li>
+					</ul>
+				</div>
+				<div class="bottombar__call ds-none" data-item="call">
+					<svg viewBox="0 0 375 275" class="bottombar__call-vector">
+						<use href="src/assets/sprites.svg#call-vector"></use>
+					</svg>
+					<svg viewBox="0 0 91 91" width="91" height="91">
+						<use href="src/assets/sprites.svg#call"></use>
+					</svg>
+					<div class="bottombar__call-content">
+						<a href="tel:+7 747 609 99 95" class="bottombar__call-tel"
+							>+7 747 609 99 95</a
+						>
+						<p class="bottombar__call-text">
+							Наши консультанты помогут подобрать идеальное украшение. Звоните – мы на
+							связи!"
+						</p>
+					</div>
+					<div class="bottombar__call-bottom">
+						<a href="tel:+7 747 609 99 95" class="button button--green">Позвонить</a>
+						<button class="bottombar__call-x">
+							<svg viewBox="0 0 24 24" width="24" height="24" class="fill-white">
+								<use href="src/assets/sprites.svg#x"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="bottombar__search ds-none" data-item="search">
+					<form class="bottombar__search-form">
+						<svg viewBox="0 0 24 24" height="24" width="24">
+							<use href="src/assets/sprites.svg#stars"></use>
+						</svg>
+						<input
+							type="text"
+							name="search"
+							id="mobile-search"
+							placeholder="Введите название изделия"
+							required
+							class="bottombar__search-input" />
+						<button class="bottombar__search-clear" type="button">
+							<svg
+								class="stroke-white fill-grey-4"
+								viewBox="0 0 24 24"
+								width="24"
+								height="24">
+								<use href="src/assets/sprites.svg#outlined-x"></use>
+							</svg>
+						</button>
+					</form>
+					<div class="bottombar__search-container"></div>
 				</div>
 				<ul class="bottombar__list">
 					<li>
@@ -81,7 +188,7 @@
 					<li>
 						<button class="bottombar__button" data-menu="whatsapp">
 							<svg width="24" height="24" viewBox="0 0 24 24" class="fill-grey-3">
-								<use href="src/assets/sprites.svg#whatsapp"></use>
+								<use href="src/assets/sprites.svg#whatsapp-small"></use>
 							</svg>
 						</button>
 					</li>
@@ -140,7 +247,7 @@
 									required
 									type="text"
 									name="search"
-									id="search"
+									id="desktop-search"
 									placeholder="Введите название изделия"
 									class="header__search-input" />
 								<button class="header__search-button" type="button">

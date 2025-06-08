@@ -35,4 +35,12 @@
 			color: variables.$gold;
 		}
 	}
+	&--green {
+		background-color: variables.$green;
+		color: variables.$white;
+		&:hover {
+			background-color: variables.$black;
+			color: variables.$green;
+		}
+	}
 }

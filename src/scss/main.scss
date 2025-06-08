@@ -1,8 +1,5 @@
 // @use 'utils/variables';
 // @use 'utils/mixins';
-// @use 'utils/breakpoints';
-@use 'utils/utils';
-
 @use 'base/base';
 @use 'base/fonts';
 
@@ -14,8 +11,12 @@
 @use 'components/slider';
 @use 'components/overlay';
 @use 'components/bottombar';
+@use 'components/catalog';
 
 @use 'layout/container';
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/menu';
+
+@use 'utils/animations';
+@use 'utils/utils';

@@ -5,6 +5,115 @@ import spritesUrl from '@/assets/sprites.svg';
 
 register();
 
+// Helper functions
+const getCatalogTemplate = c => `
+			<div class="catalog">
+								<div class="catalog__header">
+									<h3 class="catalog__header-title">${c.category}</h3>
+									<button class="catalog__header-button">
+										<span>Все ${c.category.toLowerCase()}</span>
+										<svg
+											viewBox="0 0 24 24"
+											fill="none"
+											class="stroke-gold"
+											width="24"
+											height="24">
+											<use
+												href="${spritesUrl}#chevron-right-arrow"></use>
+										</svg>
+									</button>
+								</div>
+								<ul class="catalog__list">
+								${c.items
+									.map(
+										i => `
+									<li class="catalog__item">
+										<img
+											src="${i.img}"
+											alt="${i.name}"
+											class="catalog__item-image" />
+										<h4 class="catalog__item-title">${i.name}</h4>
+									</li>
+								`
+									)
+									.join('')}
+								</ul>
+							</div>
+							`;
+const getHighlightedWord = (words, inputVal) =>
+	words
+		.split(' ')
+		.map(w =>
+			w.toLowerCase().includes(inputVal.toLowerCase())
+				? `<span class="color-gold">${w}</span>`
+				: w
+		)
+		.join(' ');
+const getSearchTemplate = (r, inputVal) => `
+    <div class="catalog__search">
+      <h3 class="catalog__search-title">${r.category}</h3>
+      <ul class="catalog__search-list">
+        ${r.items
+			.map(
+				i => `
+            <li class="catalog__search-item">
+              <img
+                src="${i.img}"
+                alt="diamondring"
+                class="catalog__search-item_image"
+              />
+              <div class="catalog__search-item_content">
+                <h3 class="catalog__search-item_name">${getHighlightedWord(i.name, inputVal)}</h3>
+                <p class="catalog__search-item_text">${getHighlightedWord(i.desc, inputVal)}</p>
+              </div>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                class="stroke-grey-3"
+                width="24"
+                height="24"
+              >
+                <use href="${spritesUrl}#chevron-right-arrow"></use>
+              </svg>
+            </li>
+          `
+			)
+			.join('')}
+      </ul>
+    </div>
+  `;
+/**
+ * Searches through products by name/description and renders results.
+ *
+ * @param {Object[]}  products         – array of product groups
+ * @param {string}    query            – the raw user query
+ * @param {HTMLElement} containerEl    – where to render the results
+ * @param {Function}  getSearchTemplate– (product, rawQuery) ⇒ HTML string
+ * @param {string}    emptyMessage     – message to show if no results
+ */
+const searchAndRender = (query, containerEl, emptyMessage = 'Ничего не нашлось') => {
+	const lowercased = query.toLowerCase();
+
+	// 1) Filter products → only keep matching items
+	const results = products
+		.map(p => ({
+			...p,
+			items: p.items.filter(
+				i =>
+					i.name.toLowerCase().includes(lowercased) ||
+					i.desc.toLowerCase().includes(lowercased)
+			)
+		}))
+		.filter(p => p.items.length > 0);
+
+	// 2) Render or show empty message
+	if (results.length === 0) {
+		alert(emptyMessage);
+	} else {
+		containerEl.innerHTML = results.map(r => getSearchTemplate(r, query)).join('');
+	}
+};
+
 const handleToggleDropdowns = () => {
 	const togglers = document.querySelectorAll('[data-toggle]');
 	togglers.forEach(t => {
@@ -30,7 +139,7 @@ const setCopyrightYear = () => {
 const handleCatalog = () => {
 	// Elements
 	const openCatalogBtn = document.querySelector('.header__button');
-	const inputEl = document.querySelector('.header__search-input');
+	const inputEl = document.querySelector('#desktop-search');
 	const starEl = document.querySelector('.header__search .icon');
 	const formEl = document.querySelector('.header__search');
 	const formBtnEl = document.querySelector('.header__search-button');
@@ -40,82 +149,6 @@ const handleCatalog = () => {
 
 	let isMenuOpen = false;
 
-	const getCatalogTemplate = c => `
-			<div class="menu__row">
-								<div class="menu__row-header">
-									<h3 class="menu__row-header_title">${c.category}</h3>
-									<button class="menu__row-header_button">
-										<span>Все ${c.category.toLowerCase()}</span>
-										<svg
-											viewBox="0 0 24 24"
-											fill="none"
-											class="stroke-gold"
-											width="24"
-											height="24">
-											<use
-												href="${spritesUrl}#chevron-right-arrow"></use>
-										</svg>
-									</button>
-								</div>
-								<ul class="menu__row-list">
-								${c.items
-									.map(
-										i => `
-									<li class="menu__row-item">
-										<img
-											src="${i.img}"
-											alt="${i.name}"
-											class="menu__row-item_image" />
-										<h4 class="menu__row-item_title">${i.name}</h4>
-									</li>
-								`
-									)
-									.join('')}
-								</ul>
-							</div>
-							`;
-	const getHighlightedWord = words =>
-		words
-			.split(' ')
-			.map(w =>
-				w.toLowerCase().includes(inputEl.value.toLowerCase())
-					? `<span class="color-gold">${w}</span>`
-					: w
-			)
-			.join(' ');
-	const getSearchTemplate = r => `
-    <div class="menu__query">
-      <h3 class="menu__query-title">${r.category}</h3>
-      <ul class="menu__list">
-        ${r.items
-			.map(
-				i => `
-            <li class="menu__item">
-              <img
-                src="${i.img}"
-                alt="diamondring"
-                class="menu__item-image"
-              />
-              <div class="menu__item-content">
-                <h3 class="menu__item-name">${getHighlightedWord(i.name)}</h3>
-                <p class="menu__item-text">${getHighlightedWord(i.desc)}</p>
-              </div>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                class="stroke-grey-3"
-                width="24"
-                height="24"
-              >
-                <use href="${spritesUrl}#chevron-right-arrow"></use>
-              </svg>
-            </li>
-          `
-			)
-			.join('')}
-      </ul>
-    </div>
-  `;
 	const toggleMenu = () => {
 		// Toggle isMenuOpen var
 		isMenuOpen = !isMenuOpen;
@@ -153,7 +186,7 @@ const handleCatalog = () => {
 		formEl.classList.remove('active');
 
 		// Reset menu with catalogs
-		if (menuEl.firstElementChild.classList.contains('menu__query')) {
+		if (menuEl.firstElementChild.classList.contains('catalog__search')) {
 			const html = catalog.map(getCatalogTemplate).join('');
 			menuEl.innerHTML = html;
 		}
@@ -163,35 +196,75 @@ const handleCatalog = () => {
 	formEl.addEventListener('submit', e => {
 		e.preventDefault();
 		if (!isMenuOpen) toggleMenu();
+		searchAndRender(inputEl.value, menuEl, 'Ничего не нашлось');
+	});
+};
+const handleBottomNavbar = () => {
+	const buttonsList = document.querySelector('.bottombar__list');
+	const items = document.querySelectorAll('[data-item]');
+	const buttons = document.querySelectorAll('[data-menu]');
+	const overlay = document.querySelector('.overlay');
 
-		// Implement search
-		const lowercasedValue = inputEl.value.toLowerCase();
-		const results = products
-			// 1) for each product, build a new one with only the matching items
-			.map(p => {
-				const matchedItems = p.items.filter(
-					i =>
-						i.name.toLowerCase().includes(lowercasedValue) ||
-						i.desc.toLowerCase().includes(lowercasedValue)
-				);
-				return {
-					...p,
-					items: matchedItems
-				};
-			})
-			// 2) then throw away any product with zero matches
-			.filter(p => p.items.length > 0);
+	const handleSearch = () => {
+		const containerEl = document.querySelector('.bottombar__search-container');
+		const inputEl = document.querySelector('#mobile-search');
+		const formEl = document.querySelector('.bottombar__search-form');
+		const clearInputBtn = document.querySelector('.bottombar__search-clear');
 
-		// Render results
-		if (results.length === 0) {
-			alert('Ничего не нашлось');
-		} else {
-			const html = results.map(getSearchTemplate).join('');
-			menuEl.innerHTML = html;
+		if (containerEl.innerHTML === '') {
+			const html = catalog.map(getCatalogTemplate).join('');
+			containerEl.innerHTML = html;
 		}
+
+		formEl.addEventListener('submit', e => {
+			e.preventDefault();
+			searchAndRender(inputEl.value, containerEl, 'Ничего не нашлось');
+		});
+		inputEl.addEventListener('input', e => {
+			clearInputBtn.classList.toggle('active', e.target.value);
+		});
+		clearInputBtn.addEventListener('click', () => {
+			inputEl.value = '';
+
+			// Reset with catalogs
+			if (containerEl.firstElementChild.classList.contains('catalog__search')) {
+				const html = catalog.map(getCatalogTemplate).join('');
+				containerEl.innerHTML = html;
+			}
+		});
+	};
+	buttonsList.addEventListener('click', e => {
+		const selectedBtn = e.target.closest('.bottombar__button');
+		const type = selectedBtn?.dataset.menu;
+		if (type) {
+			const selectedItem = document.querySelector(`[data-item="${type}"]`);
+
+			// Hide all others
+			items.forEach(i => i !== selectedItem && i.classList.add('ds-none'));
+			buttons.forEach(b => b !== selectedBtn && b.classList.remove('active'));
+
+			// Activate buttons & menu
+			selectedItem?.classList.toggle('ds-none');
+			selectedBtn.classList.toggle('active');
+
+			// Toggle overlay & body scroll
+			const allHidden = Array.from(items).every(i => i.classList.contains('ds-none'));
+			overlay.classList.toggle('hidden', allHidden);
+			document.body.classList.toggle('no-scroll', !allHidden);
+
+			// Different stuff for search
+			if (type === 'search') handleSearch();
+		}
+	});
+	overlay.addEventListener('click', () => {
+		items.forEach(i => i.classList.add('ds-none'));
+		buttons.forEach(b => b.classList.remove('active'));
+		overlay.classList.toggle('hidden');
+		document.body.classList.toggle('no-scroll');
 	});
 };
 
 setCopyrightYear();
 handleToggleDropdowns();
-handleCatalog();
+if (window.innerWidth > 768) handleCatalog();
+if (window.innerWidth < 768) handleBottomNavbar();

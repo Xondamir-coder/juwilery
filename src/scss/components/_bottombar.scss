@@ -1,5 +1,6 @@
 @use '../utils/variables';
 @use '../utils/breakpoints';
+@use '../utils/mixins';
 
 .bottombar {
 	position: fixed;
@@ -8,24 +9,173 @@
 	background-color: variables.$white;
 	z-index: 100;
 	width: 100%;
+	border-top-left-radius: 2.4rem;
+	border-top-right-radius: 2.4rem;
+
 	@include breakpoints.min-large-mobile {
 		display: none;
+	}
+	& > *:not(.bottombar__list) {
+		border-top-left-radius: 2.4rem;
+		border-top-right-radius: 2.4rem;
+		padding-inline: 4rem;
+		padding-bottom: 2.3rem;
+		animation: slide-from-bottom-50px 0.5s backwards;
+	}
+	&__search {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		padding-top: 3.5rem;
+		padding-inline: 1.6rem !important;
+		&-clear {
+			transform: scale(0);
+			&.active {
+				transform: scale(1);
+			}
+		}
+		&-form {
+			display: flex;
+			align-items: center;
+			gap: 1.2rem;
+			background-color: variables.$grey-2;
+			padding: 1.2rem;
+			border-radius: 8px;
+		}
+		&-input {
+			background-color: transparent;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 100%;
+			letter-spacing: -0.02em;
+			flex: 1;
+		}
+		&-container {
+			overflow-y: auto;
+			max-height: 60vh;
+		}
+	}
+	&__call {
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 2.6rem;
+		background: linear-gradient(179.31deg, #f1e8dd 2.38%, #ffffff 83.62%);
+		padding-top: 3.1rem;
+		& > *:not(.bottombar__call-vector) {
+			z-index: 2;
+		}
+		&-tel {
+			font-weight: 600;
+			font-size: 2.4rem;
+			line-height: 132%;
+			text-align: center;
+		}
+		&-text {
+			opacity: 0.7;
+			font-weight: 500;
+			font-size: 1.4rem;
+			line-height: 124%;
+			letter-spacing: 0%;
+			text-align: center;
+		}
+		&-bottom {
+			margin-top: 5px;
+			display: flex;
+			gap: 4px;
+			& > *:first-child {
+				padding-inline: 6.5rem;
+				display: flex;
+				align-items: center;
+			}
+		}
+		&-x {
+			width: 4.8rem;
+			aspect-ratio: 1;
+			background-color: variables.$black;
+			border-radius: 1.4rem;
+			@include mixins.flex-center;
+		}
+		&-content {
+			display: flex;
+			flex-direction: column;
+			gap: 1.2rem;
+			text-align: center;
+		}
+		&-vector {
+			z-index: 1;
+			position: absolute;
+			height: auto;
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+	&__language {
+		border-radius: 6rem;
+		padding-block: 1.3rem;
+		padding-inline: 2.4rem;
+
+		&.active {
+			background-color: variables.$gold;
+			color: variables.$white;
+		}
+	}
+	&__languages {
+		margin-top: 0.8rem;
+		align-self: center;
+		display: flex;
+		backdrop-filter: blur(16px);
+		background-color: variables.$grey-2;
+		border-radius: 12rem;
+		padding: 3px;
+	}
+	&__nav {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		&-icon {
+			background-color: variables.$gold;
+			width: 3.6rem;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			@include mixins.flex-center;
+			& ~ svg {
+				margin-left: auto;
+			}
+		}
+		&-item {
+			display: flex;
+			align-items: center;
+			gap: 1.2rem;
+			background-color: variables.$grey-2;
+			border-radius: 1.6rem;
+			padding: 1.4rem;
+		}
 	}
 	&__menu {
 		display: flex;
 		flex-direction: column;
 		gap: 2.4rem;
 		background-color: variables.$white;
-		border-top-left-radius: 2.4rem;
-		border-top-right-radius: 2.4rem;
+		padding-top: 2.3rem;
+		&-title {
+			align-self: center;
+			font-family: variables.$font-cormorant;
+			font-weight: 500;
+			font-size: 2.4rem;
+			line-height: 82%;
+			letter-spacing: -0.03em;
+			text-align: center;
+		}
 	}
 	&__button {
 		display: flex;
-		&:last-of-type {
-			display: grid;
-			& > * {
-				grid-area: 1/1/2/2;
-			}
+		svg {
+			transition-property: fill, stroke, transform;
+			transition-duration: variables.$default-transition-duration;
 		}
 	}
 	&__list {
@@ -35,5 +185,30 @@
 		padding-block: 1.2rem;
 		background-color: variables.$white;
 		border-top: 1px solid #f2f2f2;
+		li {
+			&:not(:last-of-type) .active > * {
+				fill: variables.$gold;
+			}
+			&:nth-of-type(3) .active > * {
+				stroke: variables.$gold;
+			}
+			&:last-of-type .bottombar__button > *:last-of-type {
+				transform: scale(0);
+			}
+			&:last-of-type > * {
+				display: grid;
+				&.active {
+					& > *:first-of-type {
+						transform: scale(0);
+					}
+					& > *:last-of-type {
+						transform: scale(1);
+					}
+				}
+				& > * {
+					grid-area: 1/1/2/2;
+				}
+			}
+		}
 	}
 }
