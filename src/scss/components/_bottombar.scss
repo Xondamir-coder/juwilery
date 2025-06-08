@@ -1,0 +1,39 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+
+.bottombar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: variables.$white;
+	z-index: 100;
+	width: 100%;
+	@include breakpoints.min-large-mobile {
+		display: none;
+	}
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		background-color: variables.$white;
+		border-top-left-radius: 2.4rem;
+		border-top-right-radius: 2.4rem;
+	}
+	&__button {
+		display: flex;
+		&:last-of-type {
+			display: grid;
+			& > * {
+				grid-area: 1/1/2/2;
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		padding-inline: 3.2rem;
+		padding-block: 1.2rem;
+		background-color: variables.$white;
+		border-top: 1px solid #f2f2f2;
+	}
+}

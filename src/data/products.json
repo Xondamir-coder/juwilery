@@ -1,0 +1,72 @@
+[
+	{
+		"category": "Кольца",
+		"items": [
+			{
+				"name": "Кольцо с фианитом из белого",
+				"desc": "Кольца помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Кольцо с фианитом из белого",
+				"desc": "Кольца помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Кольцо с фианитом из белого",
+				"desc": "Кольца помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Кольцо с фианитом из белого",
+				"desc": "Кольца помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Кольцо с фианитом из белого",
+				"desc": "Кольца помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Кольцо с фианитом из белого",
+				"desc": "Кольца помолвочные",
+				"img": "images/diamond-ring.jpg"
+			}
+		]
+	},
+	{
+		"category": "Серьги",
+		"items": [
+			{
+				"name": "Серьги с фианитом из белого",
+				"desc": "Серьги помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Серьги с фианитом из белого",
+				"desc": "Серьги помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Серьги с фианитом из белого",
+				"desc": "Серьги помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Серьги с фианитом из белого",
+				"desc": "Серьги помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "Серьги с фианитом из белого",
+				"desc": "Серьги помолвочные",
+				"img": "images/diamond-ring.jpg"
+			},
+			{
+				"name": "qwe с фианитом из белого",
+				"desc": "qwe помолвочные",
+				"img": "images/diamond-ring.jpg"
+			}
+		]
+	}
+]

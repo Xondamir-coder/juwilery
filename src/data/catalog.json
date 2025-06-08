@@ -1,0 +1,48 @@
+[
+	{
+		"category": "Серьги",
+		"items": [
+			{
+				"name": "пусеты",
+				"img": "/images/flexing-ring.jpg"
+			},
+			{
+				"name": "Английская застежка",
+				"img": "/images/flexing-ring.jpg"
+			},
+			{
+				"name": "Французская застежка",
+				"img": "/images/flexing-ring.jpg"
+			}
+		]
+	},
+	{
+		"category": "Кольца",
+		"items": [
+			{
+				"name": "помолвочные",
+				"img": "/images/girl-lookingleftup.jpg"
+			},
+			{
+				"name": "обручальные",
+				"img": "/images/girl-lookingleftup.jpg"
+			},
+			{
+				"name": "фаланговые",
+				"img": "/images/girl-lookingleftup.jpg"
+			},
+			{
+				"name": "перстни женские",
+				"img": "/images/girl-lookingleftup.jpg"
+			},
+			{
+				"name": "коктельные",
+				"img": "/images/girl-lookingleftup.jpg"
+			},
+			{
+				"name": "коктельные",
+				"img": "/images/girl-lookingleftup.jpg"
+			}
+		]
+	}
+]
