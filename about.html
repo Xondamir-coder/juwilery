@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="src/scss/index.scss" />
+		<link rel="stylesheet" href="src/scss/about.scss" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -15,34 +15,251 @@
 	</head>
 	<body>
 		<div class="container">
+			<!-- Overlay -->
+			<div class="overlay hidden"></div>
+
+			<!-- Nav Bottombar Mobile -->
+			<div class="bottombar">
+				<div class="bottombar__menu ds-none" data-item="menu">
+					<h3 class="bottombar__menu-title">Меню</h3>
+					<nav>
+						<ul class="bottombar__nav">
+							<li>
+								<a href="/" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#home"></use>
+										</svg>
+									</div>
+									<span>Главная</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="/about" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#octagon"></use>
+										</svg>
+									</div>
+									<span>О нас</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="/faq" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#faq"></use>
+										</svg>
+									</div>
+									<span>FAQ</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="/contacts" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg viewBox="0 0 20 20" width="20" height="20">
+											<use href="src/assets/sprites.svg#contacts"></use>
+										</svg>
+									</div>
+									<span>Контакты</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="bottombar__languages">
+						<li>
+							<button class="bottombar__language active">Rus</button>
+						</li>
+						<li>
+							<button class="bottombar__language">Eng</button>
+						</li>
+						<li>
+							<button class="bottombar__language">Kaz</button>
+						</li>
+					</ul>
+				</div>
+				<div class="bottombar__call ds-none" data-item="call">
+					<svg viewBox="0 0 375 275" class="bottombar__call-vector">
+						<use href="src/assets/sprites.svg#call-vector"></use>
+					</svg>
+					<svg viewBox="0 0 91 91" width="91" height="91">
+						<use href="src/assets/sprites.svg#call"></use>
+					</svg>
+					<div class="bottombar__call-content">
+						<a href="tel:+7 747 609 99 95" class="bottombar__call-tel"
+							>+7 747 609 99 95</a
+						>
+						<p class="bottombar__call-text">
+							Наши консультанты помогут подобрать идеальное украшение. Звоните – мы на
+							связи!"
+						</p>
+					</div>
+					<div class="bottombar__call-bottom">
+						<a href="tel:+7 747 609 99 95" class="button button--green">Позвонить</a>
+						<button class="bottombar__call-x">
+							<svg viewBox="0 0 24 24" width="24" height="24" class="fill-white">
+								<use href="src/assets/sprites.svg#x"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="bottombar__search ds-none" data-item="search">
+					<form class="bottombar__search-form">
+						<svg viewBox="0 0 24 24" height="24" width="24">
+							<use href="src/assets/sprites.svg#stars"></use>
+						</svg>
+						<input
+							type="text"
+							name="search"
+							id="mobile-search"
+							placeholder="Введите название изделия"
+							required
+							class="bottombar__search-input" />
+						<button class="bottombar__search-clear" type="button">
+							<svg
+								class="stroke-white fill-grey-4"
+								viewBox="0 0 24 24"
+								width="24"
+								height="24">
+								<use href="src/assets/sprites.svg#outlined-x"></use>
+							</svg>
+						</button>
+					</form>
+					<div class="bottombar__search-container"></div>
+				</div>
+				<ul class="bottombar__list">
+					<li>
+						<button class="bottombar__button" data-menu="call">
+							<svg width="24" height="24" viewBox="0 0 24 24" class="fill-grey-3">
+								<use href="src/assets/sprites.svg#phone"></use>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<a href="https://whatsapp.com" target="_blank" class="bottombar__button">
+							<svg width="24" height="24" viewBox="0 0 24 24" class="fill-grey-3">
+								<use href="src/assets/sprites.svg#whatsapp-small"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<button class="bottombar__button" data-menu="search">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								class="fill-grey-3 stroke-grey-3">
+								<use href="src/assets/sprites.svg#search-mobile"></use>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<button class="bottombar__button" data-menu="menu">
+							<svg width="24" height="24" viewBox="0 0 24 24" class="stroke-grey-3">
+								<use href="src/assets/sprites.svg#mobile-menu"></use>
+							</svg>
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								class="stroke-white fill-black">
+								<use href="src/assets/sprites.svg#outlined-x"></use>
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</div>
 			<!-- Header -->
 			<header class="header">
 				<div class="header__left">
 					<a href="/" class="header__logo">
 						<img src="src/assets/images/logo.png" alt="logo" />
 					</a>
-					<div class="header__action">
-						<button class="header__button">
-							<svg class="icon fill-white" viewBox="0 0 25 24">
-								<use href="src/assets/sprites.svg#menu"></use>
-							</svg>
-							<span>Каталог</span>
-						</button>
-						<div class="header__search">
-							<svg class="icon fill-black" viewBox="0 0 24 24">
-								<use href="src/assets/sprites.svg#stars"></use>
-							</svg>
-							<input
-								type="text"
-								name="search"
-								id="search"
-								placeholder="Введите название изделия"
-								class="header__search-input" />
-							<button class="header__search-button">
-								<svg class="icon fill-grey-3" viewBox="0 0 24 24">
-									<use href="src/assets/sprites.svg#search"></use>
-								</svg>
+					<div class="header__container">
+						<div class="menu"></div>
+						<div class="header__action">
+							<button class="header__button">
+								<div class="header__button-icon">
+									<svg class="icon fill-white" viewBox="0 0 25 24">
+										<use href="src/assets/sprites.svg#menu"></use>
+									</svg>
+									<svg class="icon fill-white" viewBox="0 0 25 24">
+										<use href="src/assets/sprites.svg#x"></use>
+									</svg>
+								</div>
+								<span>Каталог</span>
 							</button>
+							<form class="header__search">
+								<svg class="icon fill-black" viewBox="0 0 24 24">
+									<use href="src/assets/sprites.svg#stars"></use>
+								</svg>
+								<input
+									required
+									type="text"
+									name="search"
+									id="desktop-search"
+									placeholder="Введите название изделия"
+									class="header__search-input" />
+								<button class="header__search-button" type="button">
+									<svg class="icon fill-grey-3" viewBox="0 0 24 24">
+										<use href="src/assets/sprites.svg#search"></use>
+									</svg>
+									<svg class="icon stroke-white fill-grey-4" viewBox="0 0 24 24">
+										<use href="src/assets/sprites.svg#outlined-x"></use>
+									</svg>
+								</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -132,7 +349,269 @@
 					</a>
 				</div>
 			</header>
-			<h1>ABOUT</h1>
+
+			<!-- Main -->
+			<main class="main">
+				<!-- Hero -->
+				<section class="hero">
+					<svg viewBox="0 0 334 764" class="hero__vector">
+						<use href="src/assets/sprites.svg#about-hero-vector"></use>
+					</svg>
+					<svg viewBox="0 0 533 859" class="hero__vector">
+						<use href="src/assets/sprites.svg#wave"></use>
+					</svg>
+					<div class="hero__container">
+						<nav>
+							<ul class="breadcrumbs">
+								<li class="breadcrumb">
+									<a href="/" class="breadcrumb__link">Главная</a>
+									<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+										<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+									</svg>
+								</li>
+								<li class="breadcrumb active">
+									<a href="/about" class="breadcrumb__link">О нас</a>
+									<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+										<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+									</svg>
+								</li>
+							</ul>
+						</nav>
+						<div class="hero__content">
+							<h1 class="hero__title">
+								Дом <br />
+								ювелирных <br />
+								изделий
+							</h1>
+							<p class="hero__text">
+								Погрузитесь в мир роскоши и мастерства, где украшения объединяют
+								традиции, элегантность и красоту драгоценных камней
+							</p>
+							<ul class="hero__list">
+								<li class="hero__item">Кольца</li>
+								<li class="hero__item">Серьги</li>
+								<li class="hero__item">Подвески</li>
+								<li class="hero__item">Браслеты</li>
+								<li class="hero__item">Броши</li>
+								<li class="hero__item">Мужские изделия</li>
+								<li class="hero__item">Детские изделия</li>
+							</ul>
+							<svg viewBox="0 0 32 59" class="hero__ornament">
+								<use href="src/assets/sprites.svg#ornament-dots"></use>
+							</svg>
+						</div>
+					</div>
+					<img
+						src="src/assets/images/girl-crossing.png"
+						alt="girl crossing"
+						class="hero__image" />
+				</section>
+			</main>
+
+			<!-- Footer -->
+			<footer class="footer">
+				<!-- Bg -->
+				<picture class="footer__image">
+					<source
+						srcset="src/assets/images/footer-bg-small.png"
+						media="(max-width: 768px)" />
+					<img src="src/assets/images/footer-bg.png" alt="footer bg" />
+				</picture>
+				<!-- Mobile -->
+				<a href="/" class="footer--mobile footer__logo">
+					<img src="src/assets/images/logo.png" alt="logo" />
+				</a>
+				<nav class="footer--mobile footer__nav">
+					<ul class="footer__nav-list">
+						<li>
+							<a href="/catalog" class="footer__nav-item"> Каталог </a>
+						</li>
+						<li>
+							<a href="/about" class="footer__nav-item"> О нас </a>
+						</li>
+						<li>
+							<a href="/faq" class="footer__nav-item"> FAQ </a>
+						</li>
+						<li>
+							<a href="/contacts" class="footer__nav-item"> Контакты </a>
+						</li>
+					</ul>
+				</nav>
+				<div class="footer--mobile footer__info">
+					<div class="footer__info-row">
+						<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+							<use href="src/assets/sprites.svg#pin"></use>
+						</svg>
+						<p class="footer__info-text">
+							Астана, ул Гейдара Алиева, 14 «Хилтон Астана»
+						</p>
+					</div>
+					<div class="footer__info-row">
+						<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+							<use href="src/assets/sprites.svg#little-star"></use>
+						</svg>
+						<p class="footer__info-text">Ежедневно: 11.00 - 19.00</p>
+					</div>
+				</div>
+				<div class="footer--mobile footer__cta">
+					<a href="tel:+7 (702) 263 00 75" class="footer__tel">+7 (702) 263 00 75</a>
+					<a href="mailto:saltanat.houseofdiamonds@gmail.ru" class="footer__email">
+						saltanat.houseofdiamonds@gmail.ru
+					</a>
+				</div>
+				<div class="footer--mobile footer__mobile-bottom">
+					<nav class="footer__socials">
+						<ul class="footer__socials-list">
+							<li>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://telegram.org"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#telegram-small"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://whatsapp.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#whatsapp-small"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="footer__bottomright-bottom footer--mobile">
+						<p class="footer__bottomright-bottom_text">
+							Made with
+							<svg viewBox="0 0 16 16" fill="#E28D4E" width="16" height="16">
+								<use href="src/assets/sprites.svg#heart"></use>
+							</svg>
+							by Bairamov Studio
+						</p>
+						<p class="footer__copyright">@ {year} Saltanat . Все права защищены</p>
+					</div>
+				</div>
+
+				<!-- Desktop -->
+				<div class="footer--desktop footer__topleft">
+					<a href="/" class="footer__logo">
+						<img src="src/assets/images/logo.png" alt="logo" />
+					</a>
+					<div class="footer__info">
+						<div class="footer__info-row">
+							<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+								<use href="src/assets/sprites.svg#pin"></use>
+							</svg>
+							<p class="footer__info-text">
+								Астана, ул Гейдара Алиева, 14 «Хилтон Астана»
+							</p>
+						</div>
+						<div class="footer__info-row">
+							<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+								<use href="src/assets/sprites.svg#little-star"></use>
+							</svg>
+							<p class="footer__info-text">Ежедневно: 11.00 - 19.00</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer--desktop footer__topright">
+					<nav class="footer__nav">
+						<ul class="footer__nav-list">
+							<li>
+								<a href="/catalog" class="footer__nav-item"> Каталог </a>
+							</li>
+							<li>
+								<a href="/about" class="footer__nav-item"> О нас </a>
+							</li>
+							<li>
+								<a href="/faq" class="footer__nav-item"> FAQ </a>
+							</li>
+							<li>
+								<a href="/contacts" class="footer__nav-item"> Контакты </a>
+							</li>
+						</ul>
+					</nav>
+					<div class="footer__cta">
+						<span class="footer__cta-label"> Phone </span>
+						<a href="tel:+7 (702) 263 00 75" class="footer__tel">+7 (702) 263 00 75</a>
+					</div>
+				</div>
+				<div class="footer--desktop footer__bottomleft">
+					<nav class="footer__socials">
+						<ul class="footer__socials-list">
+							<li>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://telegram.org"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#telegram-small"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://whatsapp.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#whatsapp-small"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<p class="footer__copyright">@ {year} Saltanat . Все права защищены</p>
+				</div>
+				<div class="footer--desktop footer__bottomright">
+					<div class="footer__cta">
+						<span class="footer__cta-label"> Email </span>
+						<a href="mailto:saltanat.houseofdiamonds@gmail.ru" class="footer__email">
+							saltanat.houseofdiamonds@gmail.ru
+						</a>
+					</div>
+					<div class="footer__bottomright-bottom">
+						<a href="/policy">Политика приватности</a>
+						<p class="footer__bottomright-bottom_text">
+							Made with
+							<svg viewBox="0 0 16 16" fill="#E28D4E" width="16" height="16">
+								<use href="src/assets/sprites.svg#heart"></use>
+							</svg>
+							by Bairamov Studio
+						</p>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>

@@ -1,0 +1,41 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.breadcrumbs {
+	display: flex;
+	gap: 1rem;
+	@include breakpoints.large-mobile {
+		gap: 0.6rem;
+	}
+}
+.breadcrumb {
+	font-weight: 500;
+	font-size: 1.6rem;
+	line-height: 100%;
+	letter-spacing: -0.02em;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	@include breakpoints.large-mobile {
+		gap: 0.6rem;
+		font-size: 1.2rem;
+	}
+
+	&:last-of-type .breadcrumb__divider {
+		display: none;
+	}
+	&.active {
+		color: variables.$grey-5;
+	}
+	&__link:hover {
+		color: variables.$gold;
+	}
+	&__divider {
+		width: 2rem;
+		stroke: variables.$grey-5;
+		@include breakpoints.large-mobile {
+			width: 1rem;
+		}
+	}
+}
