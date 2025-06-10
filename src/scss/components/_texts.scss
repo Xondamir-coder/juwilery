@@ -10,3 +10,10 @@
 		font-size: 1.4rem;
 	}
 }
+.text-16 {
+	@extend .text-default;
+	font-size: 1.6rem;
+	@include breakpoints.large-mobile {
+		font-size: 1.2rem;
+	}
+}

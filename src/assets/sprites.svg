@@ -123,6 +123,23 @@
                 stroke="inherit" stroke-width="1.5" />
         </symbol>
 
+        <symbol id="left-classic-arrow" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.29289 12.3537L14.2929 19.3537L15.7071 17.9395L9.41421 11.6466L15.7071 5.35367L14.2929 3.93945L7.29289 10.9395C6.90237 11.33 6.90237 11.9631 7.29289 12.3537Z"
+                fill="inherit" />
+        </symbol>
+
+        <symbol id="curvy-add" viewBox="0 0 24 24">
+            <path
+                d="M21 13V11H14.9C13.8 11 13 10.1 13 9V3H11V9C11 9.9 11.5 10.6 12.3 10.9V11H3V13H9C10.1 13 11 13.8 11 15V21H13V15C13 14.1 12.5 13.4 11.7 13.1V13H21Z"
+                fill="inherit" />
+        </symbol>
+
+        <symbol id="minus" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 13H4V11H20V13Z" fill="inherit" />
+        </symbol>
+
+
         <symbol id="left-curved-arrow" viewBox="0 0 24 24">
             <g clip-path="url(#clip0_1_3956)">
                 <path

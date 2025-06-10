@@ -10,7 +10,7 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
 			rel="stylesheet" />
-		<script type="module" src="src/js/main.js" defer></script>
+		<script type="module" src="src/js/pages/about.js" defer></script>
 		<title>About Page</title>
 	</head>
 	<body>
@@ -405,6 +405,273 @@
 						src="src/assets/images/girl-crossing.png"
 						alt="girl crossing"
 						class="hero__image" />
+				</section>
+				<!-- Legacy -->
+				<section class="legacy">
+					<div class="legacy__top">
+						<h2 class="legacy__title">
+							Вдохновленные <br />
+							кочевым наследием
+						</h2>
+						<svg viewBox="0 0 64 64" class="legacy__ornament">
+							<use href="src/assets/sprites.svg#ornament"></use>
+						</svg>
+					</div>
+					<div class="legacy__container">
+						<div class="legacy__image-container">
+							<img
+								src="src/assets/images/asian-girl.jpg"
+								alt="asign girl"
+								class="legacy__image" />
+						</div>
+						<div class="legacy__content">
+							<div class="legacy__text">
+								<p>
+									Укорененные в духе кочевой культуры, наши художники стремятся
+									<span class="color-gold">поделиться с миром</span> древней
+									казахской философией, переосмысленной через призму роскошных
+									материалов, современного дизайна и вневременной моды Укорененные
+									в духе кочевой культуры, наши художники стремятся
+									<span class="color-gold">поделиться</span>
+								</p>
+
+								<p>
+									<span class="color-gold">с миром</span> древней казахской
+									философией, переосмысленной через призму роскошных материалов,
+									современного дизайна и вневременной моды Укорененные в духе
+									кочевой культуры, наши художники стремятся
+									<span class="color-gold">поделиться с миром</span> древней
+									казахской философией, переосмысленной через призму роскошных
+									материалов, современного дизайна и вневременной моды
+								</p>
+							</div>
+							<ul class="legacy__list">
+								<li class="legacy__item">
+									<h3 class="legacy__item-amount">500+</h3>
+									<p class="text-16">Уникальных моделей в каталоге</p>
+								</li>
+								<li class="legacy__item">
+									<h3 class="legacy__item-amount">20+</h3>
+									<p class="text-16">Видов драгоценных камней в ассортименте</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<!-- Studio -->
+				<section class="studio">
+					<div class="studio__nav">
+						<button class="studio__nav-button" id="studio-nav-left">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/assets/sprites.svg#left-classic-arrow"></use>
+							</svg>
+						</button>
+						<button class="studio__nav-button" id="studio-nav-right">
+							<svg viewBox="0 0 24 24" class="icon rotate-180">
+								<use href="src/assets/sprites.svg#left-classic-arrow"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="studio__content">
+						<h3 class="studio__title">Наша студия</h3>
+						<p class="studio__text">
+							Welcome to Saltanat House of Diamonds. A celebration of elegance,
+							legacy, and the indomitable spirit of women
+						</p>
+						<button class="studio__button button button--gold">
+							Запись на встречу в шоуруме
+						</button>
+					</div>
+					<swiper-container
+						id="studio-swiper"
+						slides-per-view="1"
+						class="studio__swiper"
+						navigation-next-el="#studio-nav-right"
+						navigation-prev-el="#studio-nav-left"
+						grab-cursor="true"
+						space-between="10">
+						<swiper-slide class="studio__slide">
+							<img
+								src="src/assets/images/studio-1.jpg"
+								alt="studio"
+								class="studio__image" />
+						</swiper-slide>
+						<swiper-slide class="studio__slide">
+							<img
+								src="src/assets/images/studio-2.jpg"
+								alt="studio"
+								class="studio__image" />
+						</swiper-slide>
+					</swiper-container>
+					<div class="studio__list" id="studio-buttons">
+						<button class="studio__item active" data-index="0">
+							<img src="src/assets/images/studio-1.jpg" alt="studio" />
+						</button>
+						<button class="studio__item" data-index="1">
+							<img src="src/assets/images/studio-2.jpg" alt="studio" />
+						</button>
+					</div>
+					<div class="studio__dots">
+						<button class="studio__dot active" data-index="0"></button>
+						<button class="studio__dot" data-index="1"></button>
+					</div>
+				</section>
+				<!-- Faq -->
+				<section class="questions">
+					<div class="faq">
+						<h2 class="section-title-42">Вопросы и ответы</h2>
+						<ul class="faq__accordions">
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="questions__image-container">
+						<img
+							src="src/assets/images/girl-showoff.jpg"
+							alt="girly"
+							class="questions__image" />
+						<svg viewBox="0 0 32 32" class="questions__ornament">
+							<use href="src/assets/sprites.svg#ornament"></use>
+						</svg>
+					</div>
 				</section>
 			</main>
 

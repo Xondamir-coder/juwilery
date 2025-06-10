@@ -1,0 +1,89 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.faq {
+	display: flex;
+	flex-direction: column;
+	gap: 3.2rem;
+	@include breakpoints.large-mobile {
+		gap: 2.4rem;
+	}
+	&__accordion {
+		display: flex;
+		flex-direction: column;
+		&.active {
+			fill: variables.$gold;
+			.faq__accordion-question {
+				color: variables.$gold;
+			}
+			.faq__accordion-answer {
+				display: block;
+			}
+			.faq__accordion-top {
+				padding-left: 0;
+				background-color: transparent;
+			}
+			.faq__accordion-icon {
+				&:first-of-type {
+					transform: scale(0);
+				}
+				&:last-of-type {
+					transform: scale(1);
+				}
+			}
+		}
+		&-icon {
+			grid-area: 1/1/2/2;
+			transition: transform variables.$default-transition-duration;
+			&:last-of-type {
+				transform: scale(0);
+			}
+			&_container {
+				display: grid;
+			}
+		}
+		&-answer {
+			font-weight: 400;
+			font-size: 1.6rem;
+			line-height: 148%;
+			letter-spacing: 0px;
+			animation: slide-from-top-20px 0.5s backwards;
+			display: none;
+			padding-bottom: 2.4rem;
+			@include breakpoints.large-mobile {
+				padding-bottom: 1.6rem;
+				font-size: 1.4rem;
+			}
+		}
+		&-question {
+			font-weight: 700;
+			font-size: 1.8rem;
+			line-height: 100%;
+			color: rgba(variables.$black, 0.8);
+			transition: color variables.$default-transition-duration;
+			@include breakpoints.large-mobile {
+				font-size: 1.5rem;
+			}
+		}
+		&-top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 2rem;
+			border-radius: 12px;
+			background-color: variables.$grey-2;
+			transition-property: padding-inline, background-color;
+			transition-duration: variables.$default-transition-duration;
+
+			@include breakpoints.large-mobile {
+				padding-block: 1.2rem;
+			}
+		}
+	}
+	&__accordions {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+}

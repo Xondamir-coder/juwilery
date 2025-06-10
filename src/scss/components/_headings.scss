@@ -8,10 +8,10 @@
 	line-height: 80%;
 
 	@include breakpoints.large-mobile {
-		font-size: 3.2rem;
+		font-size: 3.2rem !important;
 	}
 }
 .section-title-42 {
-	font-size: 4.2rem;
 	@extend .section-title;
+	font-size: 4.2rem;
 }
