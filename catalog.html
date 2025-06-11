@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="src/scss/catalog.scss" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
+			rel="stylesheet" />
+		<script type="module" src="src/js/main.js" defer></script>
+		<title>Catalog Page</title>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Overlay -->
+			<div class="overlay hidden"></div>
+
+			<!-- Nav Bottombar Mobile -->
+			<div class="bottombar">
+				<div class="bottombar__menu ds-none" data-item="menu">
+					<h3 class="bottombar__menu-title">Меню</h3>
+					<nav>
+						<ul class="bottombar__nav">
+							<li>
+								<a href="/" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#home"></use>
+										</svg>
+									</div>
+									<span>Главная</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="/about" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#octagon"></use>
+										</svg>
+									</div>
+									<span>О нас</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="/faq" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg
+											viewBox="0 0 20 20"
+											width="20"
+											height="20"
+											fill="none"
+											class="stroke-white">
+											<use href="src/assets/sprites.svg#faq"></use>
+										</svg>
+									</div>
+									<span>FAQ</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="/contacts" class="bottombar__nav-item">
+									<div class="bottombar__nav-icon">
+										<svg viewBox="0 0 20 20" width="20" height="20">
+											<use href="src/assets/sprites.svg#contacts"></use>
+										</svg>
+									</div>
+									<span>Контакты</span>
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										fill="none"
+										class="stroke-grey-3">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="bottombar__languages">
+						<li>
+							<button class="bottombar__language active">Rus</button>
+						</li>
+						<li>
+							<button class="bottombar__language">Eng</button>
+						</li>
+						<li>
+							<button class="bottombar__language">Kaz</button>
+						</li>
+					</ul>
+				</div>
+				<div class="bottombar__call ds-none" data-item="call">
+					<svg viewBox="0 0 375 275" class="bottombar__call-vector">
+						<use href="src/assets/sprites.svg#call-vector"></use>
+					</svg>
+					<svg viewBox="0 0 91 91" width="91" height="91">
+						<use href="src/assets/sprites.svg#call"></use>
+					</svg>
+					<div class="bottombar__call-content">
+						<a href="tel:+7 747 609 99 95" class="bottombar__call-tel"
+							>+7 747 609 99 95</a
+						>
+						<p class="bottombar__call-text">
+							Наши консультанты помогут подобрать идеальное украшение. Звоните – мы на
+							связи!"
+						</p>
+					</div>
+					<div class="bottombar__call-bottom">
+						<a href="tel:+7 747 609 99 95" class="button button--green">Позвонить</a>
+						<button class="bottombar__call-x">
+							<svg viewBox="0 0 24 24" width="24" height="24" class="fill-white">
+								<use href="src/assets/sprites.svg#x"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="bottombar__search ds-none" data-item="search">
+					<form class="bottombar__search-form">
+						<svg viewBox="0 0 24 24" height="24" width="24">
+							<use href="src/assets/sprites.svg#stars"></use>
+						</svg>
+						<input
+							type="text"
+							name="search"
+							id="mobile-search"
+							placeholder="Введите название изделия"
+							required
+							class="bottombar__search-input" />
+						<button class="bottombar__search-clear" type="button">
+							<svg
+								class="stroke-white fill-grey-4"
+								viewBox="0 0 24 24"
+								width="24"
+								height="24">
+								<use href="src/assets/sprites.svg#outlined-x"></use>
+							</svg>
+						</button>
+					</form>
+					<div class="bottombar__search-container"></div>
+				</div>
+				<ul class="bottombar__list">
+					<li>
+						<button class="bottombar__button" data-menu="call">
+							<svg width="24" height="24" viewBox="0 0 24 24" class="fill-grey-3">
+								<use href="src/assets/sprites.svg#phone"></use>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<a href="https://whatsapp.com" target="_blank" class="bottombar__button">
+							<svg width="24" height="24" viewBox="0 0 24 24" class="fill-grey-3">
+								<use href="src/assets/sprites.svg#whatsapp-small"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<button class="bottombar__button" data-menu="search">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								class="fill-grey-3 stroke-grey-3">
+								<use href="src/assets/sprites.svg#search-mobile"></use>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<button class="bottombar__button" data-menu="menu">
+							<svg width="24" height="24" viewBox="0 0 24 24" class="stroke-grey-3">
+								<use href="src/assets/sprites.svg#mobile-menu"></use>
+							</svg>
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								class="stroke-white fill-black">
+								<use href="src/assets/sprites.svg#outlined-x"></use>
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Header -->
+			<header class="header">
+				<div class="header__left">
+					<a href="/" class="header__logo">
+						<img src="src/assets/images/logo.png" alt="logo" />
+					</a>
+					<div class="header__container">
+						<div class="menu"></div>
+						<div class="header__action">
+							<button class="header__button">
+								<div class="header__button-icon">
+									<svg class="icon fill-white" viewBox="0 0 25 24">
+										<use href="src/assets/sprites.svg#menu"></use>
+									</svg>
+									<svg class="icon fill-white" viewBox="0 0 25 24">
+										<use href="src/assets/sprites.svg#x"></use>
+									</svg>
+								</div>
+								<span>Каталог</span>
+							</button>
+							<form class="header__search">
+								<svg class="icon fill-black" viewBox="0 0 24 24">
+									<use href="src/assets/sprites.svg#stars"></use>
+								</svg>
+								<input
+									required
+									type="text"
+									name="search"
+									id="desktop-search"
+									placeholder="Введите название изделия"
+									class="header__search-input" />
+								<button class="header__search-button" type="button">
+									<svg class="icon fill-grey-3" viewBox="0 0 24 24">
+										<use href="src/assets/sprites.svg#search"></use>
+									</svg>
+									<svg class="icon stroke-white fill-grey-4" viewBox="0 0 24 24">
+										<use href="src/assets/sprites.svg#outlined-x"></use>
+									</svg>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="header__right">
+					<ul class="header__list">
+						<li class="header__item">
+							<a href="/about" class="header__link">О нас</a>
+						</li>
+						<li class="header__item">
+							<a href="/faq" class="header__link">FAQ</a>
+						</li>
+						<li class="header__item">
+							<a href="/contacts" class="header__link">Контакты</a>
+						</li>
+					</ul>
+					<div class="header__accessibility">
+						<div class="header__languages">
+							<button
+								class="header__languages-selected"
+								data-toggle="language-options">
+								<svg class="icon stroke-black" fill="none" viewBox="0 0 16 16">
+									<use href="src/assets/sprites.svg#globe"></use>
+								</svg>
+								<span class="header__languages-selected_text">Ru</span>
+							</button>
+							<ul
+								class="header__dropdown header__languages-options"
+								id="language-options">
+								<li>
+									<button class="header__languages-option active">Ru</button>
+								</li>
+								<li>
+									<button class="header__languages-option">En</button>
+								</li>
+								<li>
+									<button class="header__languages-option">Kz</button>
+								</li>
+							</ul>
+						</div>
+						<div class="header__cta">
+							<button class="header__call" data-toggle="cta-options">
+								<svg class="icon fill-white" viewBox="0 0 24 24">
+									<use href="src/assets/sprites.svg#phone"></use>
+								</svg>
+							</button>
+							<ul class="header__dropdown header__cta-options" id="cta-options">
+								<li class="header__cta-option">
+									<a class="header__cta-tag" href="tel:+7 (702) 263 00 75">
+										<svg class="icon fill-gold" viewBox="0 0 24 24">
+											<use href="src/assets/sprites.svg#phone"></use>
+										</svg>
+										<span>+7 (702) 263 00 75</span>
+									</a>
+								</li>
+								<li class="header__cta-option">
+									<a class="header__cta-tag" href="mailto:example@example.com">
+										<svg class="icon fill-gold" viewBox="0 0 24 24">
+											<use href="src/assets/sprites.svg#email"></use>
+										</svg>
+										<span>Написать на почту</span>
+									</a>
+								</li>
+								<li class="header__cta-option">
+									<a class="header__cta-tag" target="_blank" href="#">
+										<svg class="icon fill-gold" viewBox="0 0 24 24">
+											<use href="src/assets/sprites.svg#whatsapp"></use>
+										</svg>
+										<span>WhatsApp</span>
+									</a>
+								</li>
+								<li class="header__cta-option">
+									<a class="header__cta-tag" target="_blank" href="#">
+										<svg class="icon fill-gold" viewBox="0 0 24 24">
+											<use href="src/assets/sprites.svg#telegram"></use>
+										</svg>
+										<span>Telegram</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<a class="header__tel" href="tel:+7 747 609 99 95">
+						<svg class="icon fill-black" viewBox="0 0 24 24">
+							<use href="src/assets/sprites.svg#phone"></use>
+						</svg>
+						<span>+7 747 609 99 95</span>
+					</a>
+				</div>
+			</header>
+
+			<main class="main">
+				<section class="hero">
+					<nav>
+						<ul class="breadcrumbs">
+							<li class="breadcrumb">
+								<a href="/" class="breadcrumb__link">Главная</a>
+								<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+									<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+								</svg>
+							</li>
+							<li class="breadcrumb active">
+								<a href="/catalog" class="breadcrumb__link">Каталог</a>
+								<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+									<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+								</svg>
+							</li>
+						</ul>
+					</nav>
+					<div class="hero__container">
+						<h1 class="hero__title">Каталог</h1>
+						<img
+							src="src/assets/images/emerald-ring.png"
+							alt="ring"
+							class="hero__image" />
+					</div>
+				</section>
+				<section class="catalog">
+					<div class="catalog__top">
+						<div class="catalog__filter">
+							<div class="catalog__filter-left">
+								<svg
+									viewBox="0 0 24 24"
+									width="24"
+									height="24"
+									class="stroke-green">
+									<use href="src/assets/sprites.svg#filter"></use>
+								</svg>
+								<p class="catalog__filter-text">
+									Фильтр <span class="color-grey-3">(2)</span>
+								</p>
+							</div>
+							<button class="catalog__filter-button color-grey-3">
+								Сбросить все
+							</button>
+						</div>
+						<button class="catalog__sort">
+							<span>Сортировать</span>
+							<svg viewBox="0 0 24 24" width="24" height="24" class="stroke-black">
+								<use href="src/assets/sprites.svg#chevron-right-arrow"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="catalog__sidebar">
+						<ul class="catalog__categories">
+							<li>
+								<button class="catalog__categories-item">
+									<span>Все категории</span>
+									<span class="color-grey-3">(666)</span>
+								</button>
+							</li>
+							<li>
+								<button class="catalog__categories-item">
+									<span>Кольца</span>
+									<span class="color-grey-3">(60)</span>
+								</button>
+							</li>
+							<li>
+								<button class="catalog__categories-item">
+									<span>Серьги</span>
+									<span class="color-grey-3">(60)</span>
+								</button>
+							</li>
+							<li>
+								<button class="catalog__categories-item">
+									<span>Ожерелье</span>
+									<span class="color-grey-3">(60)</span>
+								</button>
+							</li>
+							<li>
+								<button class="catalog__categories-item">
+									<span>Комплекты</span>
+									<span class="color-grey-3">(60)</span>
+								</button>
+							</li>
+							<li>
+								<button class="catalog__categories-item">
+									<span>Детские изделия</span>
+									<span class="color-grey-3">(60)</span>
+								</button>
+							</li>
+							<li>
+								<button class="catalog__categories-item">
+									<span>Мужские изделия</span>
+									<span class="color-grey-3">(60)</span>
+								</button>
+							</li>
+						</ul>
+						<div class="catalog__row">
+							<div class="catalog__row-top">
+								<span>Материал (2)</span>
+								<button class="catalog__row-reset">
+									<span>Сбросить</span>
+									<svg viewBox="0 0 25 24" width="16" height="16">
+										<use href="src/assets/sprites.svg#x"></use>
+									</svg>
+								</button>
+							</div>
+							<ul class="catalog__row-list">
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Золото" />
+											<span>Золото</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Белое золото" />
+											<span>Белое золото</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Желтое золото" />
+											<span>Желтое золото</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Розовое золото" />
+											<span>Розовое золото</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Серебро" />
+											<span>Серебро</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+							</ul>
+							<button class="catalog__row-more">Показать еще</button>
+						</div>
+						<div class="catalog__row">
+							<div class="catalog__row-top">
+								<span>Вставка</span>
+								<button class="catalog__row-reset">
+									<span>Сбросить</span>
+									<svg viewBox="0 0 25 24" width="16" height="16">
+										<use href="src/assets/sprites.svg#x"></use>
+									</svg>
+								</button>
+							</div>
+							<ul class="catalog__row-list">
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Без вставок" />
+											<span>Без вставок</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Бриллиант" />
+											<span>Бриллиант</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Изумруд" />
+											<span>Изумруд</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Жемчуг синтетический" />
+											<span>Жемчуг синтетический</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Александрит гидротермальный" />
+											<span>Александрит гидротермальный</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+							</ul>
+							<button class="catalog__row-more">Показать еще</button>
+						</div>
+						<div class="catalog__row">
+							<div class="catalog__row-top">
+								<span>Стиль</span>
+								<button class="catalog__row-reset">
+									<span>Сбросить</span>
+									<svg viewBox="0 0 25 24" width="16" height="16">
+										<use href="src/assets/sprites.svg#x"></use>
+									</svg>
+								</button>
+							</div>
+							<ul class="catalog__row-list">
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Ампир" />
+											<span>Ампир</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Модерн" />
+											<span>Модерн</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Барокко" />
+											<span>Барокко</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Класицим" />
+											<span>Класицим</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+								<li>
+									<button class="catalog__row-item">
+										<div class="catalog__row-item_left">
+											<input
+												type="checkbox"
+												class="catalog__checkbox"
+												value="Готика" />
+											<span>Готика</span>
+										</div>
+										<span class="color-grey-3">(21)</span>
+									</button>
+								</li>
+							</ul>
+							<button class="catalog__row-more">Показать еще</button>
+						</div>
+						<button class="catalog__submit button button--green">Применить</button>
+					</div>
+					<div class="catalog__products">
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+						<div class="card">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="brooches"
+								class="card__image" />
+							<h3 class="card__text">Кольцо из золота с фианитом</h3>
+						</div>
+					</div>
+					<div class="pagination">
+						<button class="pagination__action">
+							<svg viewBox="0 0 24 24" width="24" height="24">
+								<use href="src/assets/sprites.svg#long-left-arrow"></use>
+							</svg>
+						</button>
+						<ul class="pagination__buttons">
+							<li class="pagination__button">1</li>
+							<li class="pagination__button">2</li>
+							<li class="pagination__button">3</li>
+							<li class="pagination__button">4</li>
+							<li class="pagination__button">5</li>
+							<li class="pagination__button pagination__button--empty">...</li>
+							<li class="pagination__button">22</li>
+						</ul>
+						<button class="pagination__action">
+							<svg viewBox="0 0 24 24" width="24" height="24">
+								<use href="src/assets/sprites.svg#long-left-arrow"></use>
+							</svg>
+						</button>
+					</div>
+				</section>
+			</main>
+
+			<!-- Footer -->
+			<footer class="footer">
+				<!-- Bg -->
+				<picture class="footer__image">
+					<source
+						srcset="src/assets/images/footer-bg-small.png"
+						media="(max-width: 768px)" />
+					<img src="src/assets/images/footer-bg.png" alt="footer bg" />
+				</picture>
+				<!-- Mobile -->
+				<a href="/" class="footer--mobile footer__logo">
+					<img src="src/assets/images/logo.png" alt="logo" />
+				</a>
+				<nav class="footer--mobile footer__nav">
+					<ul class="footer__nav-list">
+						<li>
+							<a href="/catalog" class="footer__nav-item"> Каталог </a>
+						</li>
+						<li>
+							<a href="/about" class="footer__nav-item"> О нас </a>
+						</li>
+						<li>
+							<a href="/faq" class="footer__nav-item"> FAQ </a>
+						</li>
+						<li>
+							<a href="/contacts" class="footer__nav-item"> Контакты </a>
+						</li>
+					</ul>
+				</nav>
+				<div class="footer--mobile footer__info">
+					<div class="footer__info-row">
+						<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+							<use href="src/assets/sprites.svg#pin"></use>
+						</svg>
+						<p class="footer__info-text">
+							Астана, ул Гейдара Алиева, 14 «Хилтон Астана»
+						</p>
+					</div>
+					<div class="footer__info-row">
+						<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+							<use href="src/assets/sprites.svg#little-star"></use>
+						</svg>
+						<p class="footer__info-text">Ежедневно: 11.00 - 19.00</p>
+					</div>
+				</div>
+				<div class="footer--mobile footer__cta">
+					<a href="tel:+7 (702) 263 00 75" class="footer__tel">+7 (702) 263 00 75</a>
+					<a href="mailto:saltanat.houseofdiamonds@gmail.ru" class="footer__email">
+						saltanat.houseofdiamonds@gmail.ru
+					</a>
+				</div>
+				<div class="footer--mobile footer__mobile-bottom">
+					<nav class="footer__socials">
+						<ul class="footer__socials-list">
+							<li>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://telegram.org"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#telegram-small"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://whatsapp.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#whatsapp-small"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="footer__bottomright-bottom footer--mobile">
+						<p class="footer__bottomright-bottom_text">
+							Made with
+							<svg viewBox="0 0 16 16" fill="#E28D4E" width="16" height="16">
+								<use href="src/assets/sprites.svg#heart"></use>
+							</svg>
+							by Bairamov Studio
+						</p>
+						<p class="footer__copyright" data-copyright>
+							@ {year} Saltanat . Все права защищены
+						</p>
+					</div>
+				</div>
+
+				<!-- Desktop -->
+				<div class="footer--desktop footer__topleft">
+					<a href="/" class="footer__logo">
+						<img src="src/assets/images/logo.png" alt="logo" />
+					</a>
+					<div class="footer__info">
+						<div class="footer__info-row">
+							<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+								<use href="src/assets/sprites.svg#pin"></use>
+							</svg>
+							<p class="footer__info-text">
+								Астана, ул Гейдара Алиева, 14 «Хилтон Астана»
+							</p>
+						</div>
+						<div class="footer__info-row">
+							<svg class="footer__icon fill-black" viewBox="0 0 16 16">
+								<use href="src/assets/sprites.svg#little-star"></use>
+							</svg>
+							<p class="footer__info-text">Ежедневно: 11.00 - 19.00</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer--desktop footer__topright">
+					<nav class="footer__nav">
+						<ul class="footer__nav-list">
+							<li>
+								<a href="/catalog" class="footer__nav-item"> Каталог </a>
+							</li>
+							<li>
+								<a href="/about" class="footer__nav-item"> О нас </a>
+							</li>
+							<li>
+								<a href="/faq" class="footer__nav-item"> FAQ </a>
+							</li>
+							<li>
+								<a href="/contacts" class="footer__nav-item"> Контакты </a>
+							</li>
+						</ul>
+					</nav>
+					<div class="footer__cta">
+						<span class="footer__cta-label"> Phone </span>
+						<a href="tel:+7 (702) 263 00 75" class="footer__tel">+7 (702) 263 00 75</a>
+					</div>
+				</div>
+				<div class="footer--desktop footer__bottomleft">
+					<nav class="footer__socials">
+						<ul class="footer__socials-list">
+							<li>
+								<a
+									href="https://instagram.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://telegram.org"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#telegram-small"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://whatsapp.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="footer__socials-item">
+									<svg viewBox="0 0 24 24" class="footer__socials-icon">
+										<use href="src/assets/sprites.svg#whatsapp-small"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<p class="footer__copyright" data-copyright>
+						@ {year} Saltanat . Все права защищены
+					</p>
+				</div>
+				<div class="footer--desktop footer__bottomright">
+					<div class="footer__cta">
+						<span class="footer__cta-label"> Email </span>
+						<a href="mailto:saltanat.houseofdiamonds@gmail.ru" class="footer__email">
+							saltanat.houseofdiamonds@gmail.ru
+						</a>
+					</div>
+					<div class="footer__bottomright-bottom">
+						<a href="/policy">Политика приватности</a>
+						<p class="footer__bottomright-bottom_text">
+							Made with
+							<svg viewBox="0 0 16 16" fill="#E28D4E" width="16" height="16">
+								<use href="src/assets/sprites.svg#heart"></use>
+							</svg>
+							by Bairamov Studio
+						</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

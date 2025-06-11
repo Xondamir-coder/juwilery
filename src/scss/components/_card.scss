@@ -1,0 +1,37 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+	font-family: variables.$font-cormorant;
+	font-weight: 500;
+	font-size: 2.2rem;
+	line-height: 96%;
+	letter-spacing: -0.05em;
+	border-radius: 1.6rem;
+	border: 1px solid #e7e7e7;
+	padding: 6px;
+
+	@include breakpoints.large-mobile {
+		padding: 0;
+		font-size: 1.6rem;
+		gap: 1.2rem;
+		border-radius: 0.8rem;
+	}
+	&__text {
+		@include breakpoints.min-large-mobile {
+			padding-inline: 1.6rem;
+			padding-bottom: 1.8rem;
+		}
+	}
+	&__image {
+		border-radius: 1.2rem;
+		aspect-ratio: 344/319;
+		@include breakpoints.large-mobile {
+			border-radius: 0.8rem;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.pagination {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	&__button {
+		width: 4.8rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		font-weight: 600;
+		font-size: max(1.4rem, 14px);
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		cursor: pointer;
+		border: 1px solid #e3e3e3;
+		transition-property: background-color, color, border-color;
+		transition-duration: variables.$default-transition-duration;
+
+		@include mixins.flex-center;
+		@include breakpoints.large-mobile {
+			width: 4rem;
+		}
+		&.active,
+		&:hover {
+			background-color: variables.$green;
+			color: variables.$white;
+			border-color: variables.$green;
+		}
+
+		&--empty {
+			border: none;
+		}
+	}
+	&__action {
+		height: 4.8rem;
+		width: 8rem;
+		background-color: variables.$grey-2;
+		border-radius: 6rem;
+		stroke: variables.$black;
+		transition-property: background-color, stroke;
+		transition-duration: variables.$default-transition-duration;
+		@include mixins.flex-center;
+		@include breakpoints.large-mobile {
+			width: 5.6rem;
+			height: 4rem;
+		}
+		&:hover {
+			background-color: variables.$green;
+			stroke: variables.$white;
+		}
+		&:last-of-type {
+			transform: rotate(180deg);
+		}
+	}
+	&__buttons {
+		display: flex;
+		gap: 8px;
+	}
+}
