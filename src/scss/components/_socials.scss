@@ -1,0 +1,22 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.socials {
+	display: flex;
+	gap: 8px;
+	&__icon {
+		width: 50%;
+		fill: variables.$white;
+	}
+	&__item {
+		width: 48px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background-color: variables.$black;
+		@include mixins.flex-center;
+		&:hover {
+			background-color: variables.$gold;
+		}
+	}
+}

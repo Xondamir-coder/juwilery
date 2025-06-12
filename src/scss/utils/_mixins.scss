@@ -4,13 +4,25 @@
 @mixin spacing($isPadding: true) {
 	@if $isPadding {
 		padding-inline: variables.$spacing;
+		@include breakpoints.ipad-pro {
+			padding-inline: 6rem;
+		}
 		@include breakpoints.large-mobile {
-			padding-inline: 1.6rem;
+			padding-inline: 4rem;
+		}
+		@include breakpoints.small-mobile {
+			padding-inline: 16px;
 		}
 	} @else {
 		margin-inline: variables.$spacing;
+		@include breakpoints.ipad-pro {
+			margin-inline: 6rem;
+		}
 		@include breakpoints.large-mobile {
-			margin-inline: 1.6rem;
+			margin-inline: 4rem;
+		}
+		@include breakpoints.small-mobile {
+			margin-inline: 16px;
 		}
 	}
 }

@@ -13,7 +13,8 @@ export default defineConfig({
 				main: 'index.html',
 				about: 'about.html',
 				contacts: 'contacts.html',
-				faq: 'faq.html'
+				faq: 'faq.html',
+				catalog: 'catalog.html'
 			}
 		}
 	}

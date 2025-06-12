@@ -15,12 +15,16 @@ html {
 	// 	font-size: calc(100vw / (1920 / 11));
 	// }
 
+	@include breakpoints.desktop {
+		font-size: calc(100vw / (1920 / 11.2));
+	}
+
 	@include breakpoints.small-desktop {
 		font-size: calc(100vw / (1920 / 12));
 	}
 
 	@include breakpoints.ipad-pro {
-		font-size: calc(100vw / (1920 / 11.5));
+		font-size: calc(100vw / (1920 / 15));
 	}
 
 	@include breakpoints.large-mobile {
@@ -41,6 +45,10 @@ a {
 	color: inherit;
 	transition-property: color, background-color, border-color;
 	transition-duration: variables.$default-transition-duration;
+	&:hover {
+		color: inherit;
+		text-decoration: none;
+	}
 }
 img {
 	width: 100%;
@@ -58,6 +66,9 @@ button {
 	font: inherit;
 	transition-property: color, background-color, border-color, transform;
 	transition-duration: variables.$default-transition-duration;
+	&:focus {
+		outline: none;
+	}
 }
 textarea {
 	resize: none;

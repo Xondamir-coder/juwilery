@@ -4,8 +4,12 @@
 
 .main {
 	padding-top: 3.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 7.3rem;
 	@include mixins.spacing;
 	@include breakpoints.large-mobile {
+		gap: 4rem;
 		padding-top: 1.6rem;
 	}
 }
@@ -60,6 +64,8 @@
 }
 .catalog {
 	display: grid;
+	border-bottom: none !important;
+	padding: 0 !important;
 	grid-template-areas:
 		'top top'
 		'sidebar products'
@@ -67,7 +73,9 @@
 		'. pagination';
 	row-gap: 2.4rem;
 	column-gap: 6rem;
+	grid-template-columns: 1fr 3fr;
 	@include breakpoints.large-mobile {
+		grid-template-columns: 1fr;
 		grid-template-areas:
 			'top'
 			'products'
@@ -76,13 +84,14 @@
 	&__products {
 		grid-area: products;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
 		gap: 2rem;
 		@include breakpoints.large-mobile {
 			gap: 0.8rem;
 		}
 	}
 	&__sort {
+		justify-self: flex-end;
 		display: flex;
 		align-items: center;
 		gap: 8px;
@@ -107,6 +116,9 @@
 		letter-spacing: -0.02em;
 		&-button {
 			font-weight: 700;
+			@include breakpoints.large-mobile {
+				display: none;
+			}
 		}
 		&-left {
 			display: flex;
@@ -120,11 +132,17 @@
 	}
 	&__top {
 		grid-area: top;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		padding-bottom: 1.6rem;
 		border-bottom: 1px solid variables.$grey-1;
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		gap: 6rem;
+		@include breakpoints.large-mobile {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0;
+		}
 	}
 	&__checkbox {
 		appearance: none;
@@ -136,7 +154,7 @@
 		transition-duration: variables.$default-transition-duration;
 		position: relative;
 		&::after {
-			content: url('@/assets/check.svg');
+			content: url('@/assets/icons/check.svg');
 			position: absolute;
 			top: 50%;
 			left: 50%;

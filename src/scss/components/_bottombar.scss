@@ -11,6 +11,7 @@
 	width: 100%;
 	border-top-left-radius: 2.4rem;
 	border-top-right-radius: 2.4rem;
+	z-index: 5000;
 
 	@include breakpoints.min-large-mobile {
 		display: none;
@@ -23,6 +24,9 @@
 		animation: slide-from-bottom-50px 0.5s backwards;
 	}
 	&__search {
+		max-height: 80vh;
+		overflow-y: auto;
+		padding-bottom: 2rem;
 		display: flex;
 		flex-direction: column;
 		gap: 2.4rem;
@@ -56,6 +60,8 @@
 		}
 	}
 	&__call {
+		padding-inline: 4rem;
+		padding-bottom: 4rem;
 		overflow: hidden;
 		position: relative;
 		display: flex;
@@ -156,6 +162,10 @@
 		}
 	}
 	&__menu {
+		max-height: 70vh;
+		overflow-y: auto;
+		padding-bottom: 4rem;
+		padding-inline: 4rem;
 		display: flex;
 		flex-direction: column;
 		gap: 2.4rem;
@@ -210,5 +220,18 @@
 				}
 			}
 		}
+	}
+	&-content {
+		border: none;
+		margin-bottom: 48px;
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+		border-top-left-radius: 2.4rem;
+		border-top-right-radius: 2.4rem;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		justify-content: flex-end;
 	}
 }

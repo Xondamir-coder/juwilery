@@ -1,5 +1,7 @@
 // @use 'utils/variables';
 // @use 'utils/mixins';
+@use 'modal-reset';
+
 @use 'base/base';
 @use 'base/fonts';
 
@@ -13,6 +15,7 @@
 @use 'components/bottombar';
 @use 'components/catalog';
 @use 'components/breadcrumbs';
+@use 'components/socials';
 
 @use 'layout/container';
 @use 'layout/header';

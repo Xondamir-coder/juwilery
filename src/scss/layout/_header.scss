@@ -3,7 +3,6 @@
 @use '../utils/mixins';
 
 .header {
-	backdrop-filter: blur(24px);
 	display: grid;
 	grid-template-columns: 1.5fr 1fr;
 	padding-block: 12px;
@@ -59,11 +58,9 @@
 		transition: opacity 0.3s;
 		display: flex;
 		width: 15.1rem;
+		align-self: center;
 		@include breakpoints.large-mobile {
 			width: 7.5rem;
-		}
-		img {
-			object-fit: contain;
 		}
 	}
 	&__container {

@@ -114,17 +114,46 @@ const searchAndRender = (query, containerEl, emptyMessage = 'Ничего не �
 	}
 };
 
+const handleSearch = () => {
+	const containerEl = document.querySelector('.bottombar__search-container');
+	const inputEl = document.querySelector('#mobile-search');
+	const formEl = document.querySelector('.bottombar__search-form');
+	const clearInputBtn = document.querySelector('.bottombar__search-clear');
+
+	if (containerEl.innerHTML === '') {
+		const html = catalog.map(getCatalogTemplate).join('');
+		containerEl.innerHTML = html;
+	}
+
+	formEl.addEventListener('submit', e => {
+		e.preventDefault();
+		searchAndRender(inputEl.value, containerEl, 'Ничего не нашлось');
+	});
+	inputEl.addEventListener('input', e => {
+		clearInputBtn.classList.toggle('active', e.target.value);
+	});
+	clearInputBtn.addEventListener('click', () => {
+		inputEl.value = '';
+
+		// Reset with catalogs
+		if (containerEl.firstElementChild.classList.contains('catalog__search')) {
+			const html = catalog.map(getCatalogTemplate).join('');
+			containerEl.innerHTML = html;
+		}
+	});
+};
+
 const handleToggleDropdowns = () => {
-	const togglers = document.querySelectorAll('[data-toggle]');
+	const togglers = document.querySelectorAll('[data-dropdown]');
 	togglers.forEach(t => {
 		t.addEventListener('click', () => {
-			document.getElementById(t.dataset.toggle).classList.toggle('active');
+			document.getElementById(t.dataset.dropdown).classList.toggle('active');
 		});
 	});
 	document.addEventListener('click', e => {
-		if (!e.target.closest('[data-toggle]')) {
+		if (!e.target.closest('[data-dropdown]')) {
 			togglers.forEach(t => {
-				document.getElementById(t.dataset.toggle).classList.remove('active');
+				document.getElementById(t.dataset.dropdown).classList.remove('active');
 			});
 		}
 	});
@@ -159,7 +188,10 @@ const handleCatalog = () => {
 		// Assign classes
 		[openCatalogBtn, starEl, headerEl, menuEl].forEach(el => el.classList.toggle('active'));
 		overlayEl.classList.toggle('hidden');
-		window.scrollTo(0, 0);
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
 		document.body.classList.toggle('no-scroll');
 
 		// Initialize menu with catalogs
@@ -199,72 +231,69 @@ const handleCatalog = () => {
 		searchAndRender(inputEl.value, menuEl, 'Ничего не нашлось');
 	});
 };
-const handleBottomNavbar = () => {
-	const buttonsList = document.querySelector('.bottombar__list');
-	const items = document.querySelectorAll('[data-item]');
-	const buttons = document.querySelectorAll('[data-menu]');
-	const overlay = document.querySelector('.overlay');
-
-	const handleSearch = () => {
-		const containerEl = document.querySelector('.bottombar__search-container');
-		const inputEl = document.querySelector('#mobile-search');
-		const formEl = document.querySelector('.bottombar__search-form');
-		const clearInputBtn = document.querySelector('.bottombar__search-clear');
-
-		if (containerEl.innerHTML === '') {
-			const html = catalog.map(getCatalogTemplate).join('');
-			containerEl.innerHTML = html;
-		}
-
-		formEl.addEventListener('submit', e => {
-			e.preventDefault();
-			searchAndRender(inputEl.value, containerEl, 'Ничего не нашлось');
-		});
-		inputEl.addEventListener('input', e => {
-			clearInputBtn.classList.toggle('active', e.target.value);
-		});
-		clearInputBtn.addEventListener('click', () => {
-			inputEl.value = '';
-
-			// Reset with catalogs
-			if (containerEl.firstElementChild.classList.contains('catalog__search')) {
-				const html = catalog.map(getCatalogTemplate).join('');
-				containerEl.innerHTML = html;
+const handleSliders = () => {
+	const sliders = document.querySelectorAll('.slider__container');
+	// const bp = {
+	// 	0: { slidesPerView: 1, spaceBetween: 20 },
+	// 	768: { slidesPerView: 2, spaceBetween: 20 },
+	// 	1024: { slidesPerView: 3, spaceBetween: 20 },
+	// 	1440: { slidesPerView: 4, spaceBetween: 20 }
+	// };
+	sliders.forEach(slider => {
+		const prevBtn = document.querySelector(slider.dataset.navigationPrevEl);
+		const nextBtn = document.querySelector(slider.dataset.navigationNextEl);
+		const swiperParams = {
+			grabCursor: true,
+			navigation: {
+				prevEl: prevBtn,
+				nextEl: nextBtn
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1.4,
+					spaceBetween: 8
+				},
+				512: {
+					slidesPerView: 2.5
+				},
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 12
+				},
+				1024: {
+					slidesPerView: 3.5,
+					spaceBetween: 16
+				},
+				1440: {
+					slidesPerView: 4,
+					spaceBetween: 20
+				}
 			}
-		});
-	};
-	buttonsList.addEventListener('click', e => {
-		const selectedBtn = e.target.closest('.bottombar__button');
-		const type = selectedBtn?.dataset.menu;
-		if (type) {
-			const selectedItem = document.querySelector(`[data-item="${type}"]`);
+		};
 
-			// Hide all others
-			items.forEach(i => i !== selectedItem && i.classList.add('ds-none'));
-			buttons.forEach(b => b !== selectedBtn && b.classList.remove('active'));
+		// now we need to assign all parameters to Swiper element
+		Object.assign(slider, swiperParams);
 
-			// Activate buttons & menu
-			selectedItem?.classList.toggle('ds-none');
-			selectedBtn.classList.toggle('active');
-
-			// Toggle overlay & body scroll
-			const allHidden = Array.from(items).every(i => i.classList.contains('ds-none'));
-			overlay.classList.toggle('hidden', allHidden);
-			document.body.classList.toggle('no-scroll', !allHidden);
-
-			// Different stuff for search
-			if (type === 'search') handleSearch();
-		}
+		// and now initialize it
+		slider.initialize();
 	});
-	overlay.addEventListener('click', () => {
-		items.forEach(i => i.classList.add('ds-none'));
-		buttons.forEach(b => b.classList.remove('active'));
-		overlay.classList.toggle('hidden');
-		document.body.classList.toggle('no-scroll');
+};
+const handleBottomModals = () => {
+	const modals = document.querySelectorAll('.modal');
+	modals.forEach(modal => {
+		const btn = document.querySelector(`[data-modal="${modal.id}"]`);
+		modal.addEventListener('hidden.bs.modal', () => {
+			btn.classList.remove('active');
+		});
+		modal.addEventListener('show.bs.modal', () => {
+			if (modal.id.includes('search')) handleSearch();
+			btn.classList.add('active');
+		});
 	});
 };
 
 setCopyrightYear();
+handleSliders();
 handleToggleDropdowns();
 if (window.innerWidth > 768) handleCatalog();
-if (window.innerWidth < 768) handleBottomNavbar();
+else handleBottomModals();

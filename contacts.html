@@ -4,183 +4,226 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous" />
 		<link rel="stylesheet" href="src/scss/contacts.scss" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
 			rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script type="module" src="src/js/main.js" defer></script>
 		<title>Contacts Page</title>
 	</head>
 	<body>
-		<div class="container">
+		<div class="holder">
 			<!-- Overlay -->
 			<div class="overlay hidden"></div>
 
+			<!-- Call Modal -->
+			<div class="modal fade" id="call-modal" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered m-0 h-100 align-end">
+					<div class="modal-content bottombar-content">
+						<!-- your original modal markup, unmodified -->
+						<div class="bottombar__call" data-item="call">
+							<svg viewBox="0 0 375 275" class="bottombar__call-vector">
+								<use href="src/assets/sprites.svg#call-vector"></use>
+							</svg>
+							<svg viewBox="0 0 91 91" width="91" height="91">
+								<use href="src/assets/sprites.svg#call"></use>
+							</svg>
+							<div class="bottombar__call-content">
+								<a href="tel:+7 747 609 99 95" class="bottombar__call-tel">
+									+7 747 609 99 95
+								</a>
+								<p class="bottombar__call-text">
+									Наши консультанты помогут подобрать идеальное украшение. Звоните
+									– мы на связи!"
+								</p>
+							</div>
+							<div class="bottombar__call-bottom" data-dismiss="modal">
+								<a href="tel:+7 747 609 99 95" class="button button--green">
+									Позвонить
+								</a>
+								<button class="bottombar__call-x">
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										class="fill-white">
+										<use href="src/assets/sprites.svg#x"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Menu Modal -->
+			<div class="modal fade" id="menu-modal" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered m-0 h-100 align-end">
+					<div class="modal-content bottombar-content">
+						<div class="bottombar__menu" data-item="menu">
+							<h3 class="bottombar__menu-title">Меню</h3>
+							<nav>
+								<ul class="bottombar__nav">
+									<li>
+										<a href="/" class="bottombar__nav-item">
+											<div class="bottombar__nav-icon">
+												<svg
+													viewBox="0 0 20 20"
+													width="20"
+													height="20"
+													fill="none"
+													class="stroke-white">
+													<use href="src/assets/sprites.svg#home"></use>
+												</svg>
+											</div>
+											<span>Главная</span>
+											<svg
+												viewBox="0 0 24 24"
+												width="24"
+												height="24"
+												fill="none"
+												class="stroke-grey-3">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="/about" class="bottombar__nav-item">
+											<div class="bottombar__nav-icon">
+												<svg
+													viewBox="0 0 20 20"
+													width="20"
+													height="20"
+													fill="none"
+													class="stroke-white">
+													<use
+														href="src/assets/sprites.svg#octagon"></use>
+												</svg>
+											</div>
+											<span>О нас</span>
+											<svg
+												viewBox="0 0 24 24"
+												width="24"
+												height="24"
+												fill="none"
+												class="stroke-grey-3">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="/faq" class="bottombar__nav-item">
+											<div class="bottombar__nav-icon">
+												<svg
+													viewBox="0 0 20 20"
+													width="20"
+													height="20"
+													fill="none"
+													class="stroke-white">
+													<use href="src/assets/sprites.svg#faq"></use>
+												</svg>
+											</div>
+											<span>FAQ</span>
+											<svg
+												viewBox="0 0 24 24"
+												width="24"
+												height="24"
+												fill="none"
+												class="stroke-grey-3">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="/contacts" class="bottombar__nav-item">
+											<div class="bottombar__nav-icon">
+												<svg viewBox="0 0 20 20" width="20" height="20">
+													<use
+														href="src/assets/sprites.svg#contacts"></use>
+												</svg>
+											</div>
+											<span>Контакты</span>
+											<svg
+												viewBox="0 0 24 24"
+												width="24"
+												height="24"
+												fill="none"
+												class="stroke-grey-3">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</nav>
+							<ul class="bottombar__languages">
+								<li>
+									<button class="bottombar__language active">Rus</button>
+								</li>
+								<li>
+									<button class="bottombar__language">Eng</button>
+								</li>
+								<li>
+									<button class="bottombar__language">Kaz</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Search Modal -->
+			<div class="modal fade" id="search-modal" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered m-0 h-100 align-end">
+					<div class="modal-content bottombar-content">
+						<div class="bottombar__search" data-item="search">
+							<form class="bottombar__search-form">
+								<svg viewBox="0 0 24 24" height="24" width="24">
+									<use href="src/assets/sprites.svg#stars"></use>
+								</svg>
+								<input
+									type="text"
+									name="search"
+									id="mobile-search"
+									placeholder="Введите название изделия"
+									required
+									class="bottombar__search-input" />
+								<button class="bottombar__search-clear" type="button">
+									<svg
+										class="stroke-white fill-grey-4"
+										viewBox="0 0 24 24"
+										width="24"
+										height="24">
+										<use href="src/assets/sprites.svg#outlined-x"></use>
+									</svg>
+								</button>
+							</form>
+							<div class="bottombar__search-container"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<!-- Nav Bottombar Mobile -->
 			<div class="bottombar">
-				<div class="bottombar__menu ds-none" data-item="menu">
-					<h3 class="bottombar__menu-title">Меню</h3>
-					<nav>
-						<ul class="bottombar__nav">
-							<li>
-								<a href="/" class="bottombar__nav-item">
-									<div class="bottombar__nav-icon">
-										<svg
-											viewBox="0 0 20 20"
-											width="20"
-											height="20"
-											fill="none"
-											class="stroke-white">
-											<use href="src/assets/sprites.svg#home"></use>
-										</svg>
-									</div>
-									<span>Главная</span>
-									<svg
-										viewBox="0 0 24 24"
-										width="24"
-										height="24"
-										fill="none"
-										class="stroke-grey-3">
-										<use
-											href="src/assets/sprites.svg#chevron-right-arrow"></use>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="/about" class="bottombar__nav-item">
-									<div class="bottombar__nav-icon">
-										<svg
-											viewBox="0 0 20 20"
-											width="20"
-											height="20"
-											fill="none"
-											class="stroke-white">
-											<use href="src/assets/sprites.svg#octagon"></use>
-										</svg>
-									</div>
-									<span>О нас</span>
-									<svg
-										viewBox="0 0 24 24"
-										width="24"
-										height="24"
-										fill="none"
-										class="stroke-grey-3">
-										<use
-											href="src/assets/sprites.svg#chevron-right-arrow"></use>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="/faq" class="bottombar__nav-item">
-									<div class="bottombar__nav-icon">
-										<svg
-											viewBox="0 0 20 20"
-											width="20"
-											height="20"
-											fill="none"
-											class="stroke-white">
-											<use href="src/assets/sprites.svg#faq"></use>
-										</svg>
-									</div>
-									<span>FAQ</span>
-									<svg
-										viewBox="0 0 24 24"
-										width="24"
-										height="24"
-										fill="none"
-										class="stroke-grey-3">
-										<use
-											href="src/assets/sprites.svg#chevron-right-arrow"></use>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="/contacts" class="bottombar__nav-item">
-									<div class="bottombar__nav-icon">
-										<svg viewBox="0 0 20 20" width="20" height="20">
-											<use href="src/assets/sprites.svg#contacts"></use>
-										</svg>
-									</div>
-									<span>Контакты</span>
-									<svg
-										viewBox="0 0 24 24"
-										width="24"
-										height="24"
-										fill="none"
-										class="stroke-grey-3">
-										<use
-											href="src/assets/sprites.svg#chevron-right-arrow"></use>
-									</svg>
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<ul class="bottombar__languages">
-						<li>
-							<button class="bottombar__language active">Rus</button>
-						</li>
-						<li>
-							<button class="bottombar__language">Eng</button>
-						</li>
-						<li>
-							<button class="bottombar__language">Kaz</button>
-						</li>
-					</ul>
-				</div>
-				<div class="bottombar__call ds-none" data-item="call">
-					<svg viewBox="0 0 375 275" class="bottombar__call-vector">
-						<use href="src/assets/sprites.svg#call-vector"></use>
-					</svg>
-					<svg viewBox="0 0 91 91" width="91" height="91">
-						<use href="src/assets/sprites.svg#call"></use>
-					</svg>
-					<div class="bottombar__call-content">
-						<a href="tel:+7 747 609 99 95" class="bottombar__call-tel"
-							>+7 747 609 99 95</a
-						>
-						<p class="bottombar__call-text">
-							Наши консультанты помогут подобрать идеальное украшение. Звоните – мы на
-							связи!"
-						</p>
-					</div>
-					<div class="bottombar__call-bottom">
-						<a href="tel:+7 747 609 99 95" class="button button--green">Позвонить</a>
-						<button class="bottombar__call-x">
-							<svg viewBox="0 0 24 24" width="24" height="24" class="fill-white">
-								<use href="src/assets/sprites.svg#x"></use>
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="bottombar__search ds-none" data-item="search">
-					<form class="bottombar__search-form">
-						<svg viewBox="0 0 24 24" height="24" width="24">
-							<use href="src/assets/sprites.svg#stars"></use>
-						</svg>
-						<input
-							type="text"
-							name="search"
-							id="mobile-search"
-							placeholder="Введите название изделия"
-							required
-							class="bottombar__search-input" />
-						<button class="bottombar__search-clear" type="button">
-							<svg
-								class="stroke-white fill-grey-4"
-								viewBox="0 0 24 24"
-								width="24"
-								height="24">
-								<use href="src/assets/sprites.svg#outlined-x"></use>
-							</svg>
-						</button>
-					</form>
-					<div class="bottombar__search-container"></div>
-				</div>
 				<ul class="bottombar__list">
 					<li>
-						<button class="bottombar__button" data-menu="call">
+						<button
+							class="bottombar__button"
+							data-modal="call-modal"
+							data-bs-toggle="modal"
+							data-bs-target="#call-modal">
 							<svg width="24" height="24" viewBox="0 0 24 24" class="fill-grey-3">
 								<use href="src/assets/sprites.svg#phone"></use>
 							</svg>
@@ -194,7 +237,11 @@
 						</a>
 					</li>
 					<li>
-						<button class="bottombar__button" data-menu="search">
+						<button
+							class="bottombar__button"
+							data-modal="search-modal"
+							data-bs-toggle="modal"
+							data-bs-target="#search-modal">
 							<svg
 								width="24"
 								height="24"
@@ -205,7 +252,11 @@
 						</button>
 					</li>
 					<li>
-						<button class="bottombar__button" data-menu="menu">
+						<button
+							class="bottombar__button"
+							data-modal="menu-modal"
+							data-bs-toggle="modal"
+							data-bs-target="#menu-modal">
 							<svg width="24" height="24" viewBox="0 0 24 24" class="stroke-grey-3">
 								<use href="src/assets/sprites.svg#mobile-menu"></use>
 							</svg>
@@ -280,7 +331,7 @@
 						<div class="header__languages">
 							<button
 								class="header__languages-selected"
-								data-toggle="language-options">
+								data-dropdown="language-options">
 								<svg class="icon stroke-black" fill="none" viewBox="0 0 16 16">
 									<use href="src/assets/sprites.svg#globe"></use>
 								</svg>
@@ -301,7 +352,7 @@
 							</ul>
 						</div>
 						<div class="header__cta">
-							<button class="header__call" data-toggle="cta-options">
+							<button class="header__call" data-dropdown="cta-options">
 								<svg class="icon fill-white" viewBox="0 0 24 24">
 									<use href="src/assets/sprites.svg#phone"></use>
 								</svg>
