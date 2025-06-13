@@ -240,8 +240,10 @@ const handleSliders = () => {
 	// 	1440: { slidesPerView: 4, spaceBetween: 20 }
 	// };
 	sliders.forEach(slider => {
-		const prevBtn = document.querySelector(slider.dataset.navigationPrevEl);
-		const nextBtn = document.querySelector(slider.dataset.navigationNextEl);
+		const prevBtn = slider.previousElementSibling.querySelector(
+			'.slider__button:first-of-type'
+		);
+		const nextBtn = slider.previousElementSibling.querySelector('.slider__button:last-of-type');
 		const swiperParams = {
 			grabCursor: true,
 			navigation: {
@@ -291,9 +293,28 @@ const handleBottomModals = () => {
 		});
 	});
 };
+const handleSearchForms = () => {
+	const forms = document.querySelectorAll('form.search');
+	forms.forEach(form => {
+		const input = form.querySelector('input');
+		const clearBtn = form.querySelector('button');
+
+		form.addEventListener('submit', e => {
+			e.preventDefault();
+		});
+		input.addEventListener('input', e => {
+			form.classList.toggle('active', e.target.value);
+		});
+		clearBtn.addEventListener('click', () => {
+			input.value = '';
+			form.classList.remove('active');
+		});
+	});
+};
 
 setCopyrightYear();
 handleSliders();
+handleSearchForms();
 handleToggleDropdowns();
 if (window.innerWidth > 768) handleCatalog();
 else handleBottomModals();

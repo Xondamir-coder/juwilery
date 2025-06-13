@@ -14,7 +14,8 @@ export default defineConfig({
 				about: 'about.html',
 				contacts: 'contacts.html',
 				faq: 'faq.html',
-				catalog: 'catalog.html'
+				catalog: 'catalog.html',
+				product: 'product.html'
 			}
 		}
 	}

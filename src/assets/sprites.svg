@@ -139,6 +139,13 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M20 13H4V11H20V13Z" fill="inherit" />
         </symbol>
 
+        <symbol id="share" viewBox="0 0 20 20" fill="none">
+            <path
+                d="M3.33203 10.0013V16.668C3.33203 17.11 3.50763 17.5339 3.82019 17.8465C4.13275 18.159 4.55667 18.3346 4.9987 18.3346H14.9987C15.4407 18.3346 15.8646 18.159 16.1772 17.8465C16.4898 17.5339 16.6654 17.11 16.6654 16.668V10.0013M13.332 5.0013L9.9987 1.66797M9.9987 1.66797L6.66536 5.0013M9.9987 1.66797V12.5013"
+                stroke="inherit" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+
+
         <symbol id="long-left-arrow" viewBox="0 0 24 24" fill="none">
             <g clip-path="url(#clip0_1_7403)">
                 <path

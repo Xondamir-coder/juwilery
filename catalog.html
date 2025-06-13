@@ -17,7 +17,7 @@
 			rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script type="module" src="src/js/main.js" defer></script>
-		<title>Catalog Page</title>
+		<title>Directory Page</title>
 	</head>
 	<body>
 		<div class="holder">
@@ -45,11 +45,11 @@
 									– мы на связи!"
 								</p>
 							</div>
-							<div class="bottombar__call-bottom" data-dismiss="modal">
+							<div class="bottombar__call-bottom">
 								<a href="tel:+7 747 609 99 95" class="button button--green">
 									Позвонить
 								</a>
-								<button class="bottombar__call-x">
+								<button class="bottombar__call-x" data-bs-dismiss="modal">
 									<svg
 										viewBox="0 0 24 24"
 										width="24"
@@ -413,7 +413,7 @@
 								</svg>
 							</li>
 							<li class="breadcrumb active">
-								<a href="/catalog" class="breadcrumb__link">Каталог</a>
+								<a href="/directory" class="breadcrumb__link">Каталог</a>
 								<svg viewBox="0 0 20 1" class="breadcrumb__divider">
 									<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
 								</svg>
@@ -428,94 +428,126 @@
 							class="hero__image" />
 					</div>
 				</section>
-				<section class="catalog">
-					<div class="catalog__top">
-						<div class="catalog__filter">
-							<div class="catalog__filter-left">
+				<section class="directory">
+					<div class="directory__boom">
+						<form class="search" id="directory-search">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/assets/sprites.svg#stars"></use>
+							</svg>
+							<input
+								type="text"
+								name="search"
+								placeholder="Введите название изделия"
+								id="directory-search-input"
+								class="search__input" />
+							<button class="search__button" type="button">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									class="stroke-white fill-grey-4 icon">
+									<use href="src/assets/sprites.svg#outlined-x"></use>
+								</svg>
+							</button>
+						</form>
+						<div class="directory__top">
+							<div class="directory__filter">
+								<div class="directory__filter-left">
+									<svg
+										viewBox="0 0 24 24"
+										width="24"
+										height="24"
+										class="stroke-green">
+										<use href="src/assets/sprites.svg#filter"></use>
+									</svg>
+									<p class="directory__filter-text">
+										Фильтр <span class="color-grey-3">(2)</span>
+									</p>
+								</div>
+								<button class="directory__filter-button color-grey-3">
+									Сбросить все
+								</button>
+							</div>
+							<button class="directory__sort">
+								<span>Сортировать</span>
 								<svg
 									viewBox="0 0 24 24"
 									width="24"
 									height="24"
-									class="stroke-green">
-									<use href="src/assets/sprites.svg#filter"></use>
+									class="stroke-black">
+									<use href="src/assets/sprites.svg#chevron-right-arrow"></use>
 								</svg>
-								<p class="catalog__filter-text">
-									Фильтр <span class="color-grey-3">(2)</span>
-								</p>
-							</div>
-							<button class="catalog__filter-button color-grey-3">
-								Сбросить все
 							</button>
 						</div>
-						<button class="catalog__sort">
-							<span>Сортировать</span>
-							<svg viewBox="0 0 24 24" width="24" height="24" class="stroke-black">
-								<use href="src/assets/sprites.svg#chevron-right-arrow"></use>
-							</svg>
-						</button>
+						<div class="directory__buttons">
+							<button class="directory__button">Стоимость</button>
+							<button class="directory__button">Материал</button>
+							<button class="directory__button">Вставка</button>
+							<button class="directory__button">Стиль</button>
+							<button class="directory__button">Стоимость</button>
+						</div>
 					</div>
-					<div class="catalog__sidebar">
-						<ul class="catalog__categories">
+					<div class="directory__sidebar">
+						<ul class="directory__categories">
 							<li>
-								<button class="catalog__categories-item">
+								<button class="directory__categories-item">
 									<span>Все категории</span>
 									<span class="color-grey-3">(666)</span>
 								</button>
 							</li>
 							<li>
-								<button class="catalog__categories-item">
+								<button class="directory__categories-item">
 									<span>Кольца</span>
 									<span class="color-grey-3">(60)</span>
 								</button>
 							</li>
 							<li>
-								<button class="catalog__categories-item">
+								<button class="directory__categories-item">
 									<span>Серьги</span>
 									<span class="color-grey-3">(60)</span>
 								</button>
 							</li>
 							<li>
-								<button class="catalog__categories-item">
+								<button class="directory__categories-item">
 									<span>Ожерелье</span>
 									<span class="color-grey-3">(60)</span>
 								</button>
 							</li>
 							<li>
-								<button class="catalog__categories-item">
+								<button class="directory__categories-item">
 									<span>Комплекты</span>
 									<span class="color-grey-3">(60)</span>
 								</button>
 							</li>
 							<li>
-								<button class="catalog__categories-item">
+								<button class="directory__categories-item">
 									<span>Детские изделия</span>
 									<span class="color-grey-3">(60)</span>
 								</button>
 							</li>
 							<li>
-								<button class="catalog__categories-item">
+								<button class="directory__categories-item">
 									<span>Мужские изделия</span>
 									<span class="color-grey-3">(60)</span>
 								</button>
 							</li>
 						</ul>
-						<div class="catalog__row">
-							<div class="catalog__row-top">
+						<div class="directory__row">
+							<div class="directory__row-top">
 								<span>Материал (2)</span>
-								<button class="catalog__row-reset">
+								<button class="directory__row-reset">
 									<span>Сбросить</span>
 									<svg viewBox="0 0 25 24" width="16" height="16">
 										<use href="src/assets/sprites.svg#x"></use>
 									</svg>
 								</button>
 							</div>
-							<ul class="catalog__row-list">
+							<ul class="directory__row-list">
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Золото" />
 											<span>Золото</span>
 										</div>
@@ -523,11 +555,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Белое золото" />
 											<span>Белое золото</span>
 										</div>
@@ -535,11 +567,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Желтое золото" />
 											<span>Желтое золото</span>
 										</div>
@@ -547,11 +579,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Розовое золото" />
 											<span>Розовое золото</span>
 										</div>
@@ -559,11 +591,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Серебро" />
 											<span>Серебро</span>
 										</div>
@@ -571,25 +603,25 @@
 									</button>
 								</li>
 							</ul>
-							<button class="catalog__row-more">Показать еще</button>
+							<button class="directory__row-more">Показать еще</button>
 						</div>
-						<div class="catalog__row">
-							<div class="catalog__row-top">
+						<div class="directory__row">
+							<div class="directory__row-top">
 								<span>Вставка</span>
-								<button class="catalog__row-reset">
+								<button class="directory__row-reset">
 									<span>Сбросить</span>
 									<svg viewBox="0 0 25 24" width="16" height="16">
 										<use href="src/assets/sprites.svg#x"></use>
 									</svg>
 								</button>
 							</div>
-							<ul class="catalog__row-list">
+							<ul class="directory__row-list">
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Без вставок" />
 											<span>Без вставок</span>
 										</div>
@@ -597,11 +629,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Бриллиант" />
 											<span>Бриллиант</span>
 										</div>
@@ -609,11 +641,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Изумруд" />
 											<span>Изумруд</span>
 										</div>
@@ -621,11 +653,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Жемчуг синтетический" />
 											<span>Жемчуг синтетический</span>
 										</div>
@@ -633,11 +665,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Александрит гидротермальный" />
 											<span>Александрит гидротермальный</span>
 										</div>
@@ -645,25 +677,25 @@
 									</button>
 								</li>
 							</ul>
-							<button class="catalog__row-more">Показать еще</button>
+							<button class="directory__row-more">Показать еще</button>
 						</div>
-						<div class="catalog__row">
-							<div class="catalog__row-top">
+						<div class="directory__row">
+							<div class="directory__row-top">
 								<span>Стиль</span>
-								<button class="catalog__row-reset">
+								<button class="directory__row-reset">
 									<span>Сбросить</span>
 									<svg viewBox="0 0 25 24" width="16" height="16">
 										<use href="src/assets/sprites.svg#x"></use>
 									</svg>
 								</button>
 							</div>
-							<ul class="catalog__row-list">
+							<ul class="directory__row-list">
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Ампир" />
 											<span>Ампир</span>
 										</div>
@@ -671,11 +703,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Модерн" />
 											<span>Модерн</span>
 										</div>
@@ -683,11 +715,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Барокко" />
 											<span>Барокко</span>
 										</div>
@@ -695,11 +727,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Класицим" />
 											<span>Класицим</span>
 										</div>
@@ -707,11 +739,11 @@
 									</button>
 								</li>
 								<li>
-									<button class="catalog__row-item">
-										<div class="catalog__row-item_left">
+									<button class="directory__row-item">
+										<div class="directory__row-item_left">
 											<input
 												type="checkbox"
-												class="catalog__checkbox"
+												class="directory__checkbox"
 												value="Готика" />
 											<span>Готика</span>
 										</div>
@@ -719,11 +751,11 @@
 									</button>
 								</li>
 							</ul>
-							<button class="catalog__row-more">Показать еще</button>
+							<button class="directory__row-more">Показать еще</button>
 						</div>
-						<button class="catalog__submit button button--green">Применить</button>
+						<button class="directory__submit button button--green">Применить</button>
 					</div>
-					<div class="catalog__products">
+					<div class="directory__products">
 						<div class="card">
 							<img
 								src="src/assets/images/brooches.jpg"
@@ -828,12 +860,12 @@
 					<div class="slider__header">
 						<h2 class="section-title">Советуем обратить внимание</h2>
 						<div class="slider__buttons">
-							<button class="slider__button" id="popular-btn-prev">
+							<button class="slider__button">
 								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
 									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
 								</svg>
 							</button>
-							<button class="slider__button" id="popular-btn-next">
+							<button class="slider__button">
 								<svg
 									class="icon stroke-black rotate-180"
 									viewBox="0 0 24 24"
@@ -843,11 +875,7 @@
 							</button>
 						</div>
 					</div>
-					<swiper-container
-						class="slider__container"
-						init="false"
-						data-navigation-prev-el="#popular-btn-prev"
-						data-navigation-next-el="#popular-btn-next">
+					<swiper-container class="slider__container" init="false">
 						<swiper-slide class="slider__item">
 							<img
 								src="src/assets/images/ring.png"
@@ -900,7 +928,7 @@
 				<nav class="footer--mobile footer__nav">
 					<ul class="footer__nav-list">
 						<li>
-							<a href="/catalog" class="footer__nav-item"> Каталог </a>
+							<a href="/directory" class="footer__nav-item"> Каталог </a>
 						</li>
 						<li>
 							<a href="/about" class="footer__nav-item"> О нас </a>
@@ -1013,7 +1041,7 @@
 					<nav class="footer__nav">
 						<ul class="footer__nav-list">
 							<li>
-								<a href="/catalog" class="footer__nav-item"> Каталог </a>
+								<a href="/directory" class="footer__nav-item"> Каталог </a>
 							</li>
 							<li>
 								<a href="/about" class="footer__nav-item"> О нас </a>

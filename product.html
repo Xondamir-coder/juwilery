@@ -9,16 +9,15 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 			crossorigin="anonymous" />
-		<link rel="stylesheet" href="src/scss/index.scss" />
+		<link rel="stylesheet" href="src/scss/product.scss" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
 			rel="stylesheet" />
-		<!-- Replace your BS4 scripts with these: -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-		<script type="module" src="src/js/main.js" defer></script>
-		<title>Main Page</title>
+		<script type="module" src="src/js/pages/product.js" defer></script>
+		<title>Contacts Page</title>
 	</head>
 	<body>
 		<div class="holder">
@@ -403,251 +402,396 @@
 				</div>
 			</header>
 
-			<!-- Hero -->
-			<section class="hero">
-				<img src="src/assets/images/main-hero.png" alt="main hero" class="hero__image" />
-				<div class="hero__content">
-					<h1 class="hero__title">House of Oriental Jewelry</h1>
-					<p class="hero__subtitle">
-						Откройте для себя мир изысканных восточных украшений, где традиции
-						мастерства встречаются с утонченной элегантностью
-					</p>
-					<div class="hero__buttons">
-						<button class="hero__button button button--black">
-							Подборать украшения
+			<main class="main">
+				<nav>
+					<ul class="breadcrumbs">
+						<li class="breadcrumb">
+							<a href="/" class="breadcrumb__link">Главная</a>
+							<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+								<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+							</svg>
+						</li>
+						<li class="breadcrumb">
+							<a href="/catalog" class="breadcrumb__link">Каталог</a>
+							<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+								<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+							</svg>
+						</li>
+						<li class="breadcrumb">
+							<a href="/catalog" class="breadcrumb__link">Кольца</a>
+							<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+								<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+							</svg>
+						</li>
+						<li class="breadcrumb active">
+							<a href="/product" class="breadcrumb__link"
+								>Кольцо из золота с фианитом</a
+							>
+							<svg viewBox="0 0 20 1" class="breadcrumb__divider">
+								<use href="src/assets/sprites.svg#breadcrumb-divider"></use>
+							</svg>
+						</li>
+					</ul>
+					<div class="top">
+						<button class="top__back">
+							<svg viewBox="0 0 24 24" width="24" height="24" class="stroke-black">
+								<use xlink:href="src/assets/sprites.svg#long-left-arrow" />
+							</svg>
 						</button>
-						<button class="hero__button button button--white">
-							<span>Скачать каталог</span>
-							<svg class="icon stroke-black" viewBox="0 0 25 24">
-								<use href="src/assets/sprites.svg#up-right-arrow"></use>
+						<button class="top__share">
+							<svg viewBox="0 0 20 20" width="20" height="20" class="stroke-black">
+								<use xlink:href="src/assets/sprites.svg#share" />
 							</svg>
 						</button>
 					</div>
-				</div>
-			</section>
-
-			<!-- Main content -->
-			<main class="main">
-				<!-- Showcase  -->
-				<div class="showcase__container">
-					<section class="showcase">
-						<div class="showcase__top">
-							<h2 class="section-title">
-								Откройте мир <br />
-								восточных украшений
-							</h2>
-							<svg class="showcase__ornament" viewBox="0 0 64 64">
-								<use href="src/assets/sprites.svg#ornament"></use>
-							</svg>
-							<p class="text-default">
-								Погрузитесь в мир роскоши и мастерства, где украшения объединяют
-								традиции,элегантность и красоту драгоценных камней
+				</nav>
+				<div class="product">
+					<div class="product__container">
+						<swiper-container
+							slides-per-view="1"
+							space-between="10"
+							class="product__slider">
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.jpg"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.jpg"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.jpg"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.jpg"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.jpg"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.jpg"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+						</swiper-container>
+						<div class="dots">
+							<button class="dot active" data-index="0"></button>
+							<button class="dot" data-index="1"></button>
+							<button class="dot" data-index="2"></button>
+							<button class="dot" data-index="3"></button>
+							<button class="dot" data-index="4"></button>
+							<button class="dot" data-index="5"></button>
+						</div>
+					</div>
+					<div class="product__images">
+						<img
+							src="src/assets/images/girl-showoff.jpg"
+							alt="showoff"
+							class="product__image" />
+						<img
+							src="src/assets/images/girl-showoff.jpg"
+							alt="showoff"
+							class="product__image" />
+						<img
+							src="src/assets/images/girl-showoff.jpg"
+							alt="showoff"
+							class="product__image" />
+						<img
+							src="src/assets/images/girl-showoff.jpg"
+							alt="showoff"
+							class="product__image" />
+						<img
+							src="src/assets/images/girl-showoff.jpg"
+							alt="showoff"
+							class="product__image" />
+						<img
+							src="src/assets/images/girl-showoff.jpg"
+							alt="showoff"
+							class="product__image" />
+					</div>
+					<div class="product__sidebar">
+						<h2 class="product__title">Кольцо с фианитом из белого золота</h2>
+						<ul class="product__details">
+							<li class="product__detail">
+								<span class="color-grey-3"> Тип металла </span>
+								<span>Белое золото 585 проба</span>
+							</li>
+							<li class="product__detail">
+								<span class="color-grey-3"> Тип металла </span>
+								<span>Морганит (7), Сапфир (52), Фенакит (46)</span>
+							</li>
+							<li class="product__detail">
+								<span class="color-grey-3"> Тип металла </span>
+								<span>Белое золото 585 проба</span>
+							</li>
+							<li class="product__detail">
+								<span class="color-grey-3"> Тип металла </span>
+								<span>Белое золото 585 проба</span>
+							</li>
+							<li class="product__detail">
+								<span class="color-grey-3"> Тип металла </span>
+								<span>Белое золото 585 проба</span>
+							</li>
+							<li class="product__detail">
+								<span class="color-grey-3"> Тип металла </span>
+								<span>Белое золото 585 проба</span>
+							</li>
+						</ul>
+						<div class="product__about">
+							<h3 class="product__about-title">Об изделии</h3>
+							<p class="product__about-text">
+								Вдохновленные кочевым наследием Укорененные в духе кочевой культуры,
+								наши художники стремятся поделиться с миром древней казахской
+								философией, переосмысленной через призму роскошных материалов,
+								современного дизайна и вневременной моды. В основе этого видения
+								лежит Birlik— символ единства и вечного путешествия кочевника. На
+								протяжении столетий ориентация в бескрайних степях определялась не
+								картами, а основными направлениями: Восток (вперед), Запад (назад),
+								Юг (направо) и Север (налево). Это пространственное осознание
+								сформировало не только путешествие — оно сформировало образ жизни,
+								мировоззрение, которое по-прежнему актуально и сегодня. В своей
+								работе мы чтим это наследие и несем его вперед с каждым стежком и
+								силуэтом.
 							</p>
+							<button class="product__about-button">Показать больше</button>
 						</div>
-						<div class="showcase__grid">
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<img
-									src="src/assets/images/girl-ring.jpg"
-									alt="girl ring"
-									class="showcase__image" />
-								<div class="showcase__item-content">
-									<div class="showcase__item-content_top">
-										<span class="showcase__item-name">Кольца</span>
-										<span class="showcase__item-amount">66</span>
-									</div>
-									<p class="text-default">
-										Погрузитесь в мир роскоши и мастерства, <br />
-										где украшения объединяют традиции,
-									</p>
-								</div>
-							</a>
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<span class="showcase__item-name">Серьги</span>
-								<svg
-									viewBox="0 0 360 300"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									class="showcase__vector">
-									<path
-										d="M189.883 275.923C191.18 290.217 176.042 293.682 172.149 295.848C173.735 298.736 180.022 303.991 192.478 301.912C208.049 299.313 236.596 275.923 211.942 229.141C196.055 198.994 142.112 205.096 122.342 217.219C128.558 213.199 141.636 197.088 147.063 162.435C153.984 118.253 102.514 84.0329 69.6418 103.958C43.3445 119.898 50.6108 144.098 57.5312 154.205C57.8196 147.13 62.808 134.279 80.4549 139.477C102.514 145.975 98.6209 174.13 93.4306 182.36C88.2403 190.59 72.237 201.852 43.6905 193.622C20.8533 187.038 5.0518 163.445 0.00569873 152.472V232.173C26.3031 259.202 69.4975 255.564 87.8075 250.366C79.3013 262.206 67.825 297.147 89.9702 342.196C112.115 387.244 159.174 396.774 179.935 395.907C125.264 447.193 144.18 495.245 160.471 512.86C163.643 489.47 186.529 436.599 235.504 406C264.709 387.753 287.201 369.374 293.256 330.73C301.425 278.595 264.709 234.772 264.709 234.772C264.709 234.772 278.982 332.234 213.239 339.597C147.495 346.961 120.679 285.452 145.333 265.527C169.987 245.602 188.585 261.629 189.883 275.923Z"
-										fill="#E9E7E7" />
-									<path
-										d="M77.8598 46.348C30.2823 41.5833 1.73578 90.5881 0.0056925 91.8876L0.00569873 0H290.661C261.249 50.2465 280.569 76.8136 293.256 85.7656C286.768 65.8403 318.343 19.4921 347.754 54.5781C377.166 89.6639 352.512 161.568 285.471 147.274C231.838 135.839 218.141 71.1825 217.997 40.2838C173.361 91.2234 188.73 138.033 201.994 155.071C195.073 152.905 178.638 110.022 163.932 93.9956C149.226 77.9687 125.437 51.1128 77.8598 46.348Z"
-										fill="#E9E7E7" />
-									<path
-										d="M9.03453 447.708C-0.539467 411.934 0.00569873 317.072 0.00569873 317.072C57.7907 356.923 72.237 417.998 72.237 443.555C82.2715 421.377 107.848 413.234 119.382 411.934C71.6315 505.497 121.112 562.962 151.821 580C151.821 580 106.612 575.438 75.3854 560.124C32.1308 538.91 18.6085 483.481 9.03453 447.708Z"
-										fill="#E9E7E7" />
+						<div class="product__cta">
+							<button class="button button--green product__cta-button">
+								Оставить заявку
+							</button>
+							<a href="tel:+7 (702) 263 00 75" class="product__call">
+								<svg viewBox="0 0 24 24" class="product__call-icon">
+									<use href="src/assets/sprites.svg#phone"></use>
 								</svg>
-								<img
-									src="src/assets/images/earrings.png"
-									alt="girl ring"
-									class="showcase__image" />
-								<span class="showcase__item-amount">19 товаров</span>
 							</a>
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<span class="showcase__item-name">Броши</span>
-								<img
-									src="src/assets/images/brooches.jpg"
-									alt="girl ring"
-									class="showcase__image" />
-								<span class="showcase__item-amount">19 товаров</span>
-							</a>
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<span class="showcase__item-name">Браслеты</span>
-								<img
-									src="src/assets/images/bracelet.png"
-									alt="girl ring"
-									class="showcase__image" />
-								<span class="showcase__item-amount">19 товаров</span>
-							</a>
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<span class="showcase__item-name">Детское</span>
-								<img
-									src="src/assets/images/babies.png"
-									alt="girl ring"
-									class="showcase__image" />
-								<span class="showcase__item-amount">19 товаров</span>
-							</a>
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<span class="showcase__item-name">Мужское</span>
-								<img
-									src="src/assets/images/sunglasses.png"
-									alt="girl ring"
-									class="showcase__image" />
-								<span class="showcase__item-amount">19 товаров</span>
-							</a>
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<span class="showcase__item-amount">24 товара</span>
-								<img
-									src="src/assets/images/amulet.jpg"
-									alt="girl ring"
-									class="showcase__image" />
-								<span class="showcase__item-name">Ожерелье</span>
-							</a>
-							<a href="#" class="showcase__item">
-								<div class="showcase__item-arrow">
-									<svg class="icon stroke-black" viewBox="0 0 24 24">
-										<use
-											href="src/assets/sprites.svg#up-right-curved-arrow"></use>
-									</svg>
-								</div>
-								<svg
-									viewBox="0 0 461 670"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									class="showcase__vector">
-									<path
-										d="M219.499 350.999C220.999 334.499 203.499 330.499 198.999 327.999C200.833 324.666 208.1 318.6 222.5 321C240.5 324 273.5 350.999 245 405C226.634 439.799 164.277 432.756 141.421 418.762C148.608 423.402 163.725 442 170 482C178 533 118.5 572.5 80.5 549.5C50.1 531.1 58.5 503.167 66.5 491.5C66.8333 499.667 72.6 514.5 93 508.5C118.5 501 114 468.5 108 459C102 449.5 83.5 436.5 50.5 446C24.1 453.6 5.83333 480.833 0 493.5V401.5C30.4 370.3 80.3331 374.5 101.5 380.5C91.6663 366.833 78.3997 326.5 104 274.5C129.6 222.5 184 211.5 208 212.5C144.8 153.3 166.666 97.8333 185.5 77.5C189.166 104.5 211.5 165.8 271.5 195C331.5 224.2 352.166 277.167 355 300C403 291.6 445 326.167 460 344.5V502.5C424.4 438.1 362.166 436.333 335.5 443.5C354.7 410.3 391.166 392 407 387C363.8 362.6 321.666 384.5 306 398.5C315 387 322.499 285.999 246.499 277.499C170.499 268.999 139.499 339.999 167.999 362.999C196.499 385.999 217.999 367.499 219.499 350.999Z"
-										fill="#F5EFE0" />
-									<path
-										d="M90 616C35 621.5 4 564.5 2 563V669.5H336C302 611.5 324.333 580.833 339 570.5C331.5 593.5 368 647 402 606.5C436 566 407.5 483 330 499.5C268 512.7 252.167 587.333 252 623C200.4 564.2 218.167 510.167 233.5 490.5C225.5 493 206.5 542.5 189.5 561C172.5 579.5 145 610.5 90 616Z"
-										fill="#F5EFE0" />
-									<path
-										d="M0 154.5V303.5C66.8 257.5 83.5 187 83.5 157.5C95.1 183.1 124.667 192.5 138 194C82.8 86 140 19.6667 175.5 0H97C40.2 46 8.66667 122.167 0 154.5Z"
-										fill="#F5EFE0" />
-									<path
-										d="M332 0H278.5C285.333 10.6667 292.9 35.6 268.5 50C244.1 64.4 224.667 44 218 32C216 58.5 233.5 104.5 289 84.5C333.4 68.5 336.167 21.5 332 0Z"
-										fill="#F5EFE0" />
-									<path
-										d="M461 0H430C430 48.8 410.333 66 400.5 68.5C430.5 72.1 453.333 103 461 118V0Z"
-										fill="#F5EFE0" />
-									<path
-										d="M461 240V190.5C456 197.5 440.3 210.4 417.5 206C394.7 201.6 392 179.5 398 167.5C405.5 187.5 441 173 421.5 142.5C403.777 114.78 373 129.5 360 142.5C348.5 154 332.5 185 375.5 231.5C409.9 268.7 446.833 252.667 461 240Z"
-										fill="#F5EFE0" />
+							<a
+								href="https://whatsapp.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="product__call">
+								<svg viewBox="0 0 24 24" class="product__call-icon">
+									<use href="src/assets/sprites.svg#whatsapp"></use>
 								</svg>
-
-								<img
-									src="src/assets/images/girl-crossing.jpg"
-									alt="girl ring"
-									class="showcase__image" />
-								<div class="showcase__item-content">
-									<div class="showcase__item-content_top">
-										<span class="showcase__item-name">Комплекты</span>
-										<span class="showcase__item-amount">66</span>
-									</div>
-									<p class="text-default">
-										Погрузитесь в мир роскоши и мастерства, <br />
-										где украшения объединяют традиции,
-									</p>
-								</div>
 							</a>
 						</div>
-					</section>
-					<section class="showcase__cta">
-						<svg
-							class="showcase__cta-vector"
-							viewBox="0 0 553 295"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M261.494 347.399C259.499 369.333 282.769 374.651 288.753 377.974C286.315 382.405 276.652 390.469 257.504 387.279C233.569 383.29 189.688 347.399 227.585 275.613C252.007 229.354 334.925 238.716 365.316 257.319C355.759 251.151 335.658 226.428 327.314 173.253C316.676 105.456 395.795 52.947 446.324 83.5221C486.747 107.982 475.578 145.115 464.94 160.625C464.497 149.768 456.829 130.049 429.702 138.026C395.795 147.996 401.778 191.2 409.757 203.828C417.735 216.457 442.335 233.739 486.215 221.11C521.32 211.007 545.61 174.804 553.366 157.966V280.266C512.943 321.742 446.546 316.158 418.4 308.182C431.476 326.35 449.117 379.967 415.076 449.093C381.035 518.22 308.699 532.842 276.785 531.513C360.823 610.211 331.747 683.945 306.704 710.975C301.828 675.083 266.649 593.954 191.366 547C146.473 519 111.9 490.798 102.592 431.5C90.0341 351.5 146.473 284.254 146.473 284.254C146.473 284.254 124.533 433.807 225.592 445.106C326.65 456.406 367.871 362.022 329.975 331.447C292.078 300.872 263.489 325.465 261.494 347.399Z"
-								fill="white" />
-							<path
-								d="M433.692 -4.8797C506.826 -12.1911 550.707 63.006 553.366 65L553.366 -75.9999H106.581C151.791 1.10236 122.094 41.8692 102.592 55.6058C112.565 25.0308 64.0299 -46.0896 18.8195 7.74908C-26.3909 61.5878 11.5061 171.924 114.559 149.99C197.002 132.442 218.056 33.2284 218.277 -14.1851C286.891 63.9807 263.266 135.81 242.877 161.954C253.515 158.63 278.779 92.8276 301.385 68.2346C323.99 43.6417 360.557 2.4317 433.692 -4.8797Z"
-								fill="white" />
-							<path
-								d="M539.487 611C554.204 556.106 553.366 410.542 553.366 410.542C464.541 471.692 442.335 565.411 442.335 604.627C426.91 570.596 387.595 558.1 369.865 556.106C443.266 699.676 367.206 787.856 320.001 814C320.001 814 389.495 807 437.495 783.5C503.985 750.948 524.771 665.894 539.487 611Z"
-								fill="white" />
-						</svg>
-						<h3 class="showcase__cta-title">
-							Откройте мир <br />
-							восточных украшений
-						</h3>
-						<p class="text-default ls-tight color-grey-3">
-							Погрузитесь в мир роскоши и мастерства, где украшения объединяют
-							традиции,элегантность и красоту драгоценных камней
-						</p>
-						<a href="/catalog" class="button button--black showcase__cta-button">
-							Каталог
-						</a>
-					</section>
+					</div>
+					<div class="faq">
+						<h2 class="section-title-42">Вопросы и ответы</h2>
+						<ul class="faq__accordions">
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+							<li class="faq__accordion">
+								<button class="faq__accordion-top">
+									<h3 class="faq__accordion-question">
+										Почему цена может отличаться?
+									</h3>
+									<div class="faq__accordion-icon_container">
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#curvy-add"></use>
+										</svg>
+										<svg
+											viewBox="0 0 24 24"
+											width="24"
+											height="24"
+											class="faq__accordion-icon icon">
+											<use href="src/assets/sprites.svg#minus"></use>
+										</svg>
+									</div>
+								</button>
+								<p class="faq__accordion-answer">
+									Цена может варьироваться в зависимости от ряда факторов:
+									используемых материалов (например, редкие камни, высокая проба
+									металла), сложности ручной работы, уникальности дизайна и
+									лимитированности выпуска. Некоторые украшения создаются в
+									единственном экземпляре, что также влияет на их стоимость.
+									<br />
+									Кроме того, на итоговую цену может повлиять изменение курса
+									валют, так как часть материалов и компонентов закупается за
+									рубежом. Мы всегда стремимся сохранять честное ценообразование и
+									высокое качество на каждом этапе.
+								</p>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<!-- Popular -->
 				<section class="slider">
 					<div class="slider__header">
-						<h2 class="section-title">Популярное</h2>
+						<h2 class="section-title">Похожие товары</h2>
+						<div class="slider__buttons">
+							<button class="slider__button" id="popular-btn-prev">
+								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+							<button class="slider__button" id="popular-btn-next">
+								<svg
+									class="icon stroke-black rotate-180"
+									viewBox="0 0 24 24"
+									fill="none">
+									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<swiper-container class="slider__container" init="false">
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/ring.png"
+								alt="ring"
+								class="slider__item-image h-auto" />
+							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/girl-showoff.jpg"
+								alt="girl showoff"
+								class="slider__item-image" />
+							<h3 class="slider__item-title color-white">
+								Кольцо из золота с фианитом
+							</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/ring.png"
+								alt="ring"
+								class="slider__item-image h-auto" />
+							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
+						</swiper-slide>
+						<swiper-slide class="slider__item">
+							<img
+								src="src/assets/images/brooches.jpg"
+								alt="ring"
+								class="slider__item-image tr-scale-1-3" />
+							<h3 class="slider__item-title color-white">
+								Кольцо из золота с фианитом
+							</h3>
+						</swiper-slide>
+					</swiper-container>
+				</section>
+				<section class="slider">
+					<div class="slider__header">
+						<h2 class="section-title">Разное</h2>
 						<div class="slider__buttons">
 							<button class="slider__button">
 								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
@@ -698,185 +842,6 @@
 							</h3>
 						</swiper-slide>
 					</swiper-container>
-				</section>
-				<!-- Others -->
-				<section class="slider">
-					<div class="slider__header">
-						<h2 class="section-title">Разное</h2>
-						<div class="slider__buttons">
-							<button class="slider__button" id="others-btn-prev">
-								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
-									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
-								</svg>
-							</button>
-							<button class="slider__button" id="others-btn-next">
-								<svg
-									class="icon stroke-black rotate-180"
-									viewBox="0 0 24 24"
-									fill="none">
-									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
-								</svg>
-							</button>
-						</div>
-					</div>
-					<swiper-container class="slider__container" init="false">
-						<swiper-slide class="slider__item">
-							<img
-								src="src/assets/images/brooches.jpg"
-								alt="ring"
-								class="slider__item-image tr-scale-1-3" />
-							<h3 class="slider__item-title color-white">
-								Кольцо из золота с фианитом
-							</h3>
-						</swiper-slide>
-						<swiper-slide class="slider__item">
-							<img
-								src="src/assets/images/earrings.png"
-								alt="girl showoff"
-								class="slider__item-image h-auto w-70 x-y-centered" />
-							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
-						</swiper-slide>
-						<swiper-slide class="slider__item">
-							<img
-								src="src/assets/images/emerald.jpg"
-								alt="ring"
-								class="slider__item-image" />
-							<h3 class="slider__item-title color-white">
-								Кольцо из золота с фианитом
-							</h3>
-						</swiper-slide>
-						<swiper-slide class="slider__item">
-							<img
-								src="src/assets/images/ring.png"
-								alt="ring"
-								class="slider__item-image h-auto" />
-							<h3 class="slider__item-title">Кольцо из золота с фианитом</h3>
-						</swiper-slide>
-					</swiper-container>
-				</section>
-				<!-- Info -->
-				<section class="slider">
-					<div class="slider__header">
-						<h2 class="section-title">Сияние Востока для избранных</h2>
-						<div class="slider__buttons">
-							<button class="slider__button">
-								<svg class="icon stroke-black" viewBox="0 0 24 24" fill="none">
-									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
-								</svg>
-							</button>
-							<button class="slider__button">
-								<svg
-									class="icon stroke-black rotate-180"
-									viewBox="0 0 24 24"
-									fill="none">
-									<use href="src/assets/sprites.svg#left-curved-arrow"></use>
-								</svg>
-							</button>
-						</div>
-					</div>
-					<swiper-container class="slider__container" init="false">
-						<swiper-slide class="info__item">
-							<div class="info__item-box">
-								<img
-									src="src/assets/icons/ornament.svg"
-									class="info__item-ornament" />
-							</div>
-							<svg viewBox="0 0 53 53" class="info__item-star">
-								<use href="src/assets/sprites.svg#curved-star"></use>
-							</svg>
-							<div class="info__item-content">
-								<h3 class="info__item-title">Качество материалов</h3>
-								<p class="info__item-text">
-									Только драгоценные металлы, натуральные бриллианты и камни для
-									долговечных и стильных украшений
-								</p>
-							</div>
-						</swiper-slide>
-						<swiper-slide class="info__item">
-							<div class="info__item-box">
-								<img
-									src="src/assets/icons/ornament-heart.svg"
-									class="info__item-ornament" />
-							</div>
-							<svg viewBox="0 0 53 53" class="info__item-star">
-								<use href="src/assets/sprites.svg#curved-star"></use>
-							</svg>
-							<div class="info__item-content">
-								<h3 class="info__item-title">Качество материалов</h3>
-								<p class="info__item-text">
-									Только драгоценные металлы, натуральные бриллианты и камни для
-									долговечных и стильных украшений
-								</p>
-							</div>
-						</swiper-slide>
-						<swiper-slide class="info__item">
-							<div class="info__item-box">
-								<img
-									src="src/assets/icons/ornament.svg"
-									class="info__item-ornament" />
-							</div>
-							<svg viewBox="0 0 53 53" class="info__item-star">
-								<use href="src/assets/sprites.svg#curved-star"></use>
-							</svg>
-							<div class="info__item-content">
-								<h3 class="info__item-title">Качество материалов</h3>
-								<p class="info__item-text">
-									Только драгоценные металлы, натуральные бриллианты и камни для
-									долговечных и стильных украшений
-								</p>
-							</div>
-						</swiper-slide>
-						<swiper-slide class="info__item">
-							<div class="info__item-box">
-								<img
-									src="src/assets/icons/ornament-heart.svg"
-									class="info__item-ornament" />
-							</div>
-							<svg viewBox="0 0 53 53" class="info__item-star">
-								<use href="src/assets/sprites.svg#curved-star"></use>
-							</svg>
-							<div class="info__item-content">
-								<h3 class="info__item-title">Качество материалов</h3>
-								<p class="info__item-text">
-									Только драгоценные металлы, натуральные бриллианты и камни для
-									долговечных и стильных украшений
-								</p>
-							</div>
-						</swiper-slide>
-					</swiper-container>
-				</section>
-				<section class="cta">
-					<picture>
-						<source
-							srcset="src/assets/images/fading-girl-lookingup.png"
-							media="(max-width: 768px)" />
-						<img
-							src="src/assets/images/girl-lookingup.png"
-							alt="girl"
-							class="cta__image" />
-					</picture>
-					<div class="cta__bg">
-						<svg viewBox="0 0 64 64" class="cta__ornament">
-							<use href="src/assets/sprites.svg#ornament"></use>
-						</svg>
-						<svg viewBox="0 0 64 64" class="cta__ornament">
-							<use href="src/assets/sprites.svg#ornament"></use>
-						</svg>
-						<svg viewBox="0 0 64 64" class="cta__ornament">
-							<use href="src/assets/sprites.svg#ornament"></use>
-						</svg>
-					</div>
-					<div class="cta__content">
-						<h2 class="cta__title">
-							Украшение <br />
-							вашей мечты
-						</h2>
-						<p class="text-default o-6 color-white">
-							Расскажите нам о своем идеальном украшении, и мы воплотим его в жизнь –
-							от эскиза до готового шедевра
-						</p>
-					</div>
-					<button class="cta__button button button--gold">Подобрать украшение</button>
 				</section>
 			</main>
 

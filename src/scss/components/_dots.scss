@@ -1,0 +1,29 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.dots {
+	align-self: flex-end;
+	justify-self: center;
+	margin-bottom: 16px;
+	z-index: 2;
+	display: flex;
+	gap: 4px;
+	@include breakpoints.min-large-mobile {
+		display: none;
+	}
+}
+.dot {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	opacity: 0.5;
+	background-color: variables.$white;
+	transition-property: width, border-radius, opacity;
+	transition-duration: variables.$default-transition-duration;
+	&.active {
+		width: 16px;
+		border-radius: 3px;
+		opacity: 1;
+	}
+}

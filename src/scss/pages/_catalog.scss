@@ -9,7 +9,7 @@
 	gap: 7.3rem;
 	@include mixins.spacing;
 	@include breakpoints.large-mobile {
-		gap: 4rem;
+		gap: 2.4rem;
 		padding-top: 1.6rem;
 	}
 }
@@ -62,7 +62,7 @@
 		}
 	}
 }
-.catalog {
+.directory {
 	display: grid;
 	border-bottom: none !important;
 	padding: 0 !important;
@@ -81,10 +81,22 @@
 			'products'
 			'pagination';
 	}
+	.search {
+		margin-bottom: 12px;
+	}
+	&__boom {
+		grid-area: top;
+		@include breakpoints.large-mobile {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			overflow-x: hidden;
+		}
+	}
 	&__products {
 		grid-area: products;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(max(160px, 15vw), 1fr));
 		gap: 2rem;
 		@include breakpoints.large-mobile {
 			gap: 0.8rem;
@@ -130,8 +142,25 @@
 			}
 		}
 	}
+	&__button {
+		padding-block: 9px;
+		padding-inline: 12px;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		background-color: variables.$grey-2;
+		border-radius: 60px;
+	}
+	&__buttons {
+		display: flex;
+		gap: 8px;
+		overflow-x: auto;
+		@include breakpoints.min-large-mobile {
+			display: none;
+		}
+	}
 	&__top {
-		grid-area: top;
 		padding-bottom: 1.6rem;
 		border-bottom: 1px solid variables.$grey-1;
 		display: grid;
@@ -198,6 +227,12 @@
 		font-size: 1.8rem;
 		line-height: 100%;
 		letter-spacing: -0.02em;
+		&-more {
+			font-weight: 700;
+			font-size: 1.6rem;
+			color: variables.$grey-5;
+			align-self: flex-start;
+		}
 		&-item {
 			flex: 1;
 			display: flex;
@@ -247,5 +282,8 @@
 	.pagination {
 		margin-top: 3.6rem;
 		grid-area: pagination;
+		@include breakpoints.large-mobile {
+			margin-top: 1.4rem;
+		}
 	}
 }

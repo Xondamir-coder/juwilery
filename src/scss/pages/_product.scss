@@ -1,0 +1,203 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include breakpoints.min-large-mobile {
+		display: none;
+	}
+	&__back {
+		width: 5.6rem;
+		border-radius: 6rem;
+	}
+	&__share {
+		border-radius: 50%;
+		width: 4rem;
+	}
+	& > * {
+		background-color: variables.$grey-2;
+		height: 4rem;
+		@include mixins.flex-center;
+	}
+}
+
+.main {
+	padding-top: 3.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 3.2rem;
+	@include mixins.spacing;
+	@include breakpoints.large-mobile {
+		padding-top: 0.8rem;
+		gap: 1.6rem;
+	}
+	.breadcrumbs {
+		@include breakpoints.large-mobile {
+			display: none;
+		}
+	}
+}
+.product {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	column-gap: 4rem;
+	row-gap: 2rem;
+	@include breakpoints.large-mobile {
+		grid-template-columns: 1fr;
+	}
+	&__container {
+		display: grid;
+		@include breakpoints.min-large-mobile {
+			display: none;
+		}
+		.dots {
+			align-self: flex-end;
+			justify-self: center;
+			z-index: 2;
+			.dot.active {
+				width: 40px;
+			}
+		}
+		& > * {
+			grid-area: 1/1/2/2;
+		}
+	}
+	&__slider {
+		aspect-ratio: 343/370;
+		display: grid;
+	}
+	&__image {
+		border-radius: 1.6rem;
+		@include breakpoints.large-mobile {
+			border-radius: 1.1rem;
+		}
+	}
+	&__images {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(max(20vw, 200px), 1fr));
+		gap: 1.2rem;
+		@include breakpoints.large-mobile {
+			display: none;
+		}
+	}
+	&__cta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		@include breakpoints.small-mobile {
+			display: none;
+		}
+		&-button {
+			flex: 1;
+		}
+	}
+	&__call {
+		width: 4.8rem;
+		aspect-ratio: 1;
+		background-color: variables.$black;
+		border-radius: 50%;
+		fill: variables.$white;
+		@include mixins.flex-center;
+		&:hover {
+			background-color: variables.$gold;
+			fill: variables.$black;
+		}
+		&-icon {
+			width: 50%;
+			transition-property: fill;
+			transition-duration: variables.$default-transition-duration;
+		}
+	}
+	&__title {
+		font-family: variables.$font-cormorant;
+		font-weight: 500;
+		font-size: 4rem;
+		line-height: 100%;
+		letter-spacing: -0.03em;
+		text-transform: uppercase;
+		margin-bottom: 1.6rem;
+		@include breakpoints.large-mobile {
+			font-size: 3.2rem;
+		}
+	}
+	&__sidebar {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+	}
+	&__details {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		gap: 1.3rem;
+		@include breakpoints.large-mobile {
+			gap: 0.8rem;
+		}
+	}
+	&__about {
+		background-color: variables.$grey-2;
+		padding-block: 2.4rem;
+		padding-inline: 1.6rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		border-radius: 8px;
+		&-button {
+			font-weight: 700;
+			font-size: 1.6rem;
+			line-height: 100%;
+			letter-spacing: -0.02em;
+			color: variables.$green;
+			align-self: flex-start;
+
+			&:hover {
+				color: variables.$gold;
+			}
+		}
+		&-title {
+			font-family: variables.$font-cormorant;
+			font-weight: 600;
+			font-size: 2.8rem;
+			line-height: 80%;
+			letter-spacing: 0%;
+			margin-bottom: 1.6rem;
+		}
+		&-text {
+			font-weight: 400;
+			font-size: 1.6rem;
+			line-height: 148%;
+			letter-spacing: -0.02em;
+			@include breakpoints.large-mobile {
+				font-size: 1.4rem;
+			}
+		}
+	}
+	&__detail {
+		padding: 1.6rem;
+		font-weight: 600;
+		font-size: 1.6rem;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		background-color: variables.$grey-2;
+		display: flex;
+		flex-direction: column;
+		gap: 1.4rem;
+		border-radius: 8px;
+		span:last-of-type {
+			line-height: 110%;
+		}
+		@include breakpoints.large-mobile {
+			gap: 3rem;
+			font-size: 1.4rem;
+		}
+	}
+	.faq {
+		margin-top: 5rem;
+		@include breakpoints.large-mobile {
+			margin-top: 2rem;
+		}
+	}
+}

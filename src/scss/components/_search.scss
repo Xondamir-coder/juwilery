@@ -1,0 +1,27 @@
+@use '../utils/variables';
+@use '../utils/breakpoints';
+@use '../utils/mixins';
+
+.search {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+	background-color: variables.$grey-2;
+	padding: 1.2rem;
+	border-radius: 8px;
+	&.active .search__button {
+		transform: scale(1);
+	}
+	&__button {
+		display: flex;
+		transform: scale(0);
+	}
+	&__input {
+		background-color: transparent;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		flex: 1;
+	}
+}

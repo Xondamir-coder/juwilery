@@ -3,7 +3,7 @@ import '../utils/faq';
 
 const handleStudioSwiper = () => {
 	const buttonsNav = document.getElementById('studio-buttons');
-	const dotsNav = document.querySelector('.studio__dots');
+	const dotsNav = document.querySelector('.dots');
 	const swiperEl = document.getElementById('studio-swiper');
 	const mySwiper = swiperEl.swiper; // your Swiper instance
 
