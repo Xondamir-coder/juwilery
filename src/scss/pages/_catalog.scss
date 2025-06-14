@@ -348,6 +348,7 @@
 		}
 	}
 	&__close {
+		animation: slide-from-top-20px 0.5s backwards;
 		display: none;
 	}
 	&__button {
@@ -357,6 +358,7 @@
 		}
 	}
 	&__rows {
+		animation: slide-from-bottom-20px 0.5s backwards;
 		display: flex;
 		flex-direction: column;
 		gap: 1.6rem;
@@ -434,11 +436,13 @@
 		color: #e14848;
 	}
 	&__back {
+		animation: slide-from-top-20px 0.5s backwards;
 		display: flex;
 		gap: 2px;
 		align-items: center;
 	}
 	&__form {
+		animation: slide-from-bottom-20px 0.5s backwards;
 		display: flex;
 		flex-direction: column;
 		gap: 8px;

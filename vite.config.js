@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
+	css: {
+		postcss: {
+			plugins: [autoprefixer]
+		}
+	},
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src')

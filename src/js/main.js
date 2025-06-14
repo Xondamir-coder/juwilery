@@ -7,38 +7,38 @@ register();
 
 // Helper functions
 const getCatalogTemplate = c => `
-			<div class="catalog">
-								<div class="catalog__header">
-									<h3 class="catalog__header-title">${c.category}</h3>
-									<button class="catalog__header-button">
-										<span>Все ${c.category.toLowerCase()}</span>
-										<svg
-											viewBox="0 0 24 24"
-											fill="none"
-											class="stroke-gold"
-											width="24"
-											height="24">
-											<use
-												href="${spritesUrl}#chevron-right-arrow"></use>
-										</svg>
-									</button>
-								</div>
-								<ul class="catalog__list">
-								${c.items
-									.map(
-										i => `
-									<li class="catalog__item">
-										<img
-											src="${i.img}"
-											alt="${i.name}"
-											class="catalog__item-image" />
-										<h4 class="catalog__item-title">${i.name}</h4>
-									</li>
-								`
-									)
-									.join('')}
-								</ul>
-							</div>
+<div class="catalog">
+	<div class="catalog__header">
+		<h3 class="catalog__header-title">${c.category}</h3>
+		<button class="catalog__header-button">
+			<span>Все ${c.category.toLowerCase()}</span>
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				class="stroke-gold"
+				width="24"
+				height="24">
+				<use
+					href="${spritesUrl}#chevron-right-arrow"></use>
+			</svg>
+		</button>
+	</div>
+	<ul class="catalog__list">
+	${c.items
+		.map(
+			i => `
+		<li class="catalog__item">
+			<img
+				src="${i.img}"
+				alt="${i.name}"
+				class="catalog__item-image" />
+			<h4 class="catalog__item-title">${i.name}</h4>
+		</li>
+	`
+		)
+		.join('')}
+	</ul>
+</div>
 							`;
 const getHighlightedWord = (words, inputVal) =>
 	words
@@ -319,3 +319,8 @@ handleSearchForms();
 handleToggleDropdowns();
 if (window.innerWidth > 768) handleCatalog();
 else handleBottomModals();
+
+// Initialize Lenis
+const lenis = new Lenis({
+	autoRaf: true
+});

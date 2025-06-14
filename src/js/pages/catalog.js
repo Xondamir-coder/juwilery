@@ -80,8 +80,12 @@ const handleMobileFilter = () => {
 	};
 
 	applyBtn.addEventListener('click', () => {
-		updateLocalStorage();
-		backBtn.click();
+		if (document.querySelector('.filter__form')) {
+			updateLocalStorage();
+			backBtn.click();
+		} else {
+			// console.log('submitting ...', selected);
+		}
 	});
 	filterRows.addEventListener('click', e => {
 		// Get clicked button
@@ -110,7 +114,6 @@ const handleMobileFilter = () => {
 		});
 	});
 	backBtn.addEventListener('click', () => {
-		// updateLocalStorage();
 		const form = document.querySelector('.filter__form');
 		form.remove();
 
@@ -133,6 +136,9 @@ const handleMobileFilter = () => {
 			// Update the output
 			document.querySelector(`.filter__rows-output[data-output="${key}"]`).innerHTML =
 				selected[key].map(e => `<span>${e}</span>`).join('<div class="dot"></div>');
+
+			// Enable/Disable apply btn
+			applyBtn.disabled = Object.values(selected).every(e => e.length);
 		});
 	});
 	resetBtn.addEventListener('click', () => {
@@ -163,6 +169,9 @@ const handleMobileFilter = () => {
 				out.textContent = data.desc;
 			});
 		}
+
+		// Enable/Disable apply btn
+		applyBtn.disabled = !Object.values(selected).every(e => e.length) ? true : false;
 	});
 };
 
