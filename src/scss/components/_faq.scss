@@ -12,9 +12,7 @@
 	&__accordion {
 		display: flex;
 		flex-direction: column;
-		&:focus {
-			outline: none;
-		}
+
 		&.active {
 			fill: variables.$gold;
 			.faq__accordion-question {
@@ -78,7 +76,9 @@
 			background-color: variables.$grey-2;
 			transition-property: padding-inline, background-color;
 			transition-duration: variables.$default-transition-duration;
-
+			&:focus {
+				outline: none;
+			}
 			@include breakpoints.large-mobile {
 				padding-block: 1.2rem;
 			}
