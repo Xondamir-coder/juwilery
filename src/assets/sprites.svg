@@ -99,6 +99,13 @@
                 stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </symbol>
 
+        <symbol id="left-classic-arrow" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.29289 12.3537L14.2929 19.3537L15.7071 17.9395L9.41421 11.6466L15.7071 5.35367L14.2929 3.93945L7.29289 10.9395C6.90237 11.33 6.90237 11.9631 7.29289 12.3537Z"
+                fill="white" />
+        </symbol>
+
+
         <symbol id="chevron-right-arrow" viewBox="0 0 24 24" fill="none">
             <path d="M10 8L14 12L10 16" stroke="inherit" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />

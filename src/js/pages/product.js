@@ -37,6 +37,17 @@ const handleSwiper = () => {
 		dots.children[swiper.realIndex].classList.add('active');
 	});
 };
+const handeImageModal = () => {
+	const slider = document.querySelector('.product__swiper');
+	const images = document.querySelector('.product__images');
+
+	images.addEventListener('click', e => {
+		const imageSrc = e.target.closest('img')?.src;
+		if (!imageSrc) return;
+		slider.swiper.slideTo([...images.children].indexOf(e.target.closest('img')));
+	});
+};
 
 handleTextCollapse();
 handleSwiper();
+handeImageModal();

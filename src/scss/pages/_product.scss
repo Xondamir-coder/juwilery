@@ -79,6 +79,9 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(max(20vw, 200px), 1fr));
 		gap: 1.2rem;
+		& > * {
+			cursor: pointer;
+		}
 		@include breakpoints.large-mobile {
 			display: none;
 		}
@@ -198,6 +201,66 @@
 		margin-top: 5rem;
 		@include breakpoints.large-mobile {
 			margin-top: 2rem;
+		}
+	}
+	&__swiper {
+		display: grid;
+		max-height: calc(100vh - 10rem * 2);
+		&-arrow {
+			pointer-events: all;
+			width: 4rem;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background: #0000003d;
+			backdrop-filter: blur(24px);
+			@include mixins.flex-center;
+			&:hover {
+				background-color: variables.$gold;
+			}
+			svg {
+				width: 60%;
+			}
+		}
+		&-nav {
+			margin-inline: 2.4rem;
+			z-index: 2;
+			align-self: center;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			pointer-events: none;
+		}
+		&-content {
+			align-self: center;
+			border-radius: 2.4rem;
+			overflow: hidden;
+			border: none;
+			background-color: transparent;
+			max-height: calc(100vh - 10rem * 2);
+			display: grid;
+			& > * {
+				grid-area: 1/1/2/2;
+			}
+		}
+		&-close {
+			@include mixins.flex-center;
+			width: 3.2rem;
+			border-radius: 50%;
+			aspect-ratio: 1;
+			z-index: 2;
+			justify-self: flex-end;
+			align-self: flex-start;
+			display: flex;
+			margin: 2.4rem;
+			background-color: variables.$white;
+			fill: variables.$grey-3;
+			&:hover {
+				background-color: variables.$gold;
+				fill: variables.$white;
+			}
+			svg {
+				width: 80%;
+			}
 		}
 	}
 }

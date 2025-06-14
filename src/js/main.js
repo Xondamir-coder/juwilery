@@ -1,9 +1,6 @@
 import products from '../data/products.json';
 import catalog from '../data/catalog.json';
-import { register } from 'swiper/element/bundle';
 import spritesUrl from '@/assets/sprites.svg';
-
-register();
 
 // Initialize Lenis
 const lenis = new Lenis({

@@ -15,6 +15,7 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
 			rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
 		<script type="module" src="src/js/pages/product.js" defer></script>
@@ -212,6 +213,76 @@
 							</form>
 							<div class="bottombar__search-container"></div>
 						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Image Modal -->
+			<div class="modal fade" id="image-modal" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content product__swiper-content">
+						<button class="product__swiper-close" data-bs-dismiss="modal">
+							<svg viewBox="0 0 24 24">
+								<use href="src/assets/sprites.svg#x"></use>
+							</svg>
+						</button>
+						<div class="product__swiper-nav">
+							<button class="product__swiper-arrow">
+								<svg viewBox="0 0 24 24" width="24" class="fill-white">
+									<use href="src/assets/sprites.svg#left-classic-arrow"></use>
+								</svg>
+							</button>
+							<button class="product__swiper-arrow rotate-180">
+								<svg viewBox="0 0 24 24" width="24" class="fill-white">
+									<use href="src/assets/sprites.svg#left-classic-arrow"></use>
+								</svg>
+							</button>
+						</div>
+						<swiper-container
+							space-between="10"
+							grab-cursor="true"
+							slides-per-view="1"
+							navigation="true"
+							navigation-prev-el=".product__swiper-arrow:first-of-type"
+							navigation-next-el=".product__swiper-arrow:last-of-type"
+							class="product__swiper">
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.avif"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-ring.avif"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-ring.avif"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.avif"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-showoff.avif"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+							<swiper-slide>
+								<img
+									src="src/assets/images/girl-ring.avif"
+									alt="showoff"
+									class="product__image" />
+							</swiper-slide>
+						</swiper-container>
 					</div>
 				</div>
 			</div>
@@ -501,26 +572,38 @@
 					<div class="product__images">
 						<img
 							src="src/assets/images/girl-showoff.avif"
+							data-bs-toggle="modal"
+							data-bs-target="#image-modal"
+							alt="showoff"
+							class="product__image" />
+						<img
+							src="src/assets/images/girl-ring.avif"
+							data-bs-toggle="modal"
+							data-bs-target="#image-modal"
+							alt="showoff"
+							class="product__image" />
+						<img
+							src="src/assets/images/girl-ring.avif"
+							data-bs-toggle="modal"
+							data-bs-target="#image-modal"
 							alt="showoff"
 							class="product__image" />
 						<img
 							src="src/assets/images/girl-showoff.avif"
+							data-bs-toggle="modal"
+							data-bs-target="#image-modal"
 							alt="showoff"
 							class="product__image" />
 						<img
 							src="src/assets/images/girl-showoff.avif"
+							data-bs-toggle="modal"
+							data-bs-target="#image-modal"
 							alt="showoff"
 							class="product__image" />
 						<img
-							src="src/assets/images/girl-showoff.avif"
-							alt="showoff"
-							class="product__image" />
-						<img
-							src="src/assets/images/girl-showoff.avif"
-							alt="showoff"
-							class="product__image" />
-						<img
-							src="src/assets/images/girl-showoff.avif"
+							src="src/assets/images/girl-ring.avif"
+							data-bs-toggle="modal"
+							data-bs-target="#image-modal"
 							alt="showoff"
 							class="product__image" />
 					</div>
