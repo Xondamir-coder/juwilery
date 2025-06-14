@@ -5,6 +5,11 @@ import spritesUrl from '@/assets/sprites.svg';
 
 register();
 
+// Initialize Lenis
+const lenis = new Lenis({
+	autoRaf: true
+});
+
 // Helper functions
 const getCatalogTemplate = c => `
 <div class="catalog">
@@ -193,6 +198,7 @@ const handleCatalog = () => {
 			behavior: 'smooth'
 		});
 		document.body.classList.toggle('no-scroll');
+		document.body.classList.contains('no-scroll') ? lenis.stop() : lenis.start();
 
 		// Initialize menu with catalogs
 		if (menuEl.innerHTML === '') {
@@ -319,8 +325,3 @@ handleSearchForms();
 handleToggleDropdowns();
 if (window.innerWidth > 768) handleCatalog();
 else handleBottomModals();
-
-// Initialize Lenis
-const lenis = new Lenis({
-	autoRaf: true
-});

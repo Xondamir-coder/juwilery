@@ -4,15 +4,15 @@
 		"items": [
 			{
 				"name": "пусеты",
-				"img": "/images/flexing-ring.jpg"
+				"img": "/images/flexing-ring.avif"
 			},
 			{
 				"name": "Английская застежка",
-				"img": "/images/flexing-ring.jpg"
+				"img": "/images/flexing-ring.avif"
 			},
 			{
 				"name": "Французская застежка",
-				"img": "/images/flexing-ring.jpg"
+				"img": "/images/flexing-ring.avif"
 			}
 		]
 	},
@@ -21,27 +21,27 @@
 		"items": [
 			{
 				"name": "помолвочные",
-				"img": "/images/girl-lookingleftup.jpg"
+				"img": "/images/girl-lookingleftup.avif"
 			},
 			{
 				"name": "обручальные",
-				"img": "/images/girl-lookingleftup.jpg"
+				"img": "/images/girl-lookingleftup.avif"
 			},
 			{
 				"name": "фаланговые",
-				"img": "/images/girl-lookingleftup.jpg"
+				"img": "/images/girl-lookingleftup.avif"
 			},
 			{
 				"name": "перстни женские",
-				"img": "/images/girl-lookingleftup.jpg"
+				"img": "/images/girl-lookingleftup.avif"
 			},
 			{
 				"name": "коктельные",
-				"img": "/images/girl-lookingleftup.jpg"
+				"img": "/images/girl-lookingleftup.avif"
 			},
 			{
 				"name": "коктельные",
-				"img": "/images/girl-lookingleftup.jpg"
+				"img": "/images/girl-lookingleftup.avif"
 			}
 		]
 	}
