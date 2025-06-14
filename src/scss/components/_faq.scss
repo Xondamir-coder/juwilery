@@ -12,6 +12,9 @@
 	&__accordion {
 		display: flex;
 		flex-direction: column;
+		&:focus {
+			outline: none;
+		}
 		&.active {
 			fill: variables.$gold;
 			.faq__accordion-question {

@@ -16,13 +16,131 @@
 			href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Manrope:wght@200..800&display=swap"
 			rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-		<script type="module" src="src/js/main.js" defer></script>
+		<script type="module" src="src/js/pages/catalog.js" defer></script>
 		<title>Directory Page</title>
 	</head>
 	<body>
 		<div class="holder">
 			<!-- Overlay -->
 			<div class="overlay hidden"></div>
+
+			<!-- Filter Modal -->
+			<div class="modal fade" id="filter-modal" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered m-0 h-100 align-end">
+					<div class="modal-content bottombar-content">
+						<div class="filter">
+							<div class="filter__top">
+								<button class="filter__back">
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										class="stroke-black rotate-180">
+										<use
+											href="src/assets/sprites.svg#chevron-right-arrow"></use>
+									</svg>
+									<span>Назад</span>
+								</button>
+								<button data-bs-dismiss="modal" class="filter__close">
+									Закрыть
+								</button>
+								<span>Фильтр</span>
+								<button id="filter-reset" class="filter__reset">Сбросить</button>
+							</div>
+							<div class="filter__rows">
+								<div class="filter__rows-row">
+									<span>Категории</span>
+									<button
+										class="filter__rows-button"
+										type="button"
+										data-tab="categories">
+										<output
+											class="filter__rows-output"
+											data-output="categories">
+											Выберите категорию
+										</output>
+										<div class="filter__rows-icon_container">
+											<svg viewBox="0 0 24 24" class="filter__rows-icon">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+											<svg viewBox="0 0 20 20" class="filter__rows-icon">
+												<use href="src/assets/sprites.svg#small-x"></use>
+											</svg>
+										</div>
+									</button>
+								</div>
+								<div class="filter__rows-row">
+									<span>Материал</span>
+									<button
+										class="filter__rows-button"
+										type="button"
+										data-tab="materials">
+										<output class="filter__rows-output" data-output="materials">
+											Выберите материал
+										</output>
+										<div class="filter__rows-icon_container">
+											<svg viewBox="0 0 24 24" class="filter__rows-icon">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+											<svg viewBox="0 0 20 20" class="filter__rows-icon">
+												<use href="src/assets/sprites.svg#small-x"></use>
+											</svg>
+										</div>
+									</button>
+								</div>
+								<div class="filter__rows-row">
+									<span>Вставка</span>
+									<button
+										class="filter__rows-button"
+										type="button"
+										data-tab="types">
+										<output class="filter__rows-output" data-output="types">
+											Выберите тип вставки
+										</output>
+										<div class="filter__rows-icon_container">
+											<svg viewBox="0 0 24 24" class="filter__rows-icon">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+											<svg viewBox="0 0 20 20" class="filter__rows-icon">
+												<use href="src/assets/sprites.svg#small-x"></use>
+											</svg>
+										</div>
+									</button>
+								</div>
+								<div class="filter__rows-row">
+									<span>Стиль</span>
+									<button
+										class="filter__rows-button"
+										type="button"
+										data-tab="styles">
+										<output class="filter__rows-output" data-output="styles">
+											Выберите стиль
+										</output>
+										<div class="filter__rows-icon_container">
+											<svg viewBox="0 0 24 24" class="filter__rows-icon">
+												<use
+													href="src/assets/sprites.svg#chevron-right-arrow"></use>
+											</svg>
+											<svg viewBox="0 0 20 20" class="filter__rows-icon">
+												<use href="src/assets/sprites.svg#small-x"></use>
+											</svg>
+										</div>
+									</button>
+								</div>
+							</div>
+							<button
+								class="filter__button button button--green"
+								type="submit"
+								id="filter-apply">
+								Применить
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<!-- Call Modal -->
 			<div class="modal fade" id="call-modal" tabindex="-1">
@@ -463,11 +581,16 @@
 										Фильтр <span class="color-grey-3">(2)</span>
 									</p>
 								</div>
-								<button class="directory__filter-button color-grey-3">
+								<button
+									class="directory__filter-button color-grey-3"
+									id="form-reset">
 									Сбросить все
 								</button>
 							</div>
-							<button class="directory__sort">
+							<button
+								class="directory__sort"
+								data-bs-toggle="modal"
+								data-bs-target="#filter-modal">
 								<span>Сортировать</span>
 								<svg
 									viewBox="0 0 24 24"
@@ -486,275 +609,308 @@
 							<button class="directory__button">Стоимость</button>
 						</div>
 					</div>
-					<div class="directory__sidebar">
-						<ul class="directory__categories">
-							<li>
-								<button class="directory__categories-item">
-									<span>Все категории</span>
-									<span class="color-grey-3">(666)</span>
-								</button>
-							</li>
-							<li>
-								<button class="directory__categories-item">
-									<span>Кольца</span>
-									<span class="color-grey-3">(60)</span>
-								</button>
-							</li>
-							<li>
-								<button class="directory__categories-item">
-									<span>Серьги</span>
-									<span class="color-grey-3">(60)</span>
-								</button>
-							</li>
-							<li>
-								<button class="directory__categories-item">
-									<span>Ожерелье</span>
-									<span class="color-grey-3">(60)</span>
-								</button>
-							</li>
-							<li>
-								<button class="directory__categories-item">
-									<span>Комплекты</span>
-									<span class="color-grey-3">(60)</span>
-								</button>
-							</li>
-							<li>
-								<button class="directory__categories-item">
-									<span>Детские изделия</span>
-									<span class="color-grey-3">(60)</span>
-								</button>
-							</li>
-							<li>
-								<button class="directory__categories-item">
-									<span>Мужские изделия</span>
-									<span class="color-grey-3">(60)</span>
-								</button>
-							</li>
-						</ul>
+					<form class="directory__sidebar">
+						<div class="directory__categories">
+							<label for="Все" class="directory__categories-item">
+								<input
+									id="Все"
+									checked
+									value="Все"
+									type="radio"
+									name="category"
+									class="directory__categories-radio" />
+								<span>Все категории</span>
+								<span class="color-grey-3">(666)</span>
+							</label>
+							<label for="Кольца" class="directory__categories-item">
+								<input
+									id="Кольца"
+									value="Кольца"
+									type="radio"
+									name="category"
+									class="directory__categories-radio" />
+								<span>Кольца</span>
+								<span class="color-grey-3">(60)</span>
+							</label>
+							<label for="Серьги" class="directory__categories-item">
+								<input
+									id="Серьги"
+									value="Серьги"
+									type="radio"
+									name="category"
+									class="directory__categories-radio" />
+								<span>Серьги</span>
+								<span class="color-grey-3">(60)</span>
+							</label>
+							<label for="Ожерелье" class="directory__categories-item">
+								<input
+									id="Ожерелье"
+									value="Ожерель"
+									type="radio"
+									name="category"
+									class="directory__categories-radio" />
+								<span>Ожерелье</span>
+								<span class="color-grey-3">(60)</span>
+							</label>
+							<label for="Комплекты" class="directory__categories-item">
+								<input
+									id="Комплекты"
+									value="Комплек"
+									type="radio"
+									name="category"
+									class="directory__categories-radio" />
+								<span>Комплекты</span>
+								<span class="color-grey-3">(60)</span>
+							</label>
+							<label for="Детские" class="directory__categories-item">
+								<input
+									id="Детские"
+									value="Детские"
+									type="radio"
+									name="category"
+									class="directory__categories-radio" />
+								<span>Детские изделия</span>
+								<span class="color-grey-3">(60)</span>
+							</label>
+							<label for="Мужские" class="directory__categories-item">
+								<input
+									id="Мужские"
+									value="Мужские"
+									type="radio"
+									name="category"
+									class="directory__categories-radio" />
+								<span>Мужские изделия</span>
+								<span class="color-grey-3">(60)</span>
+							</label>
+						</div>
 						<div class="directory__row">
 							<div class="directory__row-top">
 								<span>Материал (2)</span>
-								<button class="directory__row-reset">
+								<button class="directory__row-reset" type="button">
 									<span>Сбросить</span>
 									<svg viewBox="0 0 25 24" width="16" height="16">
 										<use href="src/assets/sprites.svg#x"></use>
 									</svg>
 								</button>
 							</div>
-							<ul class="directory__row-list">
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Золото" />
-											<span>Золото</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Белое золото" />
-											<span>Белое золото</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Желтое золото" />
-											<span>Желтое золото</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Розовое золото" />
-											<span>Розовое золото</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Серебро" />
-											<span>Серебро</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-							</ul>
+							<div class="directory__row-list">
+								<label for="Золото" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Золото"
+											type="checkbox"
+											class="directory__checkbox"
+											name="material"
+											value="Золото" />
+										<span>Золото</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Белое золото" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											type="checkbox"
+											id="Белое золото"
+											class="directory__checkbox"
+											name="material"
+											value="Белое золото" />
+										<span>Белое золото</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Желтое золото" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											type="checkbox"
+											id="Желтое золото"
+											class="directory__checkbox"
+											name="material"
+											value="Желтое золото" />
+										<span>Желтое золото</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Розовое золото" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											type="checkbox"
+											id="Розовое золото"
+											class="directory__checkbox"
+											name="material"
+											value="Розовое золото" />
+										<span>Розовое золото</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Серебро" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											type="checkbox"
+											id="Серебро"
+											class="directory__checkbox"
+											name="material"
+											value="asd" />
+										<span>Серебро</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+							</div>
 							<button class="directory__row-more">Показать еще</button>
 						</div>
 						<div class="directory__row">
 							<div class="directory__row-top">
 								<span>Вставка</span>
-								<button class="directory__row-reset">
+								<button class="directory__row-reset" type="button">
 									<span>Сбросить</span>
 									<svg viewBox="0 0 25 24" width="16" height="16">
 										<use href="src/assets/sprites.svg#x"></use>
 									</svg>
 								</button>
 							</div>
-							<ul class="directory__row-list">
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Без вставок" />
-											<span>Без вставок</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Бриллиант" />
-											<span>Бриллиант</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Изумруд" />
-											<span>Изумруд</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Жемчуг синтетический" />
-											<span>Жемчуг синтетический</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Александрит гидротермальный" />
-											<span>Александрит гидротермальный</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-							</ul>
+							<div class="directory__row-list">
+								<label for="Без вставок" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Без вставок"
+											type="checkbox"
+											class="directory__checkbox"
+											name="type"
+											value="Без вставок" />
+										<span>Без вставок</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Бриллиант" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Бриллиант"
+											type="checkbox"
+											class="directory__checkbox"
+											name="type"
+											value="Бриллиант" />
+										<span>Бриллиант</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Изумруд" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Изумруд"
+											type="checkbox"
+											class="directory__checkbox"
+											name="type"
+											value="Изумруд" />
+										<span>Изумруд</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Жемчуг синтетический" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Жемчуг синтетический"
+											type="checkbox"
+											class="directory__checkbox"
+											name="type"
+											value="Жемчуг синтетический" />
+										<span>Жемчуг синтетический</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label
+									for="Александрит гидротермальный"
+									class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Александрит гидротермальный"
+											type="checkbox"
+											class="directory__checkbox"
+											name="type"
+											value="Александрит гидротермальный" />
+										<span>Александрит гидротермальный</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+							</div>
 							<button class="directory__row-more">Показать еще</button>
 						</div>
 						<div class="directory__row">
 							<div class="directory__row-top">
 								<span>Стиль</span>
-								<button class="directory__row-reset">
+								<button class="directory__row-reset" type="button">
 									<span>Сбросить</span>
 									<svg viewBox="0 0 25 24" width="16" height="16">
 										<use href="src/assets/sprites.svg#x"></use>
 									</svg>
 								</button>
 							</div>
-							<ul class="directory__row-list">
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Ампир" />
-											<span>Ампир</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Модерн" />
-											<span>Модерн</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Барокко" />
-											<span>Барокко</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Класицим" />
-											<span>Класицим</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-								<li>
-									<button class="directory__row-item">
-										<div class="directory__row-item_left">
-											<input
-												type="checkbox"
-												class="directory__checkbox"
-												value="Готика" />
-											<span>Готика</span>
-										</div>
-										<span class="color-grey-3">(21)</span>
-									</button>
-								</li>
-							</ul>
+							<div class="directory__row-list">
+								<label for="Ампир" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Ампир"
+											type="checkbox"
+											class="directory__checkbox"
+											name="style"
+											value="Ампир" />
+										<span>Ампир</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Модерн" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Модерн"
+											type="checkbox"
+											class="directory__checkbox"
+											name="style"
+											value="Модерн" />
+										<span>Модерн</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Барокко" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Барокко"
+											type="checkbox"
+											class="directory__checkbox"
+											name="style"
+											value="Барокко" />
+										<span>Барокко</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Класицим" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Класицим"
+											type="checkbox"
+											class="directory__checkbox"
+											name="style"
+											value="Класицим" />
+										<span>Класицим</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+								<label for="Готика" class="directory__row-item">
+									<div class="directory__row-item_left">
+										<input
+											id="Готика"
+											type="checkbox"
+											class="directory__checkbox"
+											name="style"
+											value="Готика" />
+										<span>Готика</span>
+									</div>
+									<span class="color-grey-3">(21)</span>
+								</label>
+							</div>
 							<button class="directory__row-more">Показать еще</button>
 						</div>
-						<button class="directory__submit button button--green">Применить</button>
-					</div>
+						<button class="directory__submit button button--green" type="submit">
+							Применить
+						</button>
+					</form>
 					<div class="directory__products">
 						<div class="card">
 							<img

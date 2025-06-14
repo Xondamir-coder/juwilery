@@ -284,6 +284,7 @@ const handleBottomModals = () => {
 	const modals = document.querySelectorAll('.modal');
 	modals.forEach(modal => {
 		const btn = document.querySelector(`[data-modal="${modal.id}"]`);
+		if (!btn) return;
 		modal.addEventListener('hidden.bs.modal', () => {
 			btn.classList.remove('active');
 		});
